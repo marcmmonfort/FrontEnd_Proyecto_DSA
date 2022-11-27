@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fondoPantalla"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/numeroUnoBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="1"
+        app:layout_constraintEnd_toStartOf="@+id/multiplicarBtn"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toEndOf="@+id/numeroDosBtn"
+        app:layout_constraintTop_toBottomOf="@+id/numeroCuatroBtn" />
+
+    <Button
+        android:id="@+id/numeroDosBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:text="2"
+        app:layout_constraintStart_toEndOf="@+id/numeroTresBtn"
+        app:layout_constraintTop_toBottomOf="@+id/numeroCincoBtn" />
+
+    <Button
+        android:id="@+id/numeroTresBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="56dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeroSeisBtn" />
+
+    <Button
+        android:id="@+id/numeroCuatroBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="4"
+        app:layout_constraintEnd_toStartOf="@+id/dividirBtn"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toEndOf="@+id/numeroCincoBtn"
+        app:layout_constraintTop_toBottomOf="@+id/numeroSieteBtn" />
+
+    <Button
+        android:id="@+id/numeroCincoBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:text="5"
+        app:layout_constraintStart_toEndOf="@+id/numeroSeisBtn"
+        app:layout_constraintTop_toBottomOf="@+id/numeroOchoBtn" />
+
+    <Button
+        android:id="@+id/numeroSeisBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="56dp"
+        android:text="6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeroNueveBtn" />
+
+    <Button
+        android:id="@+id/numeroSieteBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:text="7"
+        app:layout_constraintEnd_toStartOf="@+id/restarBtn"
+        app:layout_constraintTop_toBottomOf="@+id/ACBtn" />
+
+    <Button
+        android:id="@+id/numeroOchoBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="28dp"
+        android:text="8"
+        app:layout_constraintEnd_toStartOf="@+id/numeroSieteBtn"
+        app:layout_constraintTop_toBottomOf="@+id/ACBtn" />
+
+    <Button
+        android:id="@+id/numeroNueveBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:text="9"
+        app:layout_constraintEnd_toStartOf="@+id/numeroOchoBtn"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ACBtn" />
+
+    <Button
+        android:id="@+id/multiplicarBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="48dp"
+        android:text="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dividirBtn" />
+
+    <Button
+        android:id="@+id/sumarBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultadoText" />
+
+    <Button
+        android:id="@+id/restarBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="50dp"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sumarBtn" />
+
+    <Button
+        android:id="@+id/dividirBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="48dp"
+        android:text="/"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restarBtn" />
+
+    <Button
+        android:id="@+id/resultadobtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="="
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintStart_toEndOf="@+id/numeroCeroBtn"
+        app:layout_constraintTop_toBottomOf="@+id/numeroUnoBtn" />
+
+    <TextView
+        android:id="@+id/resultadoText"
+        android:layout_width="310dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comandosTxt" />
+
+    <TextView
+        android:id="@+id/comandosTxt"
+        android:layout_width="310dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ACBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="AC"
+        app:layout_constraintEnd_toStartOf="@+id/sumarBtn"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultadoText" />
+
+    <Button
+        android:id="@+id/numeroCeroBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="56dp"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeroDosBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
