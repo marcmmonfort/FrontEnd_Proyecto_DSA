@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.*;
 
 import android.os.Bundle;
-import org.mozilla.javascript.Context;
-import org.mozilla.javascript.Scriptable;
 
 import upc.edu.dsa.myapplication.R;
 
@@ -24,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home_main);
 
         resultados = findViewById(R.id.resultadoText);
         operaciones = findViewById(R.id.comandosTxt);
@@ -54,40 +52,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Button boton = (Button) v;
-        String botonText = boton.getText().toString();
-        String dataToCalculate = operaciones.getText().toString();
-
-        if (botonText.equals("AC")){
-            operaciones.setText("");
-            resultados.setText("0");
-            return;
-        }
-        if (botonText.equals("=")){
-            String finalResult = getResult(dataToCalculate);
-            if(!finalResult.equals("Error")){
-                resultados.setText(finalResult);
-            } else {
-                String aviso = "Err";
-                resultados.setText(aviso);
-            }
-        } else {
-            dataToCalculate = dataToCalculate + botonText;
-            operaciones.setText(dataToCalculate);
-        }
-    }
-    String getResult(String data) {
-        try{
-            Context context = Context.enter();
-            context.setOptimizationLevel(-1);
-            Scriptable scriptable = context.initStandardObjects();
-            String finalResult = context.evaluateString(scriptable,data,"Javascript",1,null).toString();
-            if (finalResult.endsWith(".0")){
-                finalResult = finalResult.replace(".0","");
-            }
-            return finalResult;
-        } catch (Exception e) {
-            return "Error";
-        }
     }
 }

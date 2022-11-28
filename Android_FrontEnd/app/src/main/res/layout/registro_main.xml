@@ -7,175 +7,75 @@
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
 
-    <Button
-        android:id="@+id/numeroUnoBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="1"
-        app:layout_constraintEnd_toStartOf="@+id/multiplicarBtn"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toEndOf="@+id/numeroDosBtn"
-        app:layout_constraintTop_toBottomOf="@+id/numeroCuatroBtn" />
-
-    <Button
-        android:id="@+id/numeroDosBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:text="2"
-        app:layout_constraintStart_toEndOf="@+id/numeroTresBtn"
-        app:layout_constraintTop_toBottomOf="@+id/numeroCincoBtn" />
-
-    <Button
-        android:id="@+id/numeroTresBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="56dp"
-        android:text="3"
+    <TextView
+        android:id="@+id/textPouRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POU"
+        android:textColor="#000000"
+        android:textSize="68dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numeroSeisBtn" />
-
-    <Button
-        android:id="@+id/numeroCuatroBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="4"
-        app:layout_constraintEnd_toStartOf="@+id/dividirBtn"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toEndOf="@+id/numeroCincoBtn"
-        app:layout_constraintTop_toBottomOf="@+id/numeroSieteBtn" />
-
-    <Button
-        android:id="@+id/numeroCincoBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:text="5"
-        app:layout_constraintStart_toEndOf="@+id/numeroSeisBtn"
-        app:layout_constraintTop_toBottomOf="@+id/numeroOchoBtn" />
-
-    <Button
-        android:id="@+id/numeroSeisBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="56dp"
-        android:text="6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numeroNueveBtn" />
-
-    <Button
-        android:id="@+id/numeroSieteBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
-        android:text="7"
-        app:layout_constraintEnd_toStartOf="@+id/restarBtn"
-        app:layout_constraintTop_toBottomOf="@+id/ACBtn" />
-
-    <Button
-        android:id="@+id/numeroOchoBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="28dp"
-        android:text="8"
-        app:layout_constraintEnd_toStartOf="@+id/numeroSieteBtn"
-        app:layout_constraintTop_toBottomOf="@+id/ACBtn" />
-
-    <Button
-        android:id="@+id/numeroNueveBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="50dp"
-        android:text="9"
-        app:layout_constraintEnd_toStartOf="@+id/numeroOchoBtn"
-        app:layout_constraintHorizontal_bias="0.26"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ACBtn" />
-
-    <Button
-        android:id="@+id/multiplicarBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="48dp"
-        android:text="*"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dividirBtn" />
-
-    <Button
-        android:id="@+id/sumarBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="50dp"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultadoText" />
-
-    <Button
-        android:id="@+id/restarBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="50dp"
-        android:text="-"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sumarBtn" />
-
-    <Button
-        android:id="@+id/dividirBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="48dp"
-        android:text="/"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restarBtn" />
-
-    <Button
-        android:id="@+id/resultadobtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="="
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.795"
-        app:layout_constraintStart_toEndOf="@+id/numeroCeroBtn"
-        app:layout_constraintTop_toBottomOf="@+id/numeroUnoBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/textLasAventurasDeRegister" />
 
     <TextView
-        android:id="@+id/resultadoText"
-        android:layout_width="310dp"
-        android:layout_height="60dp"
+        android:id="@+id/textLasAventurasDeRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:text="LAS AVENTURAS DE"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comandosTxt" />
-
-    <TextView
-        android:id="@+id/comandosTxt"
-        android:layout_width="310dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ACBtn"
-        android:layout_width="60dp"
+        android:id="@+id/botonRegistroRegistrar"
+        android:layout_width="160dp"
         android:layout_height="60dp"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
-        android:text="AC"
-        app:layout_constraintEnd_toStartOf="@+id/sumarBtn"
-        app:layout_constraintHorizontal_bias="0.079"
+        android:backgroundTint="#730000"
+        android:text="REGISTRAR"
+        android:textSize="20dp"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultadoText" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-    <Button
-        android:id="@+id/numeroCeroBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="56dp"
-        android:text="0"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numeroDosBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/textPouRegister">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textoRegistroCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo del Pou" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textoRegistroPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password del Pou" />
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PouRetrofit {
     public static final String BASE_URL = "http://10.0.2.2:8080/dsaApp/";
 
-    private static PouRetrofit instance = null;
+    private static PouRetrofit instance;
     private PouServices pouServices;
 
     private PouRetrofit() {
