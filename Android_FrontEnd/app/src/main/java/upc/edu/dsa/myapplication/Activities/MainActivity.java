@@ -1,4 +1,4 @@
-package upc.edu.dsa.myapplication;
+package upc.edu.dsa.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.RequiresApi;
@@ -12,6 +12,8 @@ import android.widget.*;
 import android.os.Bundle;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
+
+import upc.edu.dsa.myapplication.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
