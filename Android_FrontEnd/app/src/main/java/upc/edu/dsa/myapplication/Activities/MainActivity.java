@@ -15,8 +15,8 @@ import upc.edu.dsa.myapplication.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    TextView textPou, textLasAventurasDe, textRegistro, textLogin;
-    Button
+    //TextView textPou, textLasAventurasDe, textRegistro, textLogin;
+    //Button
 
     /*
 

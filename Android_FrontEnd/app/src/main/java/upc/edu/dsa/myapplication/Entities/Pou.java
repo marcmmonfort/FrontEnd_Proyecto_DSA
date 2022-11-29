@@ -1,20 +1,24 @@
 package upc.edu.dsa.myapplication.Entities;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import upc.edu.dsa.myapplication.Activities.*;
 import upc.edu.dsa.myapplication.*;
+import upc.edu.dsa.myapplication.Entities.VO.*;
 
 public class Pou {
-/*
+
     // ATRIBUTOS
 
-    String pouId;
-    String nombrePou;
-    String nacimientoPou;
-    Credenciales credencialesPou;
-    Estado estadoPou;
-    Outfit outfitPou;
-    Armario armarioPou;
-    Map<String, Sala> salasPou;
+    private String pouId;
+    private String nombrePou;
+    private String nacimientoPou;
+    private Credenciales credencialesPou;
+    private Estado estadoPou;
+    private Outfit outfitPou;
+    private Armario armarioPou;
+    private Map<String, Sala> salasPou;
 
     // CONSTRUCTORES
 
@@ -32,5 +36,5 @@ public class Pou {
 
     // GETTERS Y SETTERS
 
-*/
+
 }

@@ -11,7 +11,7 @@ import android.widget.*;
 
 import android.os.Bundle;
 
-import upc.edu.dsa.myapplication.R;
+
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     @Override

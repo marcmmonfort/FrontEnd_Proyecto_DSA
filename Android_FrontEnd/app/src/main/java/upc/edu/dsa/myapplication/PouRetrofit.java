@@ -39,7 +39,7 @@ public class PouRetrofit {
         return instance;
     }
 
-    public PouServices getMyServices() {
+    public PouServices getPouServices() {
         return pouServices;
     }
 
