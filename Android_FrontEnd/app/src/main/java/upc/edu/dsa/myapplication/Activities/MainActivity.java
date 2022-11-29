@@ -15,6 +15,11 @@ import upc.edu.dsa.myapplication.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    TextView textPou, textLasAventurasDe, textRegistro, textLogin;
+    Button
+
+    /*
+
     TextView resultados, operaciones;
     Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,bMult,bDiv,bRes,bSum,bEqu,bLimp;
 
@@ -53,4 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
     }
+
+     */
 }
