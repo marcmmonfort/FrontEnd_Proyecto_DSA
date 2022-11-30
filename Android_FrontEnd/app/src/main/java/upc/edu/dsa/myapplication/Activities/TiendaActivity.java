@@ -55,6 +55,12 @@ public class TiendaActivity extends AppCompatActivity {
         }
     }
 
+    public void backHome(View view) {
+        Intent myIntent1 = new Intent(TiendaActivity.this, HomeActivity.class);
+        TiendaActivity.this.startActivity(myIntent1);
+    }
+
+    @SuppressLint("SetTextI18n")
     private void buildTable(Call<List<ObjetoTienda>> call) throws IOException {
         List<ObjetoTienda> objetosTienda = call.execute().body();
         assert objetosTienda != null;
@@ -73,12 +79,12 @@ public class TiendaActivity extends AppCompatActivity {
 
             columna_nombreArticulo.setText(objetoTienda.getArticuloId());
             columna_idArticulo.setText(objetoTienda.getArticuloId());
-            columna_precioArticulo.setText((int) objetoTienda.getPrecioArticulo());
+            columna_precioArticulo.setText(Integer.toString((int) objetoTienda.getPrecioArticulo()));
             columna_tipoArticulo.setText(objetoTienda.getTipoArticulo());
-            columna_recargaHambre.setText(objetoTienda.getRecargaHambre());
-            columna_recargaSalud.setText(objetoTienda.getRecargaSalud());
-            columna_recargaDiversion.setText(objetoTienda.getRecargaDiversion());
-            columna_recargaSueno.setText(objetoTienda.getRecargaSueno());
+            columna_recargaHambre.setText(Integer.toString(objetoTienda.getRecargaHambre()));
+            columna_recargaSalud.setText(Integer.toString(objetoTienda.getRecargaSalud()));
+            columna_recargaDiversion.setText(Integer.toString(objetoTienda.getRecargaDiversion()));
+            columna_recargaSueno.setText(Integer.toString(objetoTienda.getRecargaSueno()));
 
             tablaArticulos.addView(filaArticulo);
         }

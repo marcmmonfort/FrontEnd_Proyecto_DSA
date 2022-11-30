@@ -45,6 +45,11 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         registro_passwordPou = findViewById(R.id.registro_passwordPou);
     }
 
+    public void backHome(View view) {
+        Intent myIntent1 = new Intent(RegistroActivity.this, HomeActivity.class);
+        RegistroActivity.this.startActivity(myIntent1);
+    }
+
     public void registroPou(View view) {
         pouServices = PouRetrofit.getInstance().getPouServices();
 
@@ -57,8 +62,8 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 switch (respuesta.code()){
                     case 200:
                         // Pou creado satisfactoriamente. Nos dirigimos a hacer el Login.
-                        Intent myIntent1 = new Intent(RegistroActivity.this, LoginActivity.class);
-                        RegistroActivity.this.startActivity(myIntent1);
+                        Snackbar registroCorrecto = Snackbar.make(view, "¡Pou creado satisfactoriamente!", 5000);
+                        registroCorrecto.show();
                         break;
                     case 404:
                         // Ya existe el correo. Nos dirigimos a hacer el Login.

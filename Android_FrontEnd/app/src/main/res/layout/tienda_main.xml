@@ -12,7 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:backgroundTint="#454545"
-        android:onClick="loginPou"
+        android:onClick="backHome"
         android:text="HOME"
         android:textSize="20dp"
         app:cornerRadius="60dp"
@@ -49,8 +49,8 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="399dp"
-        android:layout_height="452dp"
+        android:layout_width="393dp"
+        android:layout_height="333dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tienda_textPou">

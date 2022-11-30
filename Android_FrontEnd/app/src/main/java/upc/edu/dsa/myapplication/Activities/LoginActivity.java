@@ -41,6 +41,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         login_passwordPou = findViewById(R.id.login_passwordPou);
     }
 
+    public void backHome(View view) {
+        Intent myIntent1 = new Intent(LoginActivity.this, HomeActivity.class);
+        LoginActivity.this.startActivity(myIntent1);
+    }
+
     public void loginPou(View view) {
         pouServices = PouRetrofit.getInstance().getPouServices();
 
