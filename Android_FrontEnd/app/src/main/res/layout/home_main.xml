@@ -59,17 +59,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonRegistro" />
 
+    <TextView
+        android:id="@+id/textTienda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Ver los Articulos de la Tienda"
+        android:textColor="#730000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonLogin" />
+
     <Button
         android:id="@+id/botonRegistro"
-        android:layout_width="100dp"
+        android:layout_width="140dp"
         android:layout_height="60dp"
+        android:backgroundTint="#730000"
+        android:onClick="clickBoton"
         android:text="NEW"
         android:textSize="26dp"
         app:cornerRadius="60dp"
-        android:backgroundTint="#730000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRegistro" />
+        app:layout_constraintTop_toBottomOf="@+id/textRegistro"
+        tools:ignore="UsingOnClickInXml" />
 
     <Button
         android:id="@+id/botonLogin"
@@ -84,6 +98,22 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLogin"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="clickBoton"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/botonTienda"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#730000"
+        android:onClick="clickBoton"
+        android:text="TIENDA"
+        android:textSize="26dp"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTienda"
+        tools:ignore="UsingOnClickInXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

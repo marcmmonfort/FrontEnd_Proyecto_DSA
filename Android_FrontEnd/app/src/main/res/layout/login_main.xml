@@ -8,7 +8,7 @@
     tools:context=".Activities.MainActivity">
 
     <TextView
-        android:id="@+id/textPouLogin"
+        android:id="@+id/tienda_textPou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="POU"
@@ -16,12 +16,12 @@
         android:textSize="68dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLasAventurasDeLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/tienda_textLasAventurasDe" />
 
     <TextView
-        android:id="@+id/textLasAventurasDeLogin"
+        android:id="@+id/tienda_textLasAventurasDe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -35,93 +35,48 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/hacerLoginLogin"
-        android:layout_width="140dp"
+        android:id="@+id/tienda_botonVerArticulos"
+        android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="#730000"
-        android:text="LOGIN"
+        android:text="ACCEDER"
         android:textSize="20dp"
         app:cornerRadius="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        android:onClick="loginPou" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout5"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textoLoginNacimientoPou"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="nacimientoPou" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout7"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textoLoginCorreo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="correo" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textoLoginNombrePou"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="nombrePou" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
+        android:id="@+id/textInputLayout2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPouLogin">
+        app:layout_constraintTop_toBottomOf="@+id/tienda_textPou">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textoLoginPouId"
+            android:id="@+id/login_correoPou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="pouId" />
+            android:hint="Correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/textInputLayout"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textoLoginPassword"
+            android:id="@+id/login_passwordPou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password" />
+            android:hint="Contraseña" />
     </com.google.android.material.textfield.TextInputLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

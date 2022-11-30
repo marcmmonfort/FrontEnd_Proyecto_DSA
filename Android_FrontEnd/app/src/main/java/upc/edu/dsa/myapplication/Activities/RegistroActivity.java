@@ -1,54 +1,93 @@
 package upc.edu.dsa.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.RequiresApi;
 
 import android.annotation.SuppressLint;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import android.os.Bundle;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 
-import upc.edu.dsa.myapplication.Entities.*;
-import upc.edu.dsa.myapplication.*;
-import upc.edu.dsa.myapplication.R;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import upc.edu.dsa.myapplication.*;
+import upc.edu.dsa.myapplication.Entities.Pou;
+import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
+import upc.edu.dsa.myapplication.Entities.VO.InfoRegistro;
+import upc.edu.dsa.myapplication.R;
 
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener{
 
-    TextView textoCorreo, textoPassword;
-    Button botonRegistrar;
+    TextView registro_textPou, registro_textLasAventurasDe;
+    Button registro_botonHacerRegistro;
+    TextInputEditText registro_nacimientoPou, registro_correoPou, registro_nombrePou, registro_pouId, registro_passwordPou;
     PouServices pouServices;
 
-    public void onClick(View view) {
-    }
-    @SuppressLint({"CutPasteId", "MissingInflatedId"})
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_main);
+        setContentView(R.layout.registro_main);
+
+        registro_textPou = findViewById(R.id.registro_textPou);
+        registro_textLasAventurasDe = findViewById(R.id.registro_textLasAventurasDe);
+
+        assignId(registro_botonHacerRegistro,R.id.registro_botonHacerRegistro);
+
+        registro_nacimientoPou = findViewById(R.id.registro_nacimientoPou);
+        registro_correoPou = findViewById(R.id.registro_correoPou);
+        registro_nombrePou = findViewById(R.id.registro_nombrePou);
+        registro_pouId = findViewById(R.id.registro_pouId);
+        registro_passwordPou = findViewById(R.id.registro_passwordPou);
     }
-
-    public void crearPou(View view){
-
-        textoCorreo = findViewById(R.id.textoRegistroCorreo);
-        textoPassword = findViewById(R.id.textoRegistroPassword);
-        //Pou pou = new Pou();
-        assignId(botonRegistrar,R.id.botonRegistro);
-
-        PouServices pouServices = PouRetrofit.getInstance().getPouServices();
-        //Call<Pou> call = pouServices.registro(pou);
-        //botonRegistrar.setOnClickListener() ;
-    }
-
 
     void assignId(Button btn, int id){
         btn = findViewById(id);
         btn.setOnClickListener(this);
     }
 
+    public void registroPou(View view) {
+        pouServices = PouRetrofit.getInstance().getPouServices();
+
+        InfoRegistro nuevaInfoRegistro = new InfoRegistro(registro_pouId.getText().toString(), registro_nombrePou.getText().toString(), registro_nacimientoPou.getText().toString(), registro_correoPou.getText().toString(), registro_passwordPou.getText().toString());
+        Call<Pou> peticion = pouServices.registro(nuevaInfoRegistro);
+
+        peticion.enqueue(new Callback<Pou>() {
+            @Override
+            public void onResponse(Call<Pou> peticion, Response<Pou> respuesta) {
+                switch (respuesta.code()){
+                    case 200:
+                        // Pou creado satisfactoriamente. Nos dirigimos a hacer el Login.
+                        Intent myIntent1 = new Intent(RegistroActivity.this, LoginActivity.class);
+                        RegistroActivity.this.startActivity(myIntent1);
+                        break;
+                    case 404:
+                        // Ya existe el correo. Nos dirigimos a hacer el Login.
+                        Snackbar yaExisteCorreo = Snackbar.make(view, "¡Este correo ya está asociado a una cuenta!", 5000);
+                        yaExisteCorreo.show();
+                        Intent myIntent2 = new Intent(RegistroActivity.this, LoginActivity.class);
+                        RegistroActivity.this.startActivity(myIntent2);
+                        break;
+                    case 405:
+                        // Ya existe el PouID.
+                        Snackbar yaExistePouID = Snackbar.make(view, "¡El Username introducido ya está en uso!", 5000);
+                        yaExistePouID.show();
+                        break;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Pou> peticion, Throwable t) {
+                Snackbar error = Snackbar.make(view, "¡Error!", 5000);
+                error.show();
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View view) {}
 }

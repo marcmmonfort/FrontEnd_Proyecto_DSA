@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.RequiresApi;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,17 +12,18 @@ import android.widget.*;
 
 import android.os.Bundle;
 
+import com.google.android.material.snackbar.Snackbar;
+
+import java.io.IOException;
+
+import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
 
-    //TextView textPou, textLasAventurasDe, textRegistro, textLogin;
-    //Button
-
-    /*
-
-    TextView resultados, operaciones;
-    Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,bMult,bDiv,bRes,bSum,bEqu,bLimp;
+    TextView textPou, textLasAventurasDe, textRegistro, textLogin;
+    Button botonRegistro, botonLogin, botonTienda;
+    PouServices pouServices;
 
     @SuppressLint("CutPasteId")
     @Override
@@ -29,35 +31,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_main);
 
-        resultados = findViewById(R.id.resultadoText);
-        operaciones = findViewById(R.id.comandosTxt);
+        textPou = findViewById(R.id.textPou);
+        textLasAventurasDe = findViewById(R.id.textLasAventurasDe);
+        textRegistro = findViewById(R.id.textRegistro);
+        textLogin = findViewById(R.id.textLogin);
 
-        assignId(b0,R.id.numeroCeroBtn);
-        assignId(b1,R.id.numeroUnoBtn);
-        assignId(b2,R.id.numeroDosBtn);
-        assignId(b3,R.id.numeroTresBtn);
-        assignId(b4,R.id.numeroCuatroBtn);
-        assignId(b5,R.id.numeroCincoBtn);
-        assignId(b6,R.id.numeroSeisBtn);
-        assignId(b7,R.id.numeroSieteBtn);
-        assignId(b8,R.id.numeroOchoBtn);
-        assignId(b9,R.id.numeroNueveBtn);
-        assignId(bMult,R.id.multiplicarBtn);
-        assignId(bDiv,R.id.dividirBtn);
-        assignId(bRes,R.id.restarBtn);
-        assignId(bSum,R.id.sumarBtn);
-        assignId(bEqu,R.id.resultadobtn);
-        assignId(bLimp,R.id.ACBtn);
+        botonRegistro = (Button) findViewById(R.id.botonRegistro);
+
+        /*
+        botonRegistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RegistroActivity.class));
+            }
+        });
+        */
+
+        botonLogin = (Button) findViewById(R.id.botonLogin);
+        botonTienda = (Button) findViewById(R.id.botonTienda);
     }
 
-    void assignId(Button btn, int id){
-        btn = findViewById(id);
-        btn.setOnClickListener(this);
+    public void clickBoton(View view) throws IOException {
+        if (view==botonTienda){
+            Intent myIntent1 = new Intent(this, TiendaActivity.class);
+            // myIntent1.putExtra("key", value); // Optional Parameters
+            startActivity(myIntent1);
+        }
+        if (view==botonRegistro){
+            Intent myIntent2 = new Intent(this, RegistroActivity.class);
+            // myIntent2.putExtra("key", value); // Optional Parameters
+            startActivity(myIntent2);
+        }
+        if (view==botonLogin){
+            Intent myIntent3 = new Intent(this, LoginActivity.class);
+            // myIntent3.putExtra("key", value); // Optional Parameters
+            startActivity(myIntent3);
+        }
     }
-
-    @Override
-    public void onClick(View v) {
-    }
-
-     */
 }

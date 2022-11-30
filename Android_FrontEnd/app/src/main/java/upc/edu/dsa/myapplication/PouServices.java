@@ -9,21 +9,20 @@ import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
 import upc.edu.dsa.myapplication.Entities.VO.InfoRegistro;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
-
 
 public interface PouServices {
 
-    //LOGIN
+    // Hacer Login en un Pou.
     @POST("/dsaApp/pougame/pou/login")
-    Call<Pou>login(@Body Credenciales ref);
+    Call<Pou> login(@Body Credenciales credenciales);
 
-    //Registro
+    // Registrar un Pou.
     @POST("/dsaApp/pougame/pou/registro")
-    Call<Pou>registro(@Body InfoRegistro ref);
+    Call<Pou> registro(@Body InfoRegistro infoRegistro);
 
-    // GET ALL PRODUCTS
-    @POST("/dsaApp/pougame/tienda/listaObjetos")
-    Call<ObjetoTienda>obtenerObjetosTienda(@Body List<ObjetoTienda> ref);
-
+    // Obtener todos los Artículos de la Tienda.
+    @GET("/dsaApp/pougame/tienda/listaObjetos")
+    Call<List<ObjetoTienda>> obtenerObjetosTienda();
 }
