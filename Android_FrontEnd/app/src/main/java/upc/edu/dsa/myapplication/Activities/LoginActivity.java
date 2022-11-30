@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 switch (respuesta.code()){
                     case 200:
                         // Login del Pou satisfactorio. Nos dirigimos al menú principal.
-                        Intent myIntent1 = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent myIntent1 = new Intent(LoginActivity.this, HomeActivity.class);
                         LoginActivity.this.startActivity(myIntent1);
                         break;
                     case 404:

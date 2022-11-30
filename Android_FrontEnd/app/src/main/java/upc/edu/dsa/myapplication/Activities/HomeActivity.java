@@ -1,16 +1,12 @@
 package upc.edu.dsa.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.RequiresApi;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
-
-import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -19,7 +15,7 @@ import java.io.IOException;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
 
-public class MainActivity extends AppCompatActivity{
+public class HomeActivity extends AppCompatActivity{
 
     TextView textPou, textLasAventurasDe, textRegistro, textLogin;
     Button botonRegistro, botonLogin, botonTienda;
@@ -53,19 +49,19 @@ public class MainActivity extends AppCompatActivity{
 
     public void clickBoton(View view) throws IOException {
         if (view==botonTienda){
-            Intent myIntent1 = new Intent(this, TiendaActivity.class);
+            Intent myIntent1 = new Intent(HomeActivity.this, TiendaActivity.class);
             // myIntent1.putExtra("key", value); // Optional Parameters
-            startActivity(myIntent1);
+            HomeActivity.this.startActivity(myIntent1);
         }
         if (view==botonRegistro){
-            Intent myIntent2 = new Intent(this, RegistroActivity.class);
+            Intent myIntent2 = new Intent(HomeActivity.this, RegistroActivity.class);
             // myIntent2.putExtra("key", value); // Optional Parameters
-            startActivity(myIntent2);
+            HomeActivity.this.startActivity(myIntent2);
         }
         if (view==botonLogin){
-            Intent myIntent3 = new Intent(this, LoginActivity.class);
+            Intent myIntent3 = new Intent(HomeActivity.this, LoginActivity.class);
             // myIntent3.putExtra("key", value); // Optional Parameters
-            startActivity(myIntent3);
+            HomeActivity.this.startActivity(myIntent3);
         }
     }
 }
