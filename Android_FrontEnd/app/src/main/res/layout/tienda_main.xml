@@ -5,7 +5,7 @@
     android:id="@+id/fondoPantalla"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.MainActivity">
+    tools:context=".Activities.TiendaActivity">
 
     <TextView
         android:id="@+id/tienda_textPou"
@@ -68,7 +68,7 @@
             <TableRow
                 android:id="@+id/filaArticulo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <TextView

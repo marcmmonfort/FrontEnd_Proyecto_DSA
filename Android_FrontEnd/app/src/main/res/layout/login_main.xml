@@ -5,7 +5,7 @@
     android:id="@+id/fondoPantalla"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.MainActivity">
+    tools:context=".Activities.LoginActivity">
 
     <TextView
         android:id="@+id/tienda_textPou"
