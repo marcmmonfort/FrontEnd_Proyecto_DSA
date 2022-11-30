@@ -22,7 +22,7 @@ import upc.edu.dsa.myapplication.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     TextView login_textPou, login_textLasAventurasDe;
-    Button login_botonHacerLogin;
+    Button login_botonHacerLogin, login_backHome;
     TextInputEditText login_correoPou, login_passwordPou;
     PouServices pouServices;
 
@@ -32,18 +32,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_main);
 
-        login_textPou = findViewById(R.id.tienda_textPou);
-        login_textLasAventurasDe = findViewById(R.id.tienda_textLasAventurasDe);
+        login_textPou = findViewById(R.id.login_textPou);
+        login_textLasAventurasDe = findViewById(R.id.login_textLasAventurasDe);
 
-        assignId(login_botonHacerLogin,R.id.tienda_botonVerArticulos);
+        login_botonHacerLogin = (Button) findViewById(R.id.login_botonHacerLogin);
 
         login_correoPou = findViewById(R.id.login_correoPou);
         login_passwordPou = findViewById(R.id.login_passwordPou);
-    }
-
-    void assignId(Button btn, int id){
-        btn = findViewById(id);
-        btn.setOnClickListener(this);
     }
 
     public void loginPou(View view) {

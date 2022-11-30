@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -29,19 +30,24 @@ import upc.edu.dsa.myapplication.R;
 public class TiendaActivity extends AppCompatActivity {
 
     TableLayout tablaArticulos;
+    Button tienda_backHome;
+    TextView tienda_textPou, tienda_textLasAventurasDe;
     PouServices pouServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tienda_main);
-        tablaArticulos = findViewById(R.id.tablaArticulos);
-    }
 
-    public void verArticulos(View view) {
+        tablaArticulos = findViewById(R.id.tablaArticulos);
+
+        tienda_textPou = findViewById(R.id.tienda_textPou);
+        tienda_textLasAventurasDe = findViewById(R.id.tienda_textLasAventurasDe);
+
+        tienda_backHome = (Button) findViewById(R.id.tienda_backHome);
+
         pouServices = PouRetrofit.getInstance().getPouServices();
         Call<List<ObjetoTienda>> call = pouServices.obtenerObjetosTienda();
-
         try {
             buildTable(call);
         } catch (IOException e) {

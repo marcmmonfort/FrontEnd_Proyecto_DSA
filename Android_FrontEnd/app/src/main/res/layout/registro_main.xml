@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".Activities.RegistroActivity">
 
+    <Button
+        android:id="@+id/registro_backHome"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#454545"
+        android:onClick="loginPou"
+        android:text="HOME"
+        android:textSize="20dp"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registro_botonHacerRegistro" />
+
     <TextView
         android:id="@+id/registro_textPou"
         android:layout_width="wrap_content"

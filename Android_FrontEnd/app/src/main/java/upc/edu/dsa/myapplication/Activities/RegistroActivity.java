@@ -23,7 +23,7 @@ import upc.edu.dsa.myapplication.R;
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView registro_textPou, registro_textLasAventurasDe;
-    Button registro_botonHacerRegistro;
+    Button registro_botonHacerRegistro, registro_backHome;
     TextInputEditText registro_nacimientoPou, registro_correoPou, registro_nombrePou, registro_pouId, registro_passwordPou;
     PouServices pouServices;
 
@@ -36,18 +36,13 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         registro_textPou = findViewById(R.id.registro_textPou);
         registro_textLasAventurasDe = findViewById(R.id.registro_textLasAventurasDe);
 
-        assignId(registro_botonHacerRegistro,R.id.registro_botonHacerRegistro);
+        registro_botonHacerRegistro = (Button) findViewById(R.id.registro_botonHacerRegistro);
 
         registro_nacimientoPou = findViewById(R.id.registro_nacimientoPou);
         registro_correoPou = findViewById(R.id.registro_correoPou);
         registro_nombrePou = findViewById(R.id.registro_nombrePou);
         registro_pouId = findViewById(R.id.registro_pouId);
         registro_passwordPou = findViewById(R.id.registro_passwordPou);
-    }
-
-    void assignId(Button btn, int id){
-        btn = findViewById(id);
-        btn.setOnClickListener(this);
     }
 
     public void registroPou(View view) {
