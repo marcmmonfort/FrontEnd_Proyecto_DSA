@@ -8,12 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import android.widget.Toast;
 import upc.edu.dsa.myapplication.Entities.Pou;
 import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
 import upc.edu.dsa.myapplication.PouRetrofit;
@@ -58,19 +58,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 switch (respuesta.code()){
                     case 200:
                         // Login del Pou satisfactorio. Nos dirigimos al menú principal.
+                        Toast loginSatisfactorio = Toast.makeText(LoginActivity.this, "¡Login completado satisfactoriamente!", Toast.LENGTH_LONG);
+                        loginSatisfactorio.show();
                         Intent myIntent1 = new Intent(LoginActivity.this, HomeActivity.class);
                         LoginActivity.this.startActivity(myIntent1);
                         break;
                     case 404:
                         // El correo no existe. Nos dirigimos al registro.
-                        Snackbar noExisteCorreo = Snackbar.make(view, "¡No hay ninguna cuenta asociada a ese correo!", 5000);
+                        Toast noExisteCorreo = Toast.makeText(LoginActivity.this, "¡No hay ninguna cuenta asociada a ese correo!", Toast.LENGTH_LONG);
                         noExisteCorreo.show();
                         Intent myIntent2 = new Intent(LoginActivity.this, RegistroActivity.class);
                         LoginActivity.this.startActivity(myIntent2);
                         break;
                     case 405:
                         // Contraseña incorrecta.
-                        Snackbar passwordIncorrecta = Snackbar.make(view, "¡La contraseña introducida es incorrecta!", 5000);
+                        Toast passwordIncorrecta = Toast.makeText(LoginActivity.this, "¡La contraseña introducida es incorrecta!", Toast.LENGTH_LONG);
                         passwordIncorrecta.show();
                         break;
                 }
@@ -78,7 +80,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onFailure(Call<Pou> peticion, Throwable t) {
-                Snackbar error = Snackbar.make(view, "¡Error!", 5000);
+                Toast error = Toast.makeText(LoginActivity.this, "¡Error!", Toast.LENGTH_LONG);
                 error.show();
             }
         });

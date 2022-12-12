@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
@@ -62,19 +62,21 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 switch (respuesta.code()){
                     case 200:
                         // Pou creado satisfactoriamente. Nos dirigimos a hacer el Login.
-                        Snackbar registroCorrecto = Snackbar.make(view, "¡Pou creado satisfactoriamente!", 5000);
+                        Toast registroCorrecto = Toast.makeText(RegistroActivity.this, "¡Pou creado satisfactoriamente!", Toast.LENGTH_LONG);
                         registroCorrecto.show();
+                        Intent myIntent3 = new Intent(RegistroActivity.this, LoginActivity.class);
+                        RegistroActivity.this.startActivity(myIntent3);
                         break;
                     case 404:
                         // Ya existe el correo. Nos dirigimos a hacer el Login.
-                        Snackbar yaExisteCorreo = Snackbar.make(view, "¡Este correo ya está asociado a una cuenta!", 5000);
+                        Toast yaExisteCorreo = Toast.makeText(RegistroActivity.this, "¡Este correo ya está asociado a una cuenta!", Toast.LENGTH_LONG);
                         yaExisteCorreo.show();
                         Intent myIntent2 = new Intent(RegistroActivity.this, LoginActivity.class);
                         RegistroActivity.this.startActivity(myIntent2);
                         break;
                     case 405:
-                        // Ya existe el PouID.
-                        Snackbar yaExistePouID = Snackbar.make(view, "¡El Username introducido ya está en uso!", 5000);
+                        //Ya existe el PouID.
+                        Toast yaExistePouID = Toast.makeText(RegistroActivity.this, "¡El Username introducido ya está en uso!", Toast.LENGTH_LONG);
                         yaExistePouID.show();
                         break;
                 }
@@ -82,7 +84,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void onFailure(Call<Pou> peticion, Throwable t) {
-                Snackbar error = Snackbar.make(view, "¡Error!", 5000);
+                Toast error = Toast.makeText(RegistroActivity.this, "¡Error!", Toast.LENGTH_LONG);
                 error.show();
             }
         });

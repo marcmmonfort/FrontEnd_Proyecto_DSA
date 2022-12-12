@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.List;
@@ -29,6 +31,10 @@ import upc.edu.dsa.myapplication.R;
 
 public class TiendaActivity extends AppCompatActivity {
 
+    TextView nombreArticulo, idArticulo, precioArticulo, tipoArticulo, recargaHambre, recargaSalud, recargaDiversion, recargaSueno;
+    ImageView imgArticulo;
+    RecyclerView articuloTienda;
+
     TableLayout tablaArticulos;
     Button tienda_backHome;
     TextView tienda_textPou, tienda_textLasAventurasDe;
@@ -36,15 +42,16 @@ public class TiendaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tienda_main);
+        setContentView(R.layout.cardstienda_main);
 
-        tablaArticulos = findViewById(R.id.tablaArticulos);
+        articuloTienda = findViewById(R.id.articuloTienda);
 
-        tienda_textPou = findViewById(R.id.tienda_textPou);
-        tienda_textLasAventurasDe = findViewById(R.id.tienda_textLasAventurasDe);
+        //tienda_textPou = findViewById(R.id.tienda_textPou);
+        //tienda_textLasAventurasDe = findViewById(R.id.tienda_textLasAventurasDe);
 
-        tienda_backHome = (Button) findViewById(R.id.tienda_backHome);
+        //tienda_backHome = (Button) findViewById(R.id.tienda_backHome);
 
         pouServices = PouRetrofit.getInstance().getPouServices();
         Call<List<ObjetoTienda>> call = pouServices.obtenerObjetosTienda();
@@ -66,7 +73,7 @@ public class TiendaActivity extends AppCompatActivity {
         assert objetosTienda != null;
         for (ObjetoTienda objetoTienda : objetosTienda) {
 
-            View filaArticulo = LayoutInflater.from(this).inflate(R.layout.columnasarticulos_main, null, false);
+            View filaArticulo = LayoutInflater.from(this).inflate(R.layout.cardsdistribution_main, null, false);
 
             TextView columna_nombreArticulo = filaArticulo.findViewById(R.id.columna_nombreArticulo);
             TextView columna_idArticulo = filaArticulo.findViewById(R.id.columna_idArticulo);
@@ -88,6 +95,7 @@ public class TiendaActivity extends AppCompatActivity {
 
             tablaArticulos.addView(filaArticulo);
         }
+
     }
     
 }
