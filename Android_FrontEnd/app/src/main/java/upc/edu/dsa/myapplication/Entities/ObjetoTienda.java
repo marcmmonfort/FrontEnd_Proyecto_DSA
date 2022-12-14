@@ -95,4 +95,11 @@ public class ObjetoTienda {
         this.tipoArticulo = tipoArticulo;
     }
 
+    public Integer getCantidadObjeto() {
+        return cantidadObjeto;
+    }
+
+    public void setCantidadObjeto(Integer cantidadObjeto) {
+        this.cantidadObjeto = cantidadObjeto;
+    }
 }

@@ -3,60 +3,69 @@ package upc.edu.dsa.myapplication.Activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.widget.Toast;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import upc.edu.dsa.myapplication.Entities.ObjetoTienda;
-import upc.edu.dsa.myapplication.Entities.Pou;
-import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
 import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
-
 import upc.edu.dsa.myapplication.R;
+
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import upc.edu.dsa.myapplication.Entities.VO.*;
 
 public class TiendaActivity extends AppCompatActivity {
 
-    TextView nombreArticulo, idArticulo, precioArticulo, tipoArticulo, recargaHambre, recargaSalud, recargaDiversion, recargaSueno;
-    ImageView imgArticulo;
-    RecyclerView articuloTienda;
+    // Nuevo ...
+    RecyclerView rv_articuloTienda;
 
-    TableLayout tablaArticulos;
+    // Tienda antigua ...
     Button tienda_backHome;
     TextView tienda_textPou, tienda_textLasAventurasDe;
+
+    // Atributos para las cards ...
+    RecyclerView.Adapter adapter;
+    RecyclerView.LayoutManager layoutManager;
+    ArrayList<DataModel> data;
+    static View.OnClickListener myOnClickListener;
+
+    // RETROFIT (Service) ...
     PouServices pouServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // tienda_textPou = findViewById(R.id.tienda_textPou);
+        // tienda_textLasAventurasDe = findViewById(R.id.tienda_textLasAventurasDe);
+        // tienda_backHome = (Button) findViewById(R.id.tienda_backHome);
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cardstienda_main);
+        setContentView(R.layout.activity_main);
 
-        articuloTienda = findViewById(R.id.articuloTienda);
+        layoutManager = new LinearLayoutManager(this);
 
-        //tienda_textPou = findViewById(R.id.tienda_textPou);
-        //tienda_textLasAventurasDe = findViewById(R.id.tienda_textLasAventurasDe);
-
-        //tienda_backHome = (Button) findViewById(R.id.tienda_backHome);
+        rv_articuloTienda = (RecyclerView) findViewById(R.id.rv_articuloTienda);
+        rv_articuloTienda.setLayoutManager(layoutManager);
+        rv_articuloTienda.setItemAnimator(new DefaultItemAnimator());
 
         pouServices = PouRetrofit.getInstance().getPouServices();
         Call<List<ObjetoTienda>> call = pouServices.obtenerObjetosTienda();
+
+        // Probamos la construcción de la tabla ...
         try {
-            buildTable(call);
+            data = new ArrayList<DataModel>(); // Lista que llenaremos con la información de las diferentes Cards (Data Models).
+            data = answersToData(call); // Llamamos a la construcción del vector "data".
+            adapter = new CardAdapter(data); // Pasamos esta información al CardAdapter.
+            rv_articuloTienda.setAdapter(adapter); // Llenamos el RecyclerView con la información.
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,34 +77,26 @@ public class TiendaActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    private void buildTable(Call<List<ObjetoTienda>> call) throws IOException {
+    private ArrayList<DataModel> answersToData(Call<List<ObjetoTienda>> call) throws IOException {
         List<ObjetoTienda> objetosTienda = call.execute().body();
         assert objetosTienda != null;
+
+        data = new ArrayList<DataModel>();
+
         for (ObjetoTienda objetoTienda : objetosTienda) {
 
-            View filaArticulo = LayoutInflater.from(this).inflate(R.layout.cardsdistribution_main, null, false);
-
-            TextView columna_nombreArticulo = filaArticulo.findViewById(R.id.columna_nombreArticulo);
-            TextView columna_idArticulo = filaArticulo.findViewById(R.id.columna_idArticulo);
-            TextView columna_precioArticulo = filaArticulo.findViewById(R.id.columna_precioArticulo);
-            TextView columna_tipoArticulo = filaArticulo.findViewById(R.id.columna_tipoArticulo);
-            TextView columna_recargaHambre = filaArticulo.findViewById(R.id.columna_recargaHambre);
-            TextView columna_recargaSalud = filaArticulo.findViewById(R.id.columna_recargaSalud);
-            TextView columna_recargaDiversion = filaArticulo.findViewById(R.id.columna_recargaDiversion);
-            TextView columna_recargaSueno = filaArticulo.findViewById(R.id.columna_recargaSueno);
-
-            columna_nombreArticulo.setText(objetoTienda.getArticuloId());
-            columna_idArticulo.setText(objetoTienda.getArticuloId());
-            columna_precioArticulo.setText(Integer.toString((int) objetoTienda.getPrecioArticulo()));
-            columna_tipoArticulo.setText(objetoTienda.getTipoArticulo());
-            columna_recargaHambre.setText(Integer.toString(objetoTienda.getRecargaHambre()));
-            columna_recargaSalud.setText(Integer.toString(objetoTienda.getRecargaSalud()));
-            columna_recargaDiversion.setText(Integer.toString(objetoTienda.getRecargaDiversion()));
-            columna_recargaSueno.setText(Integer.toString(objetoTienda.getRecargaSueno()));
-
-            tablaArticulos.addView(filaArticulo);
+            // Se añaden los datos de un artículo a la lista "data".
+            data.add(new DataModel(objetoTienda.getArticuloId(),
+                    objetoTienda.getNombreArticulo(),
+                    Integer.toString((int) objetoTienda.getPrecioArticulo()),
+                    objetoTienda.getTipoArticulo(),
+                    Integer.toString((int) objetoTienda.getRecargaHambre()),
+                    Integer.toString((int) objetoTienda.getRecargaSalud()),
+                    Integer.toString((int) objetoTienda.getRecargaDiversion()),
+                    Integer.toString((int) objetoTienda.getRecargaSueno()),
+                    1));
         }
 
+        return data;
     }
-    
 }
