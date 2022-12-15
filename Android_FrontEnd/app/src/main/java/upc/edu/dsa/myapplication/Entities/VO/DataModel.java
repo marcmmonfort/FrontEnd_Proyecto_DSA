@@ -10,11 +10,10 @@ public class DataModel {
     String recargaSalud;
     String recargaDiversion;
     String recargaSueno;
-    int image;
 
     public DataModel(){}
 
-    public DataModel(String articuloId, String nombreArticulo, String precioArticulo, String tipoArticulo, String recargaHambre, String recargaSalud, String recargaDiversion, String recargaSueno, int image) {
+    public DataModel(String articuloId, String nombreArticulo, String precioArticulo, String tipoArticulo, String recargaHambre, String recargaSalud, String recargaDiversion, String recargaSueno) {
         this.articuloId = articuloId;
         this.nombreArticulo = nombreArticulo;
         this.precioArticulo = precioArticulo;
@@ -23,7 +22,6 @@ public class DataModel {
         this.recargaSalud = recargaSalud;
         this.recargaDiversion = recargaDiversion;
         this.recargaSueno = recargaSueno;
-        this.image = image;
     }
 
     public String getArticuloId() {
@@ -87,8 +85,4 @@ public class DataModel {
     public void setRecargaSueno(String recargaSueno) {
         this.recargaSueno = recargaSueno;
     }
-
-    public int getImage() { return image; }
-
-    public void setImage(int image) { this.image = image; }
 }

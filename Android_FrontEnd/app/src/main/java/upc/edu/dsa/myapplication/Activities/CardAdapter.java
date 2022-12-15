@@ -32,7 +32,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
             this.recargaSalud = (TextView) itemView.findViewById(R.id.recargaSalud);
             this.recargaDiversion = (TextView) itemView.findViewById(R.id.recargaDiversion);
             this.recargaSueno = (TextView) itemView.findViewById(R.id.recargaSueno);
-            this.imgArticulo = (ImageView) itemView.findViewById(R.id.imgArticulo);
         }
     }
 
@@ -75,9 +74,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
 
         TextView recargaSueno = holder.recargaSueno;
         recargaSueno.setText(dataSet.get(listPosition).getRecargaSueno());
-
-        ImageView imgArticulo = holder.imgArticulo;
-        imgArticulo.setImageResource(dataSet.get(listPosition).getImage());
     }
 
     @Override

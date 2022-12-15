@@ -93,8 +93,7 @@ public class TiendaActivity extends AppCompatActivity {
                     Integer.toString((int) objetoTienda.getRecargaHambre()),
                     Integer.toString((int) objetoTienda.getRecargaSalud()),
                     Integer.toString((int) objetoTienda.getRecargaDiversion()),
-                    Integer.toString((int) objetoTienda.getRecargaSueno()),
-                    1));
+                    Integer.toString((int) objetoTienda.getRecargaSueno())));
         }
 
         return data;
