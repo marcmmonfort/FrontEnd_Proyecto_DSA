@@ -67,11 +67,11 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             pouServices = PouRetrofit.getInstance().getPouServices();
 
             InfoRegistro nuevaInfoRegistro = new InfoRegistro(registro_pouId.getText().toString(), registro_nombrePou.getText().toString(), registro_nacimientoPou.getText().toString(), registro_correoPou.getText().toString(), registro_passwordPou.getText().toString());
-            Call<Pou> peticion = pouServices.registro(nuevaInfoRegistro);
+            Call<Void> peticion = pouServices.registro(nuevaInfoRegistro);
 
-            peticion.enqueue(new Callback<Pou>() {
+            peticion.enqueue(new Callback<Void>() {
                 @Override
-                public void onResponse(Call<Pou> peticion, Response<Pou> respuesta) {
+                public void onResponse(Call<Void> peticion, Response<Void> respuesta) {
                     switch (respuesta.code()){
                         case 200:
                             // Pou creado satisfactoriamente. Nos dirigimos a hacer el Login.
@@ -96,7 +96,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 }
 
                 @Override
-                public void onFailure(Call<Pou> peticion, Throwable t) {
+                public void onFailure(Call<Void> peticion, Throwable t) {
                     Toast error = Toast.makeText(RegistroActivity.this, "¡Error!", Toast.LENGTH_LONG);
                     error.show();
                 }
