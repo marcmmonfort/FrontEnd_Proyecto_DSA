@@ -60,11 +60,11 @@
         app:layout_constraintTop_toBottomOf="@+id/botonRegistro" />
 
     <TextView
-        android:id="@+id/textTienda"
+        android:id="@+id/textLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Ver los Articulos de la Tienda"
+        android:text="Logout de un Pou"
         android:textColor="#730000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +102,20 @@
         tools:ignore="UsingOnClickInXml" />
 
     <Button
+        android:id="@+id/botonLogout"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#730000"
+        android:text="LOGOUT"
+        android:textSize="26dp"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLogout"
+        android:onClick="clickLogout"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
         android:id="@+id/botonTienda"
         android:layout_width="150dp"
         android:layout_height="60dp"
@@ -114,5 +128,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTienda"
         tools:ignore="UsingOnClickInXml" />
+
+    <TextView
+        android:id="@+id/textTienda"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginTop="20dp"
+        android:text="Ver los Articulos de la Tienda"
+        android:textColor="#730000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonLogout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

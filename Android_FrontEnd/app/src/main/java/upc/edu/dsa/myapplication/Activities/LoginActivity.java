@@ -3,13 +3,12 @@ package upc.edu.dsa.myapplication.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
-
 import com.google.android.material.textfield.TextInputEditText;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,6 +18,7 @@ import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
 import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
+import android.content.SharedPreferences;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     TextView login_textPou, login_textLasAventurasDe;
@@ -39,6 +39,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         login_correoPou = findViewById(R.id.login_correoPou);
         login_passwordPou = findViewById(R.id.login_passwordPou);
+
+        SharedPreferences preferences=getSharedPreferences("datos", Context.MODE_PRIVATE);
+        login_correoPou.setText(preferences.getString("mail",""));
+        login_passwordPou.setText(preferences.getString("password",""));
     }
 
     public void backHome(View view) {
@@ -57,9 +61,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onResponse(Call<Pou> peticion, Response<Pou> respuesta) {
                 switch (respuesta.code()){
                     case 200:
+                        // Guardamos esta información de login ...
+                        SharedPreferences preferencias=getSharedPreferences("datos",Context.MODE_PRIVATE);
+                        SharedPreferences.Editor Obj_editor=preferencias.edit();
+                        Obj_editor.putString("mail",login_correoPou.getText().toString());
+                        Obj_editor.putString("password",login_passwordPou.getText().toString());
+                        Obj_editor.putBoolean("isLogged",true);
+                        Obj_editor.apply();
+
                         // Login del Pou satisfactorio. Nos dirigimos al menú principal.
                         Toast loginSatisfactorio = Toast.makeText(LoginActivity.this, "¡Login completado satisfactoriamente!", Toast.LENGTH_LONG);
                         loginSatisfactorio.show();
+
+                        // Nos vamos al Home.
                         Intent myIntent1 = new Intent(LoginActivity.this, HomeActivity.class);
                         LoginActivity.this.startActivity(myIntent1);
                         break;
