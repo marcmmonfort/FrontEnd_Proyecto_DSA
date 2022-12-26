@@ -16,11 +16,11 @@ public interface PouServices {
 
     // Hacer Login en un Pou.
     @POST("/dsaApp/pougame/pou/login")
-    Call<Pou> login(@Body Credenciales credenciales);
+    Call<Void> login(@Body Credenciales credenciales);
 
     // Registrar un Pou.
     @POST("/dsaApp/pougame/pou/registro")
-    Call<Pou> registro(@Body InfoRegistro infoRegistro);
+    Call<Void> registro(@Body InfoRegistro infoRegistro);
 
     // Obtener todos los Artículos de la Tienda.
     @GET("/dsaApp/pougame/tienda/listaObjetos")

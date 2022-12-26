@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.google.android.material.textfield.TextInputEditText;
@@ -54,11 +55,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         pouServices = PouRetrofit.getInstance().getPouServices();
 
         Credenciales nuevasCredenciales = new Credenciales(login_correoPou.getText().toString(), login_passwordPou.getText().toString());
-        Call<Pou> peticion = pouServices.login(nuevasCredenciales);
+        Call<Void> peticion = pouServices.login(nuevasCredenciales);
 
-        peticion.enqueue(new Callback<Pou>() {
+        peticion.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<Pou> peticion, Response<Pou> respuesta) {
+            public void onResponse(Call<Void> peticion, Response<Void> respuesta) {
                 switch (respuesta.code()){
                     case 200:
                         // Guardamos esta información de login ...
@@ -93,7 +94,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
 
             @Override
-            public void onFailure(Call<Pou> peticion, Throwable t) {
+            public void onFailure(Call<Void> peticion, Throwable t) {
+
+                Log.d("POU"," onFailure", t);
+
                 Toast error = Toast.makeText(LoginActivity.this, "¡Error!", Toast.LENGTH_LONG);
                 error.show();
             }
