@@ -1,6 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/color2">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="409dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/display_barra_superior" />
+
+    <TextView
+        android:id="@+id/diversion_salon2"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/sueno_salon2"
+        app:layout_constraintStart_toEndOf="@+id/salud_salon2"
+        app:layout_constraintTop_toTopOf="@+id/salud_salon2" />
+
+    <TextView
+        android:id="@+id/titulo_salon2"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="INFO"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_izquierda_salon2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_salon2"
+        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_salon2"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon2" />
+
+    <TextView
+        android:id="@+id/hambre_salon2"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/salud_salon2"
+        app:layout_constraintStart_toEndOf="@+id/dinero_salon2"
+        app:layout_constraintTop_toTopOf="@+id/dinero_salon2" />
+
+    <TextView
+        android:id="@+id/dinero_salon2"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="1000"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/sueno_salon2"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/diversion_salon2" />
+
+    <TextView
+        android:id="@+id/salud_salon2"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintTop_toTopOf="@+id/hambre_salon2"
+        tools:layout_editor_absoluteX="165dp" />
+
+    <ImageButton
+        android:id="@+id/btn_derecha_salon2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/display_right_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_izquierda_salon2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/display_left_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salud_salon2"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

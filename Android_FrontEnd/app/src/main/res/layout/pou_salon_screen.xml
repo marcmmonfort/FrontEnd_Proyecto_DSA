@@ -1,6 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/color1">
+
+    <TextView
+        android:id="@+id/dinero_salon"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="1000"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/hambre_salon"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/hambre_salon"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/salud_salon"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/titulo_salon"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="SALÓN"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_izquierda_salon"
+        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_salon"
+        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_salon"
+        app:layout_constraintTop_toTopOf="@+id/btn_derecha_salon" />
+
+    <TextView
+        android:id="@+id/salud_salon"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/diversion_salon"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/diversion_salon"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/sueno_salon"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/sueno_salon"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="409dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/display_barra_superior" />
+
+    <ImageButton
+        android:id="@+id/btn_izquierda_salon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/display_left_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dinero_salon"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_derecha_salon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/display_right_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sueno_salon"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/estado_salon"
+        android:layout_width="322dp"
+        android:layout_height="322dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_salon"
+        app:srcCompat="@drawable/outfit_base_normal" />
+
+    <ImageView
+        android:id="@+id/camiseta_salon"
+        android:layout_width="322dp"
+        android:layout_height="322dp"
+        app:layout_constraintStart_toStartOf="@+id/estado_salon"
+        app:layout_constraintTop_toTopOf="@+id/estado_salon"
+        app:srcCompat="@drawable/outfit_base_spain" />
+
+    <ImageView
+        android:id="@+id/bambas_salon"
+        android:layout_width="322dp"
+        android:layout_height="322dp"
+        app:layout_constraintStart_toStartOf="@+id/estado_salon"
+        app:layout_constraintTop_toTopOf="@+id/estado_salon"
+        app:srcCompat="@drawable/outfit_bambas_veja" />
+
+    <ImageView
+        android:id="@+id/blink_salon"
+        android:layout_width="322dp"
+        android:layout_height="322dp"
+        app:layout_constraintStart_toStartOf="@+id/estado_salon"
+        app:layout_constraintTop_toTopOf="@+id/estado_salon"
+        app:srcCompat="@drawable/outfit_blink_android" />
+
+    <ImageView
+        android:id="@+id/gafas_salon"
+        android:layout_width="322dp"
+        android:layout_height="322dp"
+        app:layout_constraintStart_toStartOf="@+id/estado_salon"
+        app:layout_constraintTop_toTopOf="@+id/estado_salon"
+        app:srcCompat="@drawable/outfit_gafas_rayban" />
+
+    <ImageView
+        android:id="@+id/gorra_salon"
+        android:layout_width="322dp"
+        android:layout_height="322dp"
+        app:layout_constraintStart_toStartOf="@+id/estado_salon"
+        app:layout_constraintTop_toTopOf="@+id/estado_salon"
+        app:srcCompat="@drawable/outfit_gorra_cerveza" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

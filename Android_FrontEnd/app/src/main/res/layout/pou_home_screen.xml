@@ -5,6 +5,7 @@
     android:id="@+id/fondoPantalla"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color9"
     tools:context=".Activities.Activity_Pou_Home">
 
     <TextView
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="POU"
         android:textSize="68dp"
+        android:fontFamily="@font/pou_font"
         android:textStyle="bold"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,11 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="LAS AVENTURAS DE"
+        android:fontFamily="@font/pou_font"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
