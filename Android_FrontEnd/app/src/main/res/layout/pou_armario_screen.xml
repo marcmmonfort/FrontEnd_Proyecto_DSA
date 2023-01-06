@@ -4,127 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Activity_Pou_Armario"
-    android:background="@color/color7">
-
-    <TextView
-        android:id="@+id/dinero_salon7"
-        android:layout_width="80dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="center"
-        android:text="1000"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
-    <ImageButton
-        android:id="@+id/btn_izquierda_salon7"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/display_left_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dinero_salon7"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/sueno_salon7"
-        android:layout_width="80dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="5dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="center"
-        android:text="100"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/diversion_salon7"
-        app:layout_constraintTop_toTopOf="@+id/diversion_salon7" />
-
-    <TextView
-        android:id="@+id/salud_salon7"
-        android:layout_width="80dp"
-        android:layout_height="45dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="center"
-        android:text="100"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/hambre_salon7"
-        app:layout_constraintTop_toTopOf="@+id/hambre_salon7" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="409dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/display_barra_superior" />
-
-    <TextView
-        android:id="@+id/titulo_salon12"
-        android:layout_width="220dp"
-        android:layout_height="45dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="center"
-        android:text="SALÓN"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_derecha_salon7"
-        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_salon7"
-        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_salon7"
-        app:layout_constraintTop_toTopOf="@+id/btn_derecha_salon7" />
-
-    <TextView
-        android:id="@+id/hambre_salon7"
-        android:layout_width="80dp"
-        android:layout_height="45dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="center"
-        android:text="100"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/dinero_salon7"
-        app:layout_constraintTop_toTopOf="@+id/dinero_salon7" />
-
-    <TextView
-        android:id="@+id/diversion_salon7"
-        android:layout_width="80dp"
-        android:layout_height="45dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="center"
-        android:text="100"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/salud_salon7"
-        app:layout_constraintTop_toTopOf="@+id/salud_salon7" />
-
-    <ImageButton
-        android:id="@+id/btn_derecha_salon7"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/display_right_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon7"
-        tools:ignore="SpeakableTextPresentCheck" />
+    tools:context=".Activities.Activity_Pou_Armario">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_articuloTienda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_derecha_salon7" />
+        app:layout_constraintTop_toBottomOf="@+id/tienda_textPou" />
+
+    <Button
+        android:id="@+id/tienda_backHome"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#454545"
+        android:onClick="backHome"
+        android:text="HOME"
+        android:textSize="20dp"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_articuloTienda" />
+
+    <TextView
+        android:id="@+id/tienda_textPou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POU"
+        android:textColor="#000000"
+        android:textSize="68dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tienda_textLasAventurasDe" />
+
+    <TextView
+        android:id="@+id/tienda_textLasAventurasDe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="LAS AVENTURAS DE"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
