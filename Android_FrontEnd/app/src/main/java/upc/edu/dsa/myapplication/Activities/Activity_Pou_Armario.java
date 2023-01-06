@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import upc.edu.dsa.myapplication.Entities.VO.*;
 
-public class TiendaActivity extends AppCompatActivity {
+public class Activity_Pou_Armario extends AppCompatActivity {
 
     // Nuevo ...
     RecyclerView rv_articuloTienda;
@@ -49,7 +48,7 @@ public class TiendaActivity extends AppCompatActivity {
         // tienda_backHome = (Button) findViewById(R.id.tienda_backHome);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.extra_armario_activity_main);
 
         layoutManager = new LinearLayoutManager(this);
 
@@ -64,7 +63,7 @@ public class TiendaActivity extends AppCompatActivity {
         try {
             data = new ArrayList<DataModel>(); // Lista que llenaremos con la información de las diferentes Cards (Data Models).
             data = answersToData(call); // Llamamos a la construcción del vector "data".
-            adapter = new CardAdapter(data); // Pasamos esta información al CardAdapter.
+            adapter = new Extra_CardAdapter(data); // Pasamos esta información al CardAdapter.
             rv_articuloTienda.setAdapter(adapter); // Llenamos el RecyclerView con la información.
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,8 +71,8 @@ public class TiendaActivity extends AppCompatActivity {
     }
 
     public void backHome(View view) {
-        Intent myIntent1 = new Intent(TiendaActivity.this, HomeActivity.class);
-        TiendaActivity.this.startActivity(myIntent1);
+        Intent myIntent1 = new Intent(Activity_Pou_Armario.this, Activity_Pou_Home.class);
+        Activity_Pou_Armario.this.startActivity(myIntent1);
     }
 
     @SuppressLint("SetTextI18n")

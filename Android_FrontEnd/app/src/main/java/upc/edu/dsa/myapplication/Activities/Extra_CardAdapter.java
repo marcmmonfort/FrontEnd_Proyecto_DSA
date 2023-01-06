@@ -1,18 +1,17 @@
 package upc.edu.dsa.myapplication.Activities;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.android.material.transition.Hold;
+
 import upc.edu.dsa.myapplication.Entities.VO.*;
 import upc.edu.dsa.myapplication.R;
 import java.util.ArrayList;
 
-public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> {
+public class Extra_CardAdapter extends RecyclerView.Adapter<Extra_CardAdapter.MyViewHolder> {
 
     private ArrayList<DataModel> dataSet;
 
@@ -35,15 +34,15 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
         }
     }
 
-    public CardAdapter(ArrayList<DataModel> data) {
+    public Extra_CardAdapter(ArrayList<DataModel> data) {
         this.dataSet = data;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cards_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.extra_armario_cards_layout, parent, false);
 
-        view.setOnClickListener(TiendaActivity.myOnClickListener);
+        view.setOnClickListener(Activity_Pou_Armario.myOnClickListener);
 
         MyViewHolder myViewHolder = new MyViewHolder(view);
         return myViewHolder;

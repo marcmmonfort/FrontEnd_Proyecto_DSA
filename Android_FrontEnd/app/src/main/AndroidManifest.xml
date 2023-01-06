@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activities.HomeActivity"
+            android:name=".Activities.Activity_Pou_Home"
             android:exported="true">
 
             <meta-data
@@ -23,7 +23,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.LoginActivity"
+            android:name=".Activities.Activity_Pou_Login"
             android:exported="true"
             android:label="Android Pou">
 
@@ -32,7 +32,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.RegistroActivity"
+            android:name=".Activities.Activity_Pou_Register"
             android:exported="true"
             android:label="Android Pou">
 
@@ -41,7 +41,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.TiendaActivity"
+            android:name=".Activities.Activity_Pou_Armario"
             android:exported="true"
             android:label="Android Pou">
 
@@ -50,7 +50,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.SplashScreenActivity"
+            android:name=".Activities.Activity_Pou_SplashScreen"
             android:exported="true"
             android:label="Android Pou">
 

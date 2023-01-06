@@ -5,7 +5,7 @@
     android:id="@+id/fondoPantalla"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.HomeActivity">
+    tools:context=".Activities.Activity_Pou_Home">
 
     <TextView
         android:id="@+id/textPou"

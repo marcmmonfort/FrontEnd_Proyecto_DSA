@@ -4,18 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import java.util.Timer;
-import java.util.TimerTask;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import upc.edu.dsa.myapplication.R;
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class Activity_Pou_SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen_main);
+        setContentView(R.layout.pou_splash_screen);
 
         SharedPreferences preferencias = getSharedPreferences("datos", Context.MODE_PRIVATE);
         Boolean isLogged = preferencias.getBoolean("isLogged", false);
@@ -28,10 +27,10 @@ public class SplashScreenActivity extends AppCompatActivity {
                     e.printStackTrace();
                 } finally {
                     if (isLogged) {
-                        Intent intent1 = new Intent(SplashScreenActivity.this, HomeActivity.class);
+                        Intent intent1 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Home.class);
                         startActivity(intent1);
                     } else {
-                        Intent intent2 = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                        Intent intent2 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Login.class);
                         startActivity(intent2);
                     }
                 }

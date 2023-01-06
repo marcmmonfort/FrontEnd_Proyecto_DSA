@@ -15,11 +15,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import upc.edu.dsa.myapplication.*;
-import upc.edu.dsa.myapplication.Entities.Pou;
 import upc.edu.dsa.myapplication.Entities.VO.InfoRegistro;
 import upc.edu.dsa.myapplication.R;
 
-public class RegistroActivity extends AppCompatActivity implements View.OnClickListener{
+public class Activity_Pou_Register extends AppCompatActivity implements View.OnClickListener{
 
     TextView registro_textPou, registro_textLasAventurasDe;
     Button registro_botonHacerRegistro, registro_backHome;
@@ -30,7 +29,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registro_main);
+        setContentView(R.layout.pou_register_screen);
 
         registro_textPou = findViewById(R.id.registro_textPou);
         registro_textLasAventurasDe = findViewById(R.id.registro_textLasAventurasDe);
@@ -47,20 +46,20 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void backHome(View view) {
-        Intent myIntent1 = new Intent(RegistroActivity.this, HomeActivity.class);
-        RegistroActivity.this.startActivity(myIntent1);
+        Intent myIntent1 = new Intent(Activity_Pou_Register.this, Activity_Pou_Home.class);
+        Activity_Pou_Register.this.startActivity(myIntent1);
     }
 
     public void registroPou(View view) {
 
         if ((registro_correoPou.getText())!=(registro_correoPouConfirmar.getText())){
             // Correos diferentes. Se avisa y no se procede con el registro.
-            Toast correosDiferentes = Toast.makeText(RegistroActivity.this, "¡Los correos no coinciden!", Toast.LENGTH_LONG);
+            Toast correosDiferentes = Toast.makeText(Activity_Pou_Register.this, "¡Los correos no coinciden!", Toast.LENGTH_LONG);
             correosDiferentes.show();
         }
         if ((registro_passwordPou.getText())!=(registro_passwordPouConfirmar.getText())){
             // Contraseñas diferentes. Se avisa y no se procede con el registro.
-            Toast contrasenasDiferentes = Toast.makeText(RegistroActivity.this, "¡Las contraseñas no coinciden!", Toast.LENGTH_LONG);
+            Toast contrasenasDiferentes = Toast.makeText(Activity_Pou_Register.this, "¡Las contraseñas no coinciden!", Toast.LENGTH_LONG);
             contrasenasDiferentes.show();
         }
         else{
@@ -75,21 +74,21 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                     switch (respuesta.code()){
                         case 200:
                             // Pou creado satisfactoriamente. Nos dirigimos a hacer el Login.
-                            Toast registroCorrecto = Toast.makeText(RegistroActivity.this, "¡Pou creado satisfactoriamente!", Toast.LENGTH_LONG);
+                            Toast registroCorrecto = Toast.makeText(Activity_Pou_Register.this, "¡Pou creado satisfactoriamente!", Toast.LENGTH_LONG);
                             registroCorrecto.show();
-                            Intent myIntent3 = new Intent(RegistroActivity.this, LoginActivity.class);
-                            RegistroActivity.this.startActivity(myIntent3);
+                            Intent myIntent3 = new Intent(Activity_Pou_Register.this, Activity_Pou_Login.class);
+                            Activity_Pou_Register.this.startActivity(myIntent3);
                             break;
                         case 404:
                             // Ya existe el correo. Nos dirigimos a hacer el Login.
-                            Toast yaExisteCorreo = Toast.makeText(RegistroActivity.this, "¡Este correo ya está asociado a una cuenta!", Toast.LENGTH_LONG);
+                            Toast yaExisteCorreo = Toast.makeText(Activity_Pou_Register.this, "¡Este correo ya está asociado a una cuenta!", Toast.LENGTH_LONG);
                             yaExisteCorreo.show();
-                            Intent myIntent2 = new Intent(RegistroActivity.this, LoginActivity.class);
-                            RegistroActivity.this.startActivity(myIntent2);
+                            Intent myIntent2 = new Intent(Activity_Pou_Register.this, Activity_Pou_Login.class);
+                            Activity_Pou_Register.this.startActivity(myIntent2);
                             break;
                         case 405:
                             //Ya existe el PouID.
-                            Toast yaExistePouID = Toast.makeText(RegistroActivity.this, "¡El Username introducido ya está en uso!", Toast.LENGTH_LONG);
+                            Toast yaExistePouID = Toast.makeText(Activity_Pou_Register.this, "¡El Username introducido ya está en uso!", Toast.LENGTH_LONG);
                             yaExistePouID.show();
                             break;
                     }
@@ -97,7 +96,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
                 @Override
                 public void onFailure(Call<Void> peticion, Throwable t) {
-                    Toast error = Toast.makeText(RegistroActivity.this, "¡Error!", Toast.LENGTH_LONG);
+                    Toast error = Toast.makeText(Activity_Pou_Register.this, "¡Error!", Toast.LENGTH_LONG);
                     error.show();
                 }
             });

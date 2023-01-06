@@ -8,13 +8,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
-import android.widget.Toast;
+
 import java.io.IOException;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
-import android.content.SharedPreferences;
 
-public class HomeActivity extends AppCompatActivity{
+public class Activity_Pou_Home extends AppCompatActivity{
 
     TextView textPou, textLasAventurasDe, textRegistro, textLogin;
     Button botonRegistro, botonLogin, botonTienda, botonLogout;
@@ -24,7 +23,7 @@ public class HomeActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_main);
+        setContentView(R.layout.pou_home_screen);
 
         textPou = findViewById(R.id.textPou);
         textLasAventurasDe = findViewById(R.id.textLasAventurasDe);
@@ -39,19 +38,19 @@ public class HomeActivity extends AppCompatActivity{
 
     public void clickBoton(View view) throws IOException {
         if (view==botonTienda){
-            Intent myIntent1 = new Intent(HomeActivity.this, TiendaActivity.class);
+            Intent myIntent1 = new Intent(Activity_Pou_Home.this, Activity_Pou_Armario.class);
             // myIntent1.putExtra("key", value); // Optional Parameters
-            HomeActivity.this.startActivity(myIntent1);
+            Activity_Pou_Home.this.startActivity(myIntent1);
         }
         if (view==botonRegistro){
-            Intent myIntent2 = new Intent(HomeActivity.this, RegistroActivity.class);
+            Intent myIntent2 = new Intent(Activity_Pou_Home.this, Activity_Pou_Register.class);
             // myIntent2.putExtra("key", value); // Optional Parameters
-            HomeActivity.this.startActivity(myIntent2);
+            Activity_Pou_Home.this.startActivity(myIntent2);
         }
         if (view==botonLogin){
-            Intent myIntent3 = new Intent(HomeActivity.this, LoginActivity.class);
+            Intent myIntent3 = new Intent(Activity_Pou_Home.this, Activity_Pou_Login.class);
             // myIntent3.putExtra("key", value); // Optional Parameters
-            HomeActivity.this.startActivity(myIntent3);
+            Activity_Pou_Home.this.startActivity(myIntent3);
         }
     }
 
@@ -60,7 +59,7 @@ public class HomeActivity extends AppCompatActivity{
         SharedPreferences.Editor Obj_editor=preferencias.edit();
         Obj_editor.putBoolean("isLogged",false);
         Obj_editor.apply();
-        Intent i = new Intent(HomeActivity.this, LoginActivity.class);
+        Intent i = new Intent(Activity_Pou_Home.this, Activity_Pou_Login.class);
         startActivity(i);
     }
 }

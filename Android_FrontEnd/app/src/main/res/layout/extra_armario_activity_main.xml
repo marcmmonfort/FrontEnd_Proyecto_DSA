@@ -7,7 +7,7 @@
     android:layout_marginLeft="10dp"
     android:layout_marginTop="10dp"
     android:layout_marginRight="10dp"
-    tools:context=".Activities.TiendaActivity">
+    tools:context=".Activities.Activity_Pou_Armario">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_articuloTienda"

@@ -14,14 +14,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import android.widget.Toast;
-import upc.edu.dsa.myapplication.Entities.Pou;
+
 import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
 import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
 import android.content.SharedPreferences;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class Activity_Pou_Login extends AppCompatActivity implements View.OnClickListener{
     TextView login_textPou, login_textLasAventurasDe;
     Button login_botonHacerLogin, login_backHome;
     TextInputEditText login_correoPou, login_passwordPou;
@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_main);
+        setContentView(R.layout.pou_login_screen);
 
         login_textPou = findViewById(R.id.login_textPou);
         login_textLasAventurasDe = findViewById(R.id.login_textLasAventurasDe);
@@ -47,8 +47,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void backHome(View view) {
-        Intent myIntent1 = new Intent(LoginActivity.this, HomeActivity.class);
-        LoginActivity.this.startActivity(myIntent1);
+        Intent myIntent1 = new Intent(Activity_Pou_Login.this, Activity_Pou_Home.class);
+        Activity_Pou_Login.this.startActivity(myIntent1);
     }
 
     public void loginPou(View view) {
@@ -71,23 +71,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Obj_editor.apply();
 
                         // Login del Pou satisfactorio. Nos dirigimos al menú principal.
-                        Toast loginSatisfactorio = Toast.makeText(LoginActivity.this, "¡Login completado satisfactoriamente!", Toast.LENGTH_LONG);
+                        Toast loginSatisfactorio = Toast.makeText(Activity_Pou_Login.this, "¡Login completado satisfactoriamente!", Toast.LENGTH_LONG);
                         loginSatisfactorio.show();
 
                         // Nos vamos al Home.
-                        Intent myIntent1 = new Intent(LoginActivity.this, HomeActivity.class);
-                        LoginActivity.this.startActivity(myIntent1);
+                        Intent myIntent1 = new Intent(Activity_Pou_Login.this, Activity_Pou_Home.class);
+                        Activity_Pou_Login.this.startActivity(myIntent1);
                         break;
                     case 404:
                         // El correo no existe. Nos dirigimos al registro.
-                        Toast noExisteCorreo = Toast.makeText(LoginActivity.this, "¡No hay ninguna cuenta asociada a ese correo!", Toast.LENGTH_LONG);
+                        Toast noExisteCorreo = Toast.makeText(Activity_Pou_Login.this, "¡No hay ninguna cuenta asociada a ese correo!", Toast.LENGTH_LONG);
                         noExisteCorreo.show();
-                        Intent myIntent2 = new Intent(LoginActivity.this, RegistroActivity.class);
-                        LoginActivity.this.startActivity(myIntent2);
+                        Intent myIntent2 = new Intent(Activity_Pou_Login.this, Activity_Pou_Register.class);
+                        Activity_Pou_Login.this.startActivity(myIntent2);
                         break;
                     case 405:
                         // Contraseña incorrecta.
-                        Toast passwordIncorrecta = Toast.makeText(LoginActivity.this, "¡La contraseña introducida es incorrecta!", Toast.LENGTH_LONG);
+                        Toast passwordIncorrecta = Toast.makeText(Activity_Pou_Login.this, "¡La contraseña introducida es incorrecta!", Toast.LENGTH_LONG);
                         passwordIncorrecta.show();
                         break;
                 }
@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 Log.d("POU"," onFailure", t);
 
-                Toast error = Toast.makeText(LoginActivity.this, "¡Error!", Toast.LENGTH_LONG);
+                Toast error = Toast.makeText(Activity_Pou_Login.this, "¡Error!", Toast.LENGTH_LONG);
                 error.show();
             }
         });
