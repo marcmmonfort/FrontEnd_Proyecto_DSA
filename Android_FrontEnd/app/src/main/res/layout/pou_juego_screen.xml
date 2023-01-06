@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color5">
+
+    <TextView
+        android:id="@+id/titulo_salon10"
+        android:layout_width="320dp"
+        android:layout_height="20dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="DÍAS SIN MORIR"
+        android:textColor="@color/color11"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_salon11" />
+
+    <TextView
+        android:id="@+id/titulo_salon11"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="14"
+        android:textColor="@color/color11"
+        android:textSize="46sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_salon9" />
+
+    <TextView
+        android:id="@+id/titulo_salon9"
+        android:layout_width="320dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="RECORD"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+    <TextView
+        android:id="@+id/titulo_salon8"
+        android:layout_width="320dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="Pulsa 'Play' para Jugar una Partida"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_salon6" />
+
+    <TextView
+        android:id="@+id/diversion_salon6"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintStart_toEndOf="@+id/salud_salon6"
+        app:layout_constraintTop_toTopOf="@+id/salud_salon6" />
+
+    <TextView
+        android:id="@+id/titulo_salon6"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="JUEGO"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_izquierda_salon6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_salon6"
+        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_salon6"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon6" />
+
+    <TextView
+        android:id="@+id/hambre_salon6"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintStart_toEndOf="@+id/dinero_salon6"
+        app:layout_constraintTop_toTopOf="@+id/dinero_salon6" />
+
+    <TextView
+        android:id="@+id/dinero_salon6"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="1000"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/sueno_salon6"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/diversion_salon6"
+        app:layout_constraintTop_toTopOf="@+id/diversion_salon6" />
+
+    <TextView
+        android:id="@+id/salud_salon6"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintStart_toEndOf="@+id/hambre_salon6"
+        app:layout_constraintTop_toTopOf="@+id/hambre_salon6" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="409dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/display_barra_superior" />
+
+    <ImageButton
+        android:id="@+id/btn_izquierda_salon6"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/display_left_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dinero_salon6"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_derecha_salon6"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/display_right_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon6"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="178dp"
+        android:layout_height="180dp"
+        android:background="@drawable/display_play_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_salon8" />
+</androidx.constraintlayout.widget.ConstraintLayout>
