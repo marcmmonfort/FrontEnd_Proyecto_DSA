@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
@@ -24,6 +25,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import upc.edu.dsa.myapplication.Entities.VO.*;
 
+import java.util.*;
+
 public class Activity_Pou_Cocina extends AppCompatActivity{
 
     ImageButton btnLeft, btnRight;
@@ -33,11 +36,49 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
     ImageView estado_cocina,camiseta_cocina,bambas_cocina,blink_cocina,gafas_cocina,gorra_cocina;
     ImageButton btn_consumir_roncola,btn_consumir_aquarius,btn_consumir_agua,btn_consumir_pizza,btn_consumir_candy,btn_consumir_manzana;
 
+    Timer timer;
+    TimerTask timerTask;
+    int time = 0;
+    boolean timerStarted = false;
+
+    private void startTimer()
+    {
+        timerTask = new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                runOnUiThread(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        time++;
+                        if (time==7) {
+                            blink_cocina.setVisibility(View.VISIBLE);
+                        }
+                        if (time==8){
+                            blink_cocina.setVisibility(View.INVISIBLE);
+                            time = 0;
+                        }
+                    }
+                });
+            }
+
+        };
+        timer.scheduleAtFixedRate(timerTask, 0 ,300);
+    }
+
     @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pou_cocina_screen);
+
+        timer = new Timer();
+        timerStarted = true;
+        time = 0;
+        startTimer();
 
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_cocina);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_cocina);
@@ -70,6 +111,8 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
         sueno_cocina = findViewById(R.id.sueno_cocina);
         titulo_cocina = findViewById(R.id.titulo_cocina);
 
+        blink_cocina.setVisibility(View.INVISIBLE);
+
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent1 = new Intent(Activity_Pou_Cocina.this, Activity_Pou_Armario.class);
@@ -83,5 +126,81 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
                 Activity_Pou_Cocina.this.startActivity(myIntent2);
             }
         });
+    }
+
+    public void clicarConsumible(View view) throws IOException {
+
+        if (view==btn_consumir_roncola){
+            int cantidadInt = Integer.parseInt(txt_cantidad_roncola.getText().toString());
+            cantidadInt = cantidadInt - 1;
+            if (cantidadInt<0){ // Si no hay más.
+                Toast debesComprar = Toast.makeText(Activity_Pou_Cocina.this, "¡No tienes más Ron Cola!", Toast.LENGTH_SHORT);
+                debesComprar.show();
+            }
+            else{ // Si hay suficientes ...
+                String cantidadString = Integer.toString(cantidadInt);
+                txt_cantidad_roncola.setText(cantidadString);
+            }
+        }
+        if (view==btn_consumir_aquarius){
+            int cantidadInt = Integer.parseInt(txt_cantidad_aquarius.getText().toString());
+            cantidadInt = cantidadInt - 1;
+            if (cantidadInt<0){ // Si no hay más.
+                Toast debesComprar = Toast.makeText(Activity_Pou_Cocina.this, "¡No tienes más Aquarius!", Toast.LENGTH_SHORT);
+                debesComprar.show();
+            }
+            else{ // Si hay suficientes ...
+                String cantidadString = Integer.toString(cantidadInt);
+                txt_cantidad_aquarius.setText(cantidadString);
+            }
+        }
+        if (view==btn_consumir_agua){
+            int cantidadInt = Integer.parseInt(txt_cantidad_agua.getText().toString());
+            cantidadInt = cantidadInt - 1;
+            if (cantidadInt<0){ // Si no hay más.
+                Toast debesComprar = Toast.makeText(Activity_Pou_Cocina.this, "¡No tienes más Agua!", Toast.LENGTH_SHORT);
+                debesComprar.show();
+            }
+            else{ // Si hay suficientes ...
+                String cantidadString = Integer.toString(cantidadInt);
+                txt_cantidad_agua.setText(cantidadString);
+            }
+        }
+        if (view==btn_consumir_pizza){
+            int cantidadInt = Integer.parseInt(txt_cantidad_pizza.getText().toString());
+            cantidadInt = cantidadInt - 1;
+            if (cantidadInt<0){ // Si no hay más.
+                Toast debesComprar = Toast.makeText(Activity_Pou_Cocina.this, "¡No tienes más Pizzas!", Toast.LENGTH_SHORT);
+                debesComprar.show();
+            }
+            else{ // Si hay suficientes ...
+                String cantidadString = Integer.toString(cantidadInt);
+                txt_cantidad_pizza.setText(cantidadString);
+            }
+        }
+        if (view==btn_consumir_candy){
+            int cantidadInt = Integer.parseInt(txt_cantidad_candy.getText().toString());
+            cantidadInt = cantidadInt - 1;
+            if (cantidadInt<0){ // Si no hay más.
+                Toast debesComprar = Toast.makeText(Activity_Pou_Cocina.this, "¡No tienes más Candy!", Toast.LENGTH_SHORT);
+                debesComprar.show();
+            }
+            else{ // Si hay suficientes ...
+                String cantidadString = Integer.toString(cantidadInt);
+                txt_cantidad_candy.setText(cantidadString);
+            }
+        }
+        if (view==btn_consumir_manzana){
+            int cantidadInt = Integer.parseInt(txt_cantidad_apple.getText().toString());
+            cantidadInt = cantidadInt - 1;
+            if (cantidadInt<0){ // Si no hay más.
+                Toast debesComprar = Toast.makeText(Activity_Pou_Cocina.this, "¡No tienes más Manzanas!", Toast.LENGTH_SHORT);
+                debesComprar.show();
+            }
+            else{ // Si hay suficientes ...
+                String cantidadString = Integer.toString(cantidadInt);
+                txt_cantidad_apple.setText(cantidadString);
+            }
+        }
     }
 }
