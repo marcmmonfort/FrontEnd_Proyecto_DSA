@@ -28,6 +28,12 @@ public class Activity_Pou_Salon extends AppCompatActivity{
     int time = 0;
     boolean timerStarted = false;
 
+    // Variables Globales con los Niveles del Estado del Pou ...
+    int lvlHambre = 55;
+    int lvlSalud = 1;
+    int lvlDiversion = 0;
+    int lvlSueno = 0;
+
     private void startTimer()
     {
         timerTask = new TimerTask()
@@ -56,7 +62,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
         timer.scheduleAtFixedRate(timerTask, 0 ,300);
     }
 
-    @SuppressLint("CutPasteId")
+    @SuppressLint({"CutPasteId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,9 +92,19 @@ public class Activity_Pou_Salon extends AppCompatActivity{
 
         blink_salon.setVisibility(View.INVISIBLE);
 
+        // Declaración de los 4 Estados del Pou ...
+        hambre_salon.setText(Integer.toString(lvlHambre));
+        salud_salon.setText(Integer.toString(lvlSalud));
+        diversion_salon.setText(Integer.toString(lvlDiversion));
+        sueno_salon.setText(Integer.toString(lvlSueno));
+
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent1 = new Intent(Activity_Pou_Salon.this, Activity_Pou_Info.class);
+                myIntent1.putExtra("pasarHambre",Integer.toString(lvlHambre));
+                myIntent1.putExtra("pasarSalud",Integer.toString(lvlSalud));
+                myIntent1.putExtra("pasarDiversion",Integer.toString(lvlDiversion));
+                myIntent1.putExtra("pasarSueno",Integer.toString(lvlSueno));
                 Activity_Pou_Salon.this.startActivity(myIntent1);
             }
         });
@@ -96,6 +112,10 @@ public class Activity_Pou_Salon extends AppCompatActivity{
         btnRight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent2 = new Intent(Activity_Pou_Salon.this, Activity_Pou_Tienda.class);
+                myIntent2.putExtra("lvlHambre",lvlHambre);
+                myIntent2.putExtra("lvlSalud",lvlSalud);
+                myIntent2.putExtra("lvlDiversion",lvlDiversion);
+                myIntent2.putExtra("lvlSueno",lvlSueno);
                 Activity_Pou_Salon.this.startActivity(myIntent2);
             }
         });

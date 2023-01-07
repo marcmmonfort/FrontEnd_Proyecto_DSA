@@ -36,7 +36,13 @@ public class Activity_Pou_Juego extends AppCompatActivity{
     TextView dinero_juego,hambre_juego,salud_juego,diversion_juego,sueno_juego,titulo_juego;
     ImageButton btn_iniciarJuego;
 
-    @SuppressLint("CutPasteId")
+    // Variables Globales con los Niveles del Estado del Pou ...
+    int lvlHambre = 0;
+    int lvlSalud = 0;
+    int lvlDiversion = 0;
+    int lvlSueno = 0;
+
+    @SuppressLint({"CutPasteId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +65,12 @@ public class Activity_Pou_Juego extends AppCompatActivity{
         titulo_juego = findViewById(R.id.titulo_juego);
 
         btn_iniciarJuego =(ImageButton)findViewById(R.id.btn_iniciarJuego);
+
+        // Declaración de los 4 Estados del Pou ...
+        hambre_juego.setText(Integer.toString(lvlHambre));
+        salud_juego.setText(Integer.toString(lvlSalud));
+        diversion_juego.setText(Integer.toString(lvlDiversion));
+        sueno_juego.setText(Integer.toString(lvlSueno));
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

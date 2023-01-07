@@ -41,6 +41,12 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
     int time = 0;
     boolean timerStarted = false;
 
+    // Variables Globales con los Niveles del Estado del Pou ...
+    int lvlHambre = 0;
+    int lvlSalud = 0;
+    int lvlDiversion = 0;
+    int lvlSueno = 0;
+
     private void startTimer()
     {
         timerTask = new TimerTask()
@@ -69,7 +75,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
         timer.scheduleAtFixedRate(timerTask, 0 ,300);
     }
 
-    @SuppressLint("CutPasteId")
+    @SuppressLint({"CutPasteId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +119,12 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
 
         blink_cocina.setVisibility(View.INVISIBLE);
 
+        // Declaración de los 4 Estados del Pou ...
+        hambre_cocina.setText(Integer.toString(lvlHambre));
+        salud_cocina.setText(Integer.toString(lvlSalud));
+        diversion_cocina.setText(Integer.toString(lvlDiversion));
+        sueno_cocina.setText(Integer.toString(lvlSueno));
+
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent1 = new Intent(Activity_Pou_Cocina.this, Activity_Pou_Armario.class);
@@ -140,6 +152,30 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_roncola.setText(cantidadString);
+                // (1) HAMBRE ...
+                int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
+                cantidadHambreInt = cantidadHambreInt + 20;
+                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
+                String cantidadHambreString = Integer.toString(cantidadHambreInt);
+                hambre_cocina.setText(cantidadHambreString);
+                // (2) SALUD ...
+                int cantidadSaludInt = Integer.parseInt(salud_cocina.getText().toString());
+                cantidadSaludInt = cantidadSaludInt + 20;
+                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
+                String cantidadSaludString = Integer.toString(cantidadSaludInt);
+                salud_cocina.setText(cantidadSaludString);
+                // (3) DIVERSIÓN ...
+                int cantidadDiversionInt = Integer.parseInt(diversion_cocina.getText().toString());
+                cantidadDiversionInt = cantidadDiversionInt + 20;
+                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
+                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
+                diversion_cocina.setText(cantidadDiversionString);
+                // (4) SUEÑO ...
+                int cantidadSuenoInt = Integer.parseInt(sueno_cocina.getText().toString());
+                cantidadSuenoInt = cantidadSuenoInt + 20;
+                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
+                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
+                sueno_cocina.setText(cantidadSuenoString);
             }
         }
         if (view==btn_consumir_aquarius){
@@ -152,6 +188,30 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_aquarius.setText(cantidadString);
+                // (1) HAMBRE ...
+                int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
+                cantidadHambreInt = cantidadHambreInt + 20;
+                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
+                String cantidadHambreString = Integer.toString(cantidadHambreInt);
+                hambre_cocina.setText(cantidadHambreString);
+                // (2) SALUD ...
+                int cantidadSaludInt = Integer.parseInt(salud_cocina.getText().toString());
+                cantidadSaludInt = cantidadSaludInt + 20;
+                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
+                String cantidadSaludString = Integer.toString(cantidadSaludInt);
+                salud_cocina.setText(cantidadSaludString);
+                // (3) DIVERSIÓN ...
+                int cantidadDiversionInt = Integer.parseInt(diversion_cocina.getText().toString());
+                cantidadDiversionInt = cantidadDiversionInt + 20;
+                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
+                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
+                diversion_cocina.setText(cantidadDiversionString);
+                // (4) SUEÑO ...
+                int cantidadSuenoInt = Integer.parseInt(sueno_cocina.getText().toString());
+                cantidadSuenoInt = cantidadSuenoInt + 20;
+                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
+                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
+                sueno_cocina.setText(cantidadSuenoString);
             }
         }
         if (view==btn_consumir_agua){
@@ -164,6 +224,30 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_agua.setText(cantidadString);
+                // (1) HAMBRE ...
+                int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
+                cantidadHambreInt = cantidadHambreInt + 20;
+                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
+                String cantidadHambreString = Integer.toString(cantidadHambreInt);
+                hambre_cocina.setText(cantidadHambreString);
+                // (2) SALUD ...
+                int cantidadSaludInt = Integer.parseInt(salud_cocina.getText().toString());
+                cantidadSaludInt = cantidadSaludInt + 20;
+                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
+                String cantidadSaludString = Integer.toString(cantidadSaludInt);
+                salud_cocina.setText(cantidadSaludString);
+                // (3) DIVERSIÓN ...
+                int cantidadDiversionInt = Integer.parseInt(diversion_cocina.getText().toString());
+                cantidadDiversionInt = cantidadDiversionInt + 20;
+                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
+                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
+                diversion_cocina.setText(cantidadDiversionString);
+                // (4) SUEÑO ...
+                int cantidadSuenoInt = Integer.parseInt(sueno_cocina.getText().toString());
+                cantidadSuenoInt = cantidadSuenoInt + 20;
+                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
+                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
+                sueno_cocina.setText(cantidadSuenoString);
             }
         }
         if (view==btn_consumir_pizza){
@@ -176,6 +260,30 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_pizza.setText(cantidadString);
+                // (1) HAMBRE ...
+                int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
+                cantidadHambreInt = cantidadHambreInt + 20;
+                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
+                String cantidadHambreString = Integer.toString(cantidadHambreInt);
+                hambre_cocina.setText(cantidadHambreString);
+                // (2) SALUD ...
+                int cantidadSaludInt = Integer.parseInt(salud_cocina.getText().toString());
+                cantidadSaludInt = cantidadSaludInt + 20;
+                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
+                String cantidadSaludString = Integer.toString(cantidadSaludInt);
+                salud_cocina.setText(cantidadSaludString);
+                // (3) DIVERSIÓN ...
+                int cantidadDiversionInt = Integer.parseInt(diversion_cocina.getText().toString());
+                cantidadDiversionInt = cantidadDiversionInt + 20;
+                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
+                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
+                diversion_cocina.setText(cantidadDiversionString);
+                // (4) SUEÑO ...
+                int cantidadSuenoInt = Integer.parseInt(sueno_cocina.getText().toString());
+                cantidadSuenoInt = cantidadSuenoInt + 20;
+                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
+                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
+                sueno_cocina.setText(cantidadSuenoString);
             }
         }
         if (view==btn_consumir_candy){
@@ -188,6 +296,30 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_candy.setText(cantidadString);
+                // (1) HAMBRE ...
+                int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
+                cantidadHambreInt = cantidadHambreInt + 20;
+                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
+                String cantidadHambreString = Integer.toString(cantidadHambreInt);
+                hambre_cocina.setText(cantidadHambreString);
+                // (2) SALUD ...
+                int cantidadSaludInt = Integer.parseInt(salud_cocina.getText().toString());
+                cantidadSaludInt = cantidadSaludInt + 20;
+                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
+                String cantidadSaludString = Integer.toString(cantidadSaludInt);
+                salud_cocina.setText(cantidadSaludString);
+                // (3) DIVERSIÓN ...
+                int cantidadDiversionInt = Integer.parseInt(diversion_cocina.getText().toString());
+                cantidadDiversionInt = cantidadDiversionInt + 20;
+                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
+                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
+                diversion_cocina.setText(cantidadDiversionString);
+                // (4) SUEÑO ...
+                int cantidadSuenoInt = Integer.parseInt(sueno_cocina.getText().toString());
+                cantidadSuenoInt = cantidadSuenoInt + 20;
+                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
+                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
+                sueno_cocina.setText(cantidadSuenoString);
             }
         }
         if (view==btn_consumir_manzana){
@@ -200,6 +332,30 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_apple.setText(cantidadString);
+                // (1) HAMBRE ...
+                int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
+                cantidadHambreInt = cantidadHambreInt + 20;
+                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
+                String cantidadHambreString = Integer.toString(cantidadHambreInt);
+                hambre_cocina.setText(cantidadHambreString);
+                // (2) SALUD ...
+                int cantidadSaludInt = Integer.parseInt(salud_cocina.getText().toString());
+                cantidadSaludInt = cantidadSaludInt + 20;
+                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
+                String cantidadSaludString = Integer.toString(cantidadSaludInt);
+                salud_cocina.setText(cantidadSaludString);
+                // (3) DIVERSIÓN ...
+                int cantidadDiversionInt = Integer.parseInt(diversion_cocina.getText().toString());
+                cantidadDiversionInt = cantidadDiversionInt + 20;
+                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
+                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
+                diversion_cocina.setText(cantidadDiversionString);
+                // (4) SUEÑO ...
+                int cantidadSuenoInt = Integer.parseInt(sueno_cocina.getText().toString());
+                cantidadSuenoInt = cantidadSuenoInt + 20;
+                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
+                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
+                sueno_cocina.setText(cantidadSuenoString);
             }
         }
     }

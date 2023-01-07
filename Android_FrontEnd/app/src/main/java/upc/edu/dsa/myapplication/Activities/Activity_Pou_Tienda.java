@@ -32,7 +32,13 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
     TextView titulo_acceso;
     ImageButton btn_abrirTienda;
 
-    @SuppressLint("CutPasteId")
+    // Variables Globales con los Niveles del Estado del Pou ...
+    int lvlHambre = 0;
+    int lvlSalud = 0;
+    int lvlDiversion = 0;
+    int lvlSueno = 0;
+
+    @SuppressLint({"CutPasteId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +56,12 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
         titulo_acceso = findViewById(R.id.titulo_acceso);
 
         btn_abrirTienda =(ImageButton)findViewById(R.id.btn_abrirTienda);
+
+        // Declaración de los 4 Estados del Pou ...
+        hambre_tienda.setText(Integer.toString(lvlHambre));
+        salud_tienda.setText(Integer.toString(lvlSalud));
+        diversion_tienda.setText(Integer.toString(lvlDiversion));
+        sueno_tienda.setText(Integer.toString(lvlSueno));
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

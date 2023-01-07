@@ -35,6 +35,13 @@ public class Activity_Pou_Armario extends AppCompatActivity {
     static View.OnClickListener myOnClickListener;
     PouServices pouServices;
 
+    // Variables Globales con los Niveles del Estado del Pou ...
+    int lvlHambre = 0;
+    int lvlSalud = 0;
+    int lvlDiversion = 0;
+    int lvlSueno = 0;
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +56,12 @@ public class Activity_Pou_Armario extends AppCompatActivity {
         diversion_armario = findViewById(R.id.diversion_armario);
         sueno_armario = findViewById(R.id.sueno_armario);
         titulo_armario = findViewById(R.id.titulo_armario);
+
+        // Declaración de los 4 Estados del Pou ...
+        hambre_armario.setText(Integer.toString(lvlHambre));
+        salud_armario.setText(Integer.toString(lvlSalud));
+        diversion_armario.setText(Integer.toString(lvlDiversion));
+        sueno_armario.setText(Integer.toString(lvlSueno));
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

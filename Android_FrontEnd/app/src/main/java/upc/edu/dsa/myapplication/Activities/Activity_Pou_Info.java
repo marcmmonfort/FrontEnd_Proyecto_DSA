@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
@@ -33,7 +34,13 @@ public class Activity_Pou_Info extends AppCompatActivity {
     TextView titulo_correo_info,correo_info,titulo_nacimiento_info,nacimiento_info,titulo_nombre_info,nombre_info,titulo_id_info,id_info;
     TextView diversion_info,titulo_info,hambre_info,dinero_info,sueno_info,salud_info;
 
-    @SuppressLint("CutPasteId")
+    // Variables Globales con los Niveles del Estado del Pou ...
+    int lvlHambre = 0;
+    int lvlSalud = 0;
+    int lvlDiversion = 0;
+    int lvlSueno = 0;
+
+    @SuppressLint({"CutPasteId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +65,21 @@ public class Activity_Pou_Info extends AppCompatActivity {
         dinero_info = findViewById(R.id.dinero_info);
         sueno_info = findViewById(R.id.sueno_info);
         salud_info = findViewById(R.id.salud_info);
+
+        // Si venimos desde otra Activity que nos pasa Datos ...
+        Bundle infoRecibida = getIntent().getExtras();
+        if (infoRecibida!=null){ // A no ser que venda de una actividad que no se le pasa nada ...
+            lvlHambre = Integer.parseInt(infoRecibida.getString("pasarHambre"));
+            lvlSalud = Integer.parseInt(infoRecibida.getString("pasarSalud"));
+            lvlDiversion = Integer.parseInt(infoRecibida.getString("pasarDiversion"));
+            lvlSueno = Integer.parseInt(infoRecibida.getString("pasarSueno"));
+        }
+
+        // Declaración de los 4 Estados del Pou ...
+        hambre_info.setText(Integer.toString(lvlHambre));
+        salud_info.setText(Integer.toString(lvlSalud));
+        diversion_info.setText(Integer.toString(lvlDiversion));
+        sueno_info.setText(Integer.toString(lvlSueno));
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
