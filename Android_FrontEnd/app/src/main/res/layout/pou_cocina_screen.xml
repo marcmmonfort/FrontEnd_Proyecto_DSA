@@ -267,7 +267,7 @@
         android:layout_height="322dp"
         app:layout_constraintEnd_toEndOf="@+id/estado_cocina"
         app:layout_constraintTop_toTopOf="@+id/estado_cocina"
-        app:srcCompat="@drawable/outfit_base_spain" />
+        app:srcCompat="@drawable/outfit_camiseta_spain" />
 
     <ImageView
         android:id="@+id/bambas_cocina"

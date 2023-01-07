@@ -34,11 +34,29 @@ public class Activity_Pou_Info extends AppCompatActivity {
     TextView titulo_correo_info,correo_info,titulo_nacimiento_info,nacimiento_info,titulo_nombre_info,nombre_info,titulo_id_info,id_info;
     TextView diversion_info,titulo_info,hambre_info,dinero_info,sueno_info,salud_info;
 
-    // Variables Globales con los Niveles del Estado del Pou ...
-    int lvlHambre = 0;
-    int lvlSalud = 0;
-    int lvlDiversion = 0;
-    int lvlSueno = 0;
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // VARIABLES GLOBALES DEL POU QUE SE PASAN ENTRE LAS ACTIVITIES.
+    int lvlHambre = 28;
+    int lvlSalud = 10;
+    int lvlDiversion = 200;
+    int lvlSueno = 1;
+    int amountDinero = 50;
+    int amountCandy = 1;
+    int amountManzana = 6;
+    int amountPizza = 6;
+    int amountAgua = 6;
+    int amountAquarius = 6;
+    int amountRoncola = 6;
+    int amountHambre = 1;
+    int amountSalud = 1;
+    int amountDiversion = 1;
+    int amountSueno = 1;
+    String pouEstado = "normal";
+    String pouCamiseta = "spain";
+    String pouBambas = "veja";
+    String pouGafas = "rayban";
+    String pouGorro = "cerveza";
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @SuppressLint({"CutPasteId", "SetTextI18n"})
     @Override

@@ -228,7 +228,7 @@
         android:layout_height="322dp"
         app:layout_constraintEnd_toEndOf="@+id/estado_lavabo"
         app:layout_constraintTop_toTopOf="@+id/estado_lavabo"
-        app:srcCompat="@drawable/outfit_base_spain" />
+        app:srcCompat="@drawable/outfit_camiseta_spain" />
 
     <ImageView
         android:id="@+id/bambas_lavabo"

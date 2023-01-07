@@ -140,7 +140,7 @@
         android:layout_height="322dp"
         app:layout_constraintStart_toStartOf="@+id/estado_salon"
         app:layout_constraintTop_toTopOf="@+id/estado_salon"
-        app:srcCompat="@drawable/outfit_base_spain" />
+        app:srcCompat="@drawable/outfit_camiseta_spain" />
 
     <ImageView
         android:id="@+id/bambas_salon"
