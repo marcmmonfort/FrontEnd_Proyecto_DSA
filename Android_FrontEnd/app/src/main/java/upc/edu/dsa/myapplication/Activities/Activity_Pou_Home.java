@@ -16,7 +16,7 @@ import upc.edu.dsa.myapplication.R;
 public class Activity_Pou_Home extends AppCompatActivity{
 
     TextView textPou, textLasAventurasDe, textRegistro, textLogin;
-    Button botonRegistro, botonLogin, botonTienda, botonLogout;
+    Button botonRegistro, botonLogin;
     PouServices pouServices;
 
     @SuppressLint("CutPasteId")
@@ -32,16 +32,10 @@ public class Activity_Pou_Home extends AppCompatActivity{
 
         botonRegistro = (Button) findViewById(R.id.botonRegistro);
         botonLogin = (Button) findViewById(R.id.botonLogin);
-        botonTienda = (Button) findViewById(R.id.botonTienda);
-        botonLogout = (Button) findViewById(R.id.botonLogout);
     }
 
     public void clickBoton(View view) throws IOException {
-        if (view==botonTienda){
-            Intent myIntent1 = new Intent(Activity_Pou_Home.this, Activity_Pou_Armario.class);
-            // myIntent1.putExtra("key", value); // Optional Parameters
-            Activity_Pou_Home.this.startActivity(myIntent1);
-        }
+
         if (view==botonRegistro){
             Intent myIntent2 = new Intent(Activity_Pou_Home.this, Activity_Pou_Register.class);
             // myIntent2.putExtra("key", value); // Optional Parameters

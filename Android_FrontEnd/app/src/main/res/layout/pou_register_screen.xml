@@ -12,9 +12,10 @@
         android:id="@+id/registro_backHome"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="70dp"
         android:backgroundTint="#454545"
+        android:fontFamily="@font/pou_font"
         android:onClick="backHome"
         android:text="HOME"
         android:textSize="20dp"
@@ -27,6 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="POU"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
         android:textColor="#000000"
         android:textSize="68dp"
         android:textStyle="bold"
@@ -41,6 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="LAS AVENTURAS DE"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -54,8 +59,9 @@
         android:layout_width="160dp"
         android:layout_height="60dp"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="#730000"
+        android:fontFamily="@font/pou_font"
         android:onClick="registroPou"
         android:text="REGISTRAR"
         android:textSize="20dp"
@@ -74,7 +80,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_nacimientoPou"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Fecha de Nacimiento del Pou" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,7 +97,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_correoPou"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,7 +114,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_nombrePou"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Nombre del Pou" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,7 +132,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_pouId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Username" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,7 +149,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_correoPouConfirmar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Confirmar Correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -151,7 +167,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_passwordPou"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Contraseña"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -167,9 +185,21 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_passwordPouConfirmar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Confirmar Contraseña"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registro_botonHacerRegistro"
+        app:srcCompat="@drawable/display_pou_registro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/color2">
 
-<<<<<<< HEAD
     <TextView
         android:id="@+id/titulo_salon19"
         android:layout_width="180dp"
@@ -119,8 +118,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_salon2" />
 
-=======
->>>>>>> 55b2e267442bacd7236644eafff207f04ea1a12c
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="409dp"
@@ -141,7 +138,6 @@
         android:textColor="@color/black"
         android:textSize="26sp"
         app:layout_constraintEnd_toStartOf="@+id/sueno_salon2"
-        app:layout_constraintStart_toEndOf="@+id/salud_salon2"
         app:layout_constraintTop_toTopOf="@+id/salud_salon2" />
 
     <TextView
@@ -207,8 +203,8 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintTop_toTopOf="@+id/hambre_salon2"
-        tools:layout_editor_absoluteX="165dp" />
+        app:layout_constraintEnd_toStartOf="@+id/diversion_salon2"
+        app:layout_constraintTop_toTopOf="@+id/hambre_salon2" />
 
     <ImageButton
         android:id="@+id/btn_derecha_salon2"
