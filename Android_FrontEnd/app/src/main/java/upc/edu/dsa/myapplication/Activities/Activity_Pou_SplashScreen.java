@@ -30,7 +30,7 @@ public class Activity_Pou_SplashScreen extends AppCompatActivity {
                         Intent intent1 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Info.class);
                         startActivity(intent1);
                     } else {
-                        Intent intent2 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Armario.class);
+                        Intent intent2 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Salon.class);
                         startActivity(intent2);
                     }
                 }
