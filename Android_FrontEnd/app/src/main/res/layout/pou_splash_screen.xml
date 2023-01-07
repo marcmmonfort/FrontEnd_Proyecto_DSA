@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color8">
+    android:background="@color/color8"
+    tools:context=".Activities.Activity_Pou_SplashScreen">
 
     <TextView
         android:id="@+id/textRegistro4"
