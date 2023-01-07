@@ -11,36 +11,25 @@
     <Button
         android:id="@+id/registro_backHome"
         android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="70dp"
+        android:layout_height="50dp"
         android:backgroundTint="#454545"
+        android:fontFamily="@font/pou_font"
         android:onClick="backHome"
         android:text="HOME"
         android:textSize="20dp"
         app:cornerRadius="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
-
-    <TextView
-        android:id="@+id/registro_textPou"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="POU"
-        android:textColor="#000000"
-        android:textSize="68dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registro_textLasAventurasDe" />
+        app:layout_constraintTop_toBottomOf="@+id/registro_botonHacerRegistro" />
 
     <TextView
         android:id="@+id/registro_textLasAventurasDe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="LAS AVENTURAS DE"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="LAS AVENTURAS DE POU"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -52,16 +41,17 @@
     <Button
         android:id="@+id/registro_botonHacerRegistro"
         android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="#730000"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_200"
+        android:fontFamily="@font/pou_font"
         android:onClick="registroPou"
         android:text="REGISTRAR"
         android:textSize="20dp"
         app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout9" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout5"
@@ -75,6 +65,8 @@
             android:id="@+id/registro_nacimientoPou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Fecha de Nacimiento del Pou" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -90,6 +82,8 @@
             android:id="@+id/registro_correoPou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,6 +99,8 @@
             android:id="@+id/registro_nombrePou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Nombre del Pou" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,12 +111,14 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registro_textPou">
+        app:layout_constraintTop_toBottomOf="@+id/registro_textLasAventurasDe">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_pouId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Username" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -130,14 +128,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/registro_correoPouConfirmar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirmar Correo" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout8"
@@ -152,24 +143,39 @@
             android:id="@+id/registro_passwordPou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/color11"
+            android:fontFamily="@font/pou_font"
             android:hint="Contraseña"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout9"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8"
-        app:endIconMode="password_toggle">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_passwordPouConfirmar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/color12"
+            android:fontFamily="@font/pou_font"
             android:hint="Confirmar Contraseña"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registro_backHome"
+        app:srcCompat="@drawable/display_pou_registro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

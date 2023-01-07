@@ -8,13 +8,82 @@
     tools:context=".Activities.Activity_Pou_SplashScreen">
 
     <TextView
+        android:id="@+id/textRegistro8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="Disseny de Serveis i Aplicacions"
+        android:textColor="@color/color11"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRegistro7" />
+
+    <TextView
+        android:id="@+id/textRegistro7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="UPC EETAC"
+        android:textColor="@color/color11"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textLasAventurasDe2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="LAS AVENTURAS DE"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRegistro8" />
+
+    <TextView
+        android:id="@+id/textRegistro3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="Eloi Moncho Roig"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/textRegistro5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="Alba Serra Muchart"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRegistro3" />
+
+    <TextView
         android:id="@+id/textRegistro4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
         android:text="Victor Fernández Escrivá"
-        android:textColor="#2B2B2B"
+        android:textColor="@color/white"
         android:textSize="16dp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textRegistro5" />
@@ -23,86 +92,50 @@
         android:id="@+id/textRegistro6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
         android:text="Marc Moran Monfort"
-        android:textColor="#2B2B2B"
+        android:textColor="@color/white"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textRegistro4" />
 
-    <TextView
-        android:id="@+id/textRegistro5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Alba Serra Muchart"
-        android:textColor="#2B2B2B"
-        android:textSize="16dp"
-        android:textStyle="bold"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:progressTint="#040404"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRegistro3" />
-
-    <TextView
-        android:id="@+id/textLasAventurasDe2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="LAS AVENTURAS DE"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textPou2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="POU"
-        android:textColor="#000000"
-        android:textSize="68dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLasAventurasDe2" />
+        app:layout_constraintTop_toBottomOf="@+id/textRegistro2" />
 
     <TextView
         android:id="@+id/textRegistro2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
         android:text="Cargando ..."
-        android:textColor="#730000"
+        android:textColor="@color/color11"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPou2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
-    <TextView
-        android:id="@+id/textRegistro3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:text="Eloi Moncho Roig"
-        android:textColor="#2B2B2B"
-        android:textSize="16dp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="244dp"
+        android:layout_height="261dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:progressTint="#BABABA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRegistro2" />
+        app:layout_constraintTop_toBottomOf="@+id/textLasAventurasDe2"
+        app:srcCompat="@drawable/display_pou_portada" />
 </androidx.constraintlayout.widget.ConstraintLayout>

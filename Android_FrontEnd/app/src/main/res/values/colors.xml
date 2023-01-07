@@ -15,8 +15,9 @@
     <color name="color5">#1D19AC</color>
     <color name="color6">#0F4C5C</color>
     <color name="color7">#E36141</color>
-    <color name="color8">#D8D0C7</color>
-    <color name="color9">#9A031E</color>
+    <color name="color8">#0742F4</color>
+    <color name="color9">#EE0E36</color>
     <color name="color10">#5F0F40</color>
     <color name="color11">#FB8B24</color>
+    <color name="color12">#00FB8B24</color>
 </resources>

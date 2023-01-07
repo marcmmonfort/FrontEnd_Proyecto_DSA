@@ -12,13 +12,12 @@
         android:id="@+id/textPou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="POU"
-        android:textSize="68dp"
         android:fontFamily="@font/pou_font"
-        android:textStyle="bold"
+        android:text="POU"
         android:textColor="#000000"
+        android:textSize="68dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLasAventurasDe" />
 
@@ -26,9 +25,9 @@
         android:id="@+id/textLasAventurasDe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="LAS AVENTURAS DE"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/pou_font"
+        android:text="LAS AVENTURAS DE"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -40,12 +39,13 @@
         android:id="@+id/textRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
         android:text="Registrar un Pou"
-        android:textColor="#730000"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPou" />
 
@@ -55,23 +55,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Login en un Pou"
-        android:textColor="#730000"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonRegistro" />
-
-    <TextView
-        android:id="@+id/textLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Logout de un Pou"
-        android:textColor="#730000"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonLogin" />
 
     <Button
         android:id="@+id/botonRegistro"
@@ -79,6 +69,8 @@
         android:layout_height="60dp"
         android:backgroundTint="#730000"
         android:text="NEW"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
         android:textSize="26dp"
         app:cornerRadius="60dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,56 +83,27 @@
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:backgroundTint="#730000"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:onClick="clickBoton"
         android:text="LOGIN"
         android:textSize="26dp"
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLogin"
         app:layout_constraintVertical_bias="0.0"
-        android:onClick="clickBoton"
         tools:ignore="UsingOnClickInXml" />
 
-    <Button
-        android:id="@+id/botonLogout"
-        android:layout_width="160dp"
-        android:layout_height="0dp"
-        android:backgroundTint="#730000"
-        android:text="LOGOUT"
-        android:textSize="26dp"
-        app:cornerRadius="60dp"
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLogout"
-        android:onClick="clickLogout"
-        tools:ignore="UsingOnClickInXml" />
-
-    <Button
-        android:id="@+id/botonTienda"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#730000"
-        android:onClick="clickBoton"
-        android:text="TIENDA"
-        android:textSize="26dp"
-        app:cornerRadius="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTienda"
-        tools:ignore="UsingOnClickInXml" />
-
-    <TextView
-        android:id="@+id/textTienda"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
-        android:layout_marginTop="20dp"
-        android:text="Ver los Articulos de la Tienda"
-        android:textColor="#730000"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonLogout" />
+        app:layout_constraintTop_toBottomOf="@+id/botonLogin"
+        app:srcCompat="@drawable/display_pou_home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
