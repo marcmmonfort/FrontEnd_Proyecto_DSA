@@ -28,7 +28,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
 
-    TextView dinero_lavabo,hambre_lavabo,salud_lavabo,diversion_lavabo,sueno_lavabo;
+    TextView dinero_lavabo,hambre_lavabo,salud_lavabo,diversion_lavabo,sueno_lavabo,titulo_lavabo;
     ImageView estado_lavabo,camiseta_lavabo,bambas_lavabo,blink_lavabo,gafas_lavabo,gorra_lavabo;
     ImageButton btn_consumir_sueno,btn_consumir_diversion,btn_consumir_salud,btn_consumir_hambre;
     TextView txt_cantidad_sueno,txt_cantidad_diversion,txt_cantidad_salud,txt_cantidad_hambre;
@@ -42,10 +42,29 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_lavabo);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_lavabo);
 
-        // TextView ---> textPou = findViewById(R.id.textPou);
-        // Button ---> botonLogin = (Button) findViewById(R.id.botonLogin);
-        // ImageButton ---> btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
-        // ImageView ---> estado_salon = findViewById(R.id.estado_salon);
+        btn_consumir_sueno =(ImageButton)findViewById(R.id.btn_consumir_sueno);
+        btn_consumir_diversion =(ImageButton)findViewById(R.id.btn_consumir_diversion);
+        btn_consumir_salud =(ImageButton)findViewById(R.id.btn_consumir_salud);
+        btn_consumir_hambre =(ImageButton)findViewById(R.id.btn_consumir_hambre);
+
+        estado_lavabo = findViewById(R.id.estado_lavabo);
+        camiseta_lavabo = findViewById(R.id.camiseta_lavabo);
+        bambas_lavabo = findViewById(R.id.bambas_lavabo);
+        blink_lavabo = findViewById(R.id.blink_lavabo);
+        gafas_lavabo = findViewById(R.id.gafas_lavabo);
+        gorra_lavabo = findViewById(R.id.gorra_lavabo);
+
+        dinero_lavabo = findViewById(R.id.dinero_lavabo);
+        hambre_lavabo = findViewById(R.id.hambre_lavabo);
+        salud_lavabo = findViewById(R.id.salud_lavabo);
+        diversion_lavabo = findViewById(R.id.diversion_lavabo);
+        sueno_lavabo = findViewById(R.id.sueno_lavabo);
+        titulo_lavabo = findViewById(R.id.titulo_lavabo);
+
+        txt_cantidad_sueno = findViewById(R.id.txt_cantidad_sueno);
+        txt_cantidad_diversion = findViewById(R.id.txt_cantidad_diversion);
+        txt_cantidad_salud = findViewById(R.id.txt_cantidad_salud);
+        txt_cantidad_hambre = findViewById(R.id.txt_cantidad_hambre);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

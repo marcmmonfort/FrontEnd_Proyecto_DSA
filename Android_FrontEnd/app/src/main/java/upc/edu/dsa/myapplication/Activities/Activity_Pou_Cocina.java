@@ -29,7 +29,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
     ImageButton btnLeft, btnRight;
 
     TextView txt_cantidad_apple,txt_cantidad_roncola,txt_cantidad_aquarius,txt_cantidad_agua,txt_cantidad_pizza,txt_cantidad_candy;
-    TextView dinero_cocina,hambre_cocina,salud_cocina,diversion_cocina,sueno_cocina;
+    TextView dinero_cocina,hambre_cocina,salud_cocina,diversion_cocina,sueno_cocina,titulo_cocina;
     ImageView estado_cocina,camiseta_cocina,bambas_cocina,blink_cocina,gafas_cocina,gorra_cocina;
     ImageButton btn_consumir_roncola,btn_consumir_aquarius,btn_consumir_agua,btn_consumir_pizza,btn_consumir_candy,btn_consumir_manzana;
 
@@ -42,10 +42,33 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_cocina);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_cocina);
 
-        // TextView ---> textPou = findViewById(R.id.textPou);
-        // Button ---> botonLogin = (Button) findViewById(R.id.botonLogin);
-        // ImageButton ---> btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
-        // ImageView ---> estado_salon = findViewById(R.id.estado_salon);
+        btn_consumir_roncola =(ImageButton)findViewById(R.id.btn_consumir_roncola);
+        btn_consumir_aquarius =(ImageButton)findViewById(R.id.btn_consumir_aquarius);
+        btn_consumir_agua =(ImageButton)findViewById(R.id.btn_consumir_agua);
+        btn_consumir_pizza =(ImageButton)findViewById(R.id.btn_consumir_pizza);
+        btn_consumir_candy =(ImageButton)findViewById(R.id.btn_consumir_candy);
+        btn_consumir_manzana =(ImageButton)findViewById(R.id.btn_consumir_manzana);
+
+        estado_cocina = findViewById(R.id.estado_cocina);
+        camiseta_cocina = findViewById(R.id.camiseta_cocina);
+        bambas_cocina = findViewById(R.id.bambas_cocina);
+        blink_cocina = findViewById(R.id.blink_cocina);
+        gafas_cocina = findViewById(R.id.gafas_cocina);
+        gorra_cocina = findViewById(R.id.gorra_cocina);
+
+        txt_cantidad_apple = findViewById(R.id.txt_cantidad_apple);
+        txt_cantidad_roncola = findViewById(R.id.txt_cantidad_roncola);
+        txt_cantidad_aquarius = findViewById(R.id.txt_cantidad_aquarius);
+        txt_cantidad_agua = findViewById(R.id.txt_cantidad_agua);
+        txt_cantidad_pizza = findViewById(R.id.txt_cantidad_pizza);
+        txt_cantidad_candy = findViewById(R.id.txt_cantidad_candy);
+
+        dinero_cocina = findViewById(R.id.dinero_cocina);
+        hambre_cocina = findViewById(R.id.hambre_cocina);
+        salud_cocina = findViewById(R.id.salud_cocina);
+        diversion_cocina = findViewById(R.id.diversion_cocina);
+        sueno_cocina = findViewById(R.id.sueno_cocina);
+        titulo_cocina = findViewById(R.id.titulo_cocina);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

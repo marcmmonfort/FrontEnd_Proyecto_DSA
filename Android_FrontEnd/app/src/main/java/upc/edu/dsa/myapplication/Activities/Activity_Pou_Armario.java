@@ -28,14 +28,11 @@ public class Activity_Pou_Armario extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
     RecyclerView rv_articuloTienda;
-
-    TextView dinero_armario,hambre_armario,salud_armario,diversion_armario,sueno_armario;
-
+    TextView dinero_armario,hambre_armario,salud_armario,diversion_armario,sueno_armario,titulo_armario;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
     ArrayList<DataModel> data;
     static View.OnClickListener myOnClickListener;
-
     PouServices pouServices;
 
     @Override
@@ -46,10 +43,12 @@ public class Activity_Pou_Armario extends AppCompatActivity {
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_armario);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_armario);
 
-        // TextView ---> textPou = findViewById(R.id.textPou);
-        // Button ---> botonLogin = (Button) findViewById(R.id.botonLogin);
-        // ImageButton ---> btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
-        // ImageView ---> estado_salon = findViewById(R.id.estado_salon);
+        dinero_armario = findViewById(R.id.dinero_armario);
+        hambre_armario = findViewById(R.id.hambre_armario);
+        salud_armario = findViewById(R.id.salud_armario);
+        diversion_armario = findViewById(R.id.diversion_armario);
+        sueno_armario = findViewById(R.id.sueno_armario);
+        titulo_armario = findViewById(R.id.titulo_armario);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

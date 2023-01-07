@@ -33,7 +33,7 @@ public class Activity_Pou_Juego extends AppCompatActivity{
 
     TextView titulo_diasSinMorir,titulo_record,titulo_informativo;
     TextView numero_diasSinMorir;
-    TextView dinero_juego,hambre_juego,salud_juego,diversion_juego,sueno_juego;
+    TextView dinero_juego,hambre_juego,salud_juego,diversion_juego,sueno_juego,titulo_juego;
     ImageButton btn_iniciarJuego;
 
     @SuppressLint("CutPasteId")
@@ -45,10 +45,20 @@ public class Activity_Pou_Juego extends AppCompatActivity{
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_juego);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_juego);
 
-        // TextView ---> textPou = findViewById(R.id.textPou);
-        // Button ---> botonLogin = (Button) findViewById(R.id.botonLogin);
-        // ImageButton ---> btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
-        // ImageView ---> estado_salon = findViewById(R.id.estado_salon);
+        titulo_diasSinMorir = findViewById(R.id.titulo_diasSinMorir);
+        titulo_record = findViewById(R.id.titulo_record);
+        titulo_informativo = findViewById(R.id.titulo_informativo);
+
+        numero_diasSinMorir = findViewById(R.id.numero_diasSinMorir);
+
+        dinero_juego = findViewById(R.id.dinero_juego);
+        hambre_juego = findViewById(R.id.hambre_juego);
+        salud_juego = findViewById(R.id.salud_juego);
+        diversion_juego = findViewById(R.id.diversion_juego);
+        sueno_juego = findViewById(R.id.sueno_juego);
+        titulo_juego = findViewById(R.id.titulo_juego);
+
+        btn_iniciarJuego =(ImageButton)findViewById(R.id.btn_iniciarJuego);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

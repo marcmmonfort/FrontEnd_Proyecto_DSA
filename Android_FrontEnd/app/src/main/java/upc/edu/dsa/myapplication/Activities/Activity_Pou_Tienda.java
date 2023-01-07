@@ -28,7 +28,7 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
 
-    TextView dinero_tienda,hambre_tienda,salud_tienda,diversion_tienda,sueno_tienda;
+    TextView dinero_tienda,hambre_tienda,salud_tienda,diversion_tienda,sueno_tienda,titulo_tienda;
     TextView titulo_acceso;
     ImageButton btn_abrirTienda;
 
@@ -41,10 +41,15 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_tienda);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_tienda);
 
-        // TextView ---> textPou = findViewById(R.id.textPou);
-        // Button ---> botonLogin = (Button) findViewById(R.id.botonLogin);
-        // ImageButton ---> btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
-        // ImageView ---> estado_salon = findViewById(R.id.estado_salon);
+        dinero_tienda = findViewById(R.id.dinero_tienda);
+        hambre_tienda = findViewById(R.id.hambre_tienda);
+        salud_tienda = findViewById(R.id.salud_tienda);
+        diversion_tienda = findViewById(R.id.diversion_tienda);
+        sueno_tienda = findViewById(R.id.sueno_tienda);
+        titulo_tienda = findViewById(R.id.titulo_tienda);
+        titulo_acceso = findViewById(R.id.titulo_acceso);
+
+        btn_abrirTienda =(ImageButton)findViewById(R.id.btn_abrirTienda);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
