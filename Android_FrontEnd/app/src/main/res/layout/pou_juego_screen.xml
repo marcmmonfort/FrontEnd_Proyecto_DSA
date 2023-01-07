@@ -8,7 +8,7 @@
     tools:context=".Activities.Activity_Pou_Juego">
 
     <TextView
-        android:id="@+id/titulo_salon10"
+        android:id="@+id/titulo_diasSinMorir"
         android:layout_width="320dp"
         android:layout_height="20dp"
         android:fontFamily="@font/pou_font"
@@ -19,10 +19,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon11" />
+        app:layout_constraintTop_toBottomOf="@+id/numero_diasSinMorir" />
 
     <TextView
-        android:id="@+id/titulo_salon11"
+        android:id="@+id/numero_diasSinMorir"
         android:layout_width="320dp"
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
@@ -34,10 +34,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon9" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo_record" />
 
     <TextView
-        android:id="@+id/titulo_salon9"
+        android:id="@+id/titulo_record"
         android:layout_width="320dp"
         android:layout_height="34dp"
         android:layout_marginTop="40dp"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
     <TextView
-        android:id="@+id/titulo_salon8"
+        android:id="@+id/titulo_informativo"
         android:layout_width="320dp"
         android:layout_height="30dp"
         android:layout_marginTop="40dp"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_juego" />
 
     <TextView
-        android:id="@+id/diversion_salon6"
+        android:id="@+id/diversion_juego"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -75,11 +75,11 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/salud_salon6"
-        app:layout_constraintTop_toTopOf="@+id/salud_salon6" />
+        app:layout_constraintStart_toEndOf="@+id/salud_juego"
+        app:layout_constraintTop_toTopOf="@+id/salud_juego" />
 
     <TextView
-        android:id="@+id/titulo_salon6"
+        android:id="@+id/titulo_juego"
         android:layout_width="220dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_izquierda_juego" />
 
     <TextView
-        android:id="@+id/hambre_salon6"
+        android:id="@+id/hambre_juego"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -101,11 +101,11 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/dinero_salon6"
-        app:layout_constraintTop_toTopOf="@+id/dinero_salon6" />
+        app:layout_constraintStart_toEndOf="@+id/dinero_juego"
+        app:layout_constraintTop_toTopOf="@+id/dinero_juego" />
 
     <TextView
-        android:id="@+id/dinero_salon6"
+        android:id="@+id/dinero_juego"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
@@ -119,7 +119,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <TextView
-        android:id="@+id/sueno_salon6"
+        android:id="@+id/sueno_juego"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginEnd="5dp"
@@ -129,11 +129,11 @@
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/diversion_salon6"
-        app:layout_constraintTop_toTopOf="@+id/diversion_salon6" />
+        app:layout_constraintStart_toEndOf="@+id/diversion_juego"
+        app:layout_constraintTop_toTopOf="@+id/diversion_juego" />
 
     <TextView
-        android:id="@+id/salud_salon6"
+        android:id="@+id/salud_juego"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -141,8 +141,8 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/hambre_salon6"
-        app:layout_constraintTop_toTopOf="@+id/hambre_salon6" />
+        app:layout_constraintStart_toEndOf="@+id/hambre_juego"
+        app:layout_constraintTop_toTopOf="@+id/hambre_juego" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -163,7 +163,7 @@
         android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dinero_salon6"
+        app:layout_constraintTop_toBottomOf="@+id/dinero_juego"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -185,5 +185,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon8" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo_informativo"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

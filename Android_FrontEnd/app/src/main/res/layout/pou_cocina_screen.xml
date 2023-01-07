@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_derecha_cocina" />
 
     <TextView
-        android:id="@+id/dinero_salon3"
+        android:id="@+id/dinero_cocina"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
@@ -32,12 +32,12 @@
         android:text="1000"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/hambre_salon3"
+        app:layout_constraintEnd_toStartOf="@+id/hambre_cocina"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/hambre_salon3"
+        android:id="@+id/hambre_cocina"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
@@ -46,11 +46,11 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/salud_salon3"
+        app:layout_constraintEnd_toStartOf="@+id/salud_cocina"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/salud_salon3"
+        android:id="@+id/salud_cocina"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
@@ -59,11 +59,11 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/diversion_salon3"
+        app:layout_constraintEnd_toStartOf="@+id/diversion_cocina"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/diversion_salon3"
+        android:id="@+id/diversion_cocina"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
@@ -72,11 +72,11 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/sueno_salon3"
+        app:layout_constraintEnd_toStartOf="@+id/sueno_cocina"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/sueno_salon3"
+        android:id="@+id/sueno_cocina"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
@@ -109,7 +109,7 @@
         android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salud_salon3"
+        app:layout_constraintTop_toBottomOf="@+id/salud_cocina"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -121,11 +121,11 @@
         android:onClick="btnRight"
         android:background="@drawable/display_right_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salud_salon3"
+        app:layout_constraintTop_toBottomOf="@+id/salud_cocina"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/estado_salon3"
+        android:id="@+id/estado_cocina"
         android:layout_width="322dp"
         android:layout_height="322dp"
         android:layout_marginTop="10dp"
@@ -136,42 +136,42 @@
         app:srcCompat="@drawable/outfit_base_normal" />
 
     <ImageView
-        android:id="@+id/camiseta_salon3"
+        android:id="@+id/camiseta_cocina"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="@+id/estado_salon3"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon3"
+        app:layout_constraintEnd_toEndOf="@+id/estado_cocina"
+        app:layout_constraintTop_toTopOf="@+id/estado_cocina"
         app:srcCompat="@drawable/outfit_base_spain" />
 
     <ImageView
-        android:id="@+id/bambas_salon3"
+        android:id="@+id/bambas_cocina"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintStart_toStartOf="@+id/estado_salon3"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon3"
+        app:layout_constraintStart_toStartOf="@+id/estado_cocina"
+        app:layout_constraintTop_toTopOf="@+id/estado_cocina"
         app:srcCompat="@drawable/outfit_bambas_veja" />
 
     <ImageView
-        android:id="@+id/blink_salon3"
+        android:id="@+id/blink_cocina"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="@+id/estado_salon3"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon3"
+        app:layout_constraintEnd_toEndOf="@+id/estado_cocina"
+        app:layout_constraintTop_toTopOf="@+id/estado_cocina"
         app:srcCompat="@drawable/outfit_blink_android" />
 
     <ImageView
-        android:id="@+id/gafas_salon3"
+        android:id="@+id/gafas_cocina"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="@+id/estado_salon3"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon3"
+        app:layout_constraintEnd_toEndOf="@+id/estado_cocina"
+        app:layout_constraintTop_toTopOf="@+id/estado_cocina"
         app:srcCompat="@drawable/outfit_gafas_rayban" />
 
     <ImageView
-        android:id="@+id/gorra_salon3"
+        android:id="@+id/gorra_cocina"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintStart_toStartOf="@+id/estado_salon3"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon3"
+        app:layout_constraintStart_toStartOf="@+id/estado_cocina"
+        app:layout_constraintTop_toTopOf="@+id/estado_cocina"
         app:srcCompat="@drawable/outfit_gorra_cerveza" />
 </androidx.constraintlayout.widget.ConstraintLayout>

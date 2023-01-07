@@ -8,7 +8,7 @@
     tools:context=".Activities.Activity_Pou_Info">
 
     <TextView
-        android:id="@+id/titulo_salon19"
+        android:id="@+id/titulo_correo_info"
         android:layout_width="176dp"
         android:layout_height="30dp"
         android:layout_marginStart="18dp"
@@ -19,10 +19,10 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon17" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo_nacimiento_info" />
 
     <TextView
-        android:id="@+id/titulo_salon20"
+        android:id="@+id/correo_info"
         android:layout_width="180dp"
         android:layout_height="25dp"
         android:layout_marginStart="6dp"
@@ -32,11 +32,11 @@
         android:text="victor@gmail.com"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/titulo_salon19"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon18" />
+        app:layout_constraintStart_toEndOf="@+id/titulo_correo_info"
+        app:layout_constraintTop_toBottomOf="@+id/nacimiento_info" />
 
     <TextView
-        android:id="@+id/titulo_salon17"
+        android:id="@+id/titulo_nacimiento_info"
         android:layout_width="176dp"
         android:layout_height="30dp"
         android:layout_marginStart="18dp"
@@ -47,10 +47,10 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon15" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo_nombre_info" />
 
     <TextView
-        android:id="@+id/titulo_salon18"
+        android:id="@+id/nacimiento_info"
         android:layout_width="180dp"
         android:layout_height="30dp"
         android:layout_marginStart="6dp"
@@ -60,11 +60,11 @@
         android:text="13/06/2001"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/titulo_salon17"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon16" />
+        app:layout_constraintStart_toEndOf="@+id/titulo_nacimiento_info"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_info" />
 
     <TextView
-        android:id="@+id/titulo_salon15"
+        android:id="@+id/titulo_nombre_info"
         android:layout_width="176dp"
         android:layout_height="30dp"
         android:layout_marginStart="18dp"
@@ -75,10 +75,10 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon13" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo_id_info" />
 
     <TextView
-        android:id="@+id/titulo_salon16"
+        android:id="@+id/nombre_info"
         android:layout_width="180dp"
         android:layout_height="30dp"
         android:layout_marginStart="6dp"
@@ -88,11 +88,11 @@
         android:text="Victor"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/titulo_salon15"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon14" />
+        app:layout_constraintStart_toEndOf="@+id/titulo_nombre_info"
+        app:layout_constraintTop_toBottomOf="@+id/id_info" />
 
     <TextView
-        android:id="@+id/titulo_salon14"
+        android:id="@+id/id_info"
         android:layout_width="180dp"
         android:layout_height="30dp"
         android:layout_marginStart="6dp"
@@ -102,11 +102,11 @@
         android:text="Victor el guapo"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/titulo_salon13"
+        app:layout_constraintStart_toEndOf="@+id/titulo_id_info"
         app:layout_constraintTop_toBottomOf="@+id/btn_derecha_info" />
 
     <TextView
-        android:id="@+id/titulo_salon13"
+        android:id="@+id/titulo_id_info"
         android:layout_width="176dp"
         android:layout_height="30dp"
         android:layout_marginStart="18dp"
@@ -130,7 +130,7 @@
         app:srcCompat="@drawable/display_barra_superior" />
 
     <TextView
-        android:id="@+id/diversion_salon2"
+        android:id="@+id/diversion_info"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -138,11 +138,11 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/sueno_salon2"
-        app:layout_constraintTop_toTopOf="@+id/salud_salon2" />
+        app:layout_constraintEnd_toStartOf="@+id/sueno_info"
+        app:layout_constraintTop_toTopOf="@+id/salud_info" />
 
     <TextView
-        android:id="@+id/titulo_salon2"
+        android:id="@+id/titulo_info"
         android:layout_width="220dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -156,7 +156,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_izquierda_info" />
 
     <TextView
-        android:id="@+id/hambre_salon2"
+        android:id="@+id/hambre_info"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -164,12 +164,12 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/salud_salon2"
-        app:layout_constraintStart_toEndOf="@+id/dinero_salon2"
-        app:layout_constraintTop_toTopOf="@+id/dinero_salon2" />
+        app:layout_constraintEnd_toStartOf="@+id/salud_info"
+        app:layout_constraintStart_toEndOf="@+id/dinero_info"
+        app:layout_constraintTop_toTopOf="@+id/dinero_info" />
 
     <TextView
-        android:id="@+id/dinero_salon2"
+        android:id="@+id/dinero_info"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
@@ -183,7 +183,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/sueno_salon2"
+        android:id="@+id/sueno_info"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginEnd="5dp"
@@ -193,10 +193,10 @@
         android:textColor="@color/black"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/diversion_salon2" />
+        app:layout_constraintTop_toTopOf="@+id/diversion_info" />
 
     <TextView
-        android:id="@+id/salud_salon2"
+        android:id="@+id/salud_info"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -204,8 +204,8 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/diversion_salon2"
-        app:layout_constraintTop_toTopOf="@+id/hambre_salon2" />
+        app:layout_constraintEnd_toStartOf="@+id/diversion_info"
+        app:layout_constraintTop_toTopOf="@+id/hambre_info" />
 
     <ImageButton
         android:id="@+id/btn_derecha_info"
@@ -227,7 +227,7 @@
         android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salud_salon2"
+        app:layout_constraintTop_toBottomOf="@+id/salud_info"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

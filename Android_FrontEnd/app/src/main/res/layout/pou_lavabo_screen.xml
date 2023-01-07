@@ -8,7 +8,7 @@
     tools:context=".Activities.Activity_Pou_Lavabo">
 
     <TextView
-        android:id="@+id/titulo_salon3"
+        android:id="@+id/titulo_lavabo"
         android:layout_width="220dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_derecha_lavabo" />
 
     <TextView
-        android:id="@+id/dinero_salon4"
+        android:id="@+id/dinero_lavabo"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
-        android:id="@+id/hambre_salon4"
+        android:id="@+id/hambre_lavabo"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -44,11 +44,11 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/dinero_salon4"
-        app:layout_constraintTop_toTopOf="@+id/dinero_salon4" />
+        app:layout_constraintStart_toEndOf="@+id/dinero_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/dinero_lavabo" />
 
     <TextView
-        android:id="@+id/salud_salon4"
+        android:id="@+id/salud_lavabo"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -56,11 +56,11 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/hambre_salon4"
-        app:layout_constraintTop_toTopOf="@+id/hambre_salon4" />
+        app:layout_constraintStart_toEndOf="@+id/hambre_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/hambre_lavabo" />
 
     <TextView
-        android:id="@+id/diversion_salon4"
+        android:id="@+id/diversion_lavabo"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -68,11 +68,11 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/salud_salon4"
-        app:layout_constraintTop_toTopOf="@+id/salud_salon4" />
+        app:layout_constraintStart_toEndOf="@+id/salud_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/salud_lavabo" />
 
     <TextView
-        android:id="@+id/sueno_salon4"
+        android:id="@+id/sueno_lavabo"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginEnd="5dp"
@@ -82,8 +82,8 @@
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/diversion_salon4"
-        app:layout_constraintTop_toTopOf="@+id/diversion_salon4" />
+        app:layout_constraintStart_toEndOf="@+id/diversion_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/diversion_lavabo" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -105,7 +105,7 @@
         android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salud_salon4"
+        app:layout_constraintTop_toBottomOf="@+id/salud_lavabo"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -120,7 +120,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/estado_salon4"
+        android:id="@+id/estado_lavabo"
         android:layout_width="322dp"
         android:layout_height="322dp"
         android:layout_marginTop="10dp"
@@ -131,42 +131,42 @@
         app:srcCompat="@drawable/outfit_base_normal" />
 
     <ImageView
-        android:id="@+id/camiseta_salon4"
+        android:id="@+id/camiseta_lavabo"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="@+id/estado_salon4"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon4"
+        app:layout_constraintEnd_toEndOf="@+id/estado_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/estado_lavabo"
         app:srcCompat="@drawable/outfit_base_spain" />
 
     <ImageView
-        android:id="@+id/bambas_salon4"
+        android:id="@+id/bambas_lavabo"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="@+id/estado_salon4"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon4"
+        app:layout_constraintEnd_toEndOf="@+id/estado_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/estado_lavabo"
         app:srcCompat="@drawable/outfit_bambas_veja" />
 
     <ImageView
-        android:id="@+id/blink_salon4"
+        android:id="@+id/blink_lavabo"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="@+id/estado_salon4"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon4"
+        app:layout_constraintEnd_toEndOf="@+id/estado_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/estado_lavabo"
         app:srcCompat="@drawable/outfit_blink_android" />
 
     <ImageView
-        android:id="@+id/gafas_salon4"
+        android:id="@+id/gafas_lavabo"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintStart_toStartOf="@+id/estado_salon4"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon4"
+        app:layout_constraintStart_toStartOf="@+id/estado_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/estado_lavabo"
         app:srcCompat="@drawable/outfit_gafas_rayban" />
 
     <ImageView
-        android:id="@+id/gorra_salon4"
+        android:id="@+id/gorra_lavabo"
         android:layout_width="322dp"
         android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="@+id/estado_salon4"
-        app:layout_constraintTop_toTopOf="@+id/estado_salon4"
+        app:layout_constraintEnd_toEndOf="@+id/estado_lavabo"
+        app:layout_constraintTop_toTopOf="@+id/estado_lavabo"
         app:srcCompat="@drawable/outfit_gorra_cerveza" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     tools:context=".Activities.Activity_Pou_Armario">
 
     <TextView
-        android:id="@+id/dinero_salon7"
+        android:id="@+id/dinero_armario"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
     <TextView
-        android:id="@+id/hambre_salon7"
+        android:id="@+id/hambre_armario"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -30,11 +30,11 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/dinero_salon7"
-        app:layout_constraintTop_toTopOf="@+id/dinero_salon7" />
+        app:layout_constraintStart_toEndOf="@+id/dinero_armario"
+        app:layout_constraintTop_toTopOf="@+id/dinero_armario" />
 
     <TextView
-        android:id="@+id/titulo_salon12"
+        android:id="@+id/titulo_armario"
         android:layout_width="220dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_izquierda_armario" />
 
     <TextView
-        android:id="@+id/salud_salon7"
+        android:id="@+id/salud_armario"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -56,11 +56,11 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/hambre_salon7"
-        app:layout_constraintTop_toTopOf="@+id/hambre_salon7" />
+        app:layout_constraintStart_toEndOf="@+id/hambre_armario"
+        app:layout_constraintTop_toTopOf="@+id/hambre_armario" />
 
     <TextView
-        android:id="@+id/diversion_salon7"
+        android:id="@+id/diversion_armario"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -68,11 +68,11 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/salud_salon7"
-        app:layout_constraintTop_toTopOf="@+id/salud_salon7" />
+        app:layout_constraintStart_toEndOf="@+id/salud_armario"
+        app:layout_constraintTop_toTopOf="@+id/salud_armario" />
 
     <TextView
-        android:id="@+id/sueno_salon7"
+        android:id="@+id/sueno_armario"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -80,8 +80,8 @@
         android:text="100"
         android:textColor="@color/black"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/diversion_salon7"
-        app:layout_constraintTop_toTopOf="@+id/diversion_salon7" />
+        app:layout_constraintStart_toEndOf="@+id/diversion_armario"
+        app:layout_constraintTop_toTopOf="@+id/diversion_armario" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -102,7 +102,7 @@
         android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hambre_salon7"
+        app:layout_constraintTop_toBottomOf="@+id/hambre_armario"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton

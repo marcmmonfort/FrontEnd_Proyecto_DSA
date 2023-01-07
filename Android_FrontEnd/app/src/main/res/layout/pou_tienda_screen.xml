@@ -10,7 +10,7 @@
     tools:context=".Activities.Activity_Pou_Tienda">
 
     <TextView
-        android:id="@+id/titulo_salon7"
+        android:id="@+id/titulo_acceso"
         android:layout_width="320dp"
         android:layout_height="30dp"
         android:layout_marginTop="40dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_tienda" />
 
     <TextView
-        android:id="@+id/diversion_salon5"
+        android:id="@+id/diversion_tienda"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -32,11 +32,11 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/salud_salon5"
-        app:layout_constraintTop_toTopOf="@+id/salud_salon5" />
+        app:layout_constraintStart_toEndOf="@+id/salud_tienda"
+        app:layout_constraintTop_toTopOf="@+id/salud_tienda" />
 
     <TextView
-        android:id="@+id/titulo_salon4"
+        android:id="@+id/titulo_tienda"
         android:layout_width="220dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_izquierda_tienda" />
 
     <TextView
-        android:id="@+id/hambre_salon5"
+        android:id="@+id/hambre_tienda"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -58,11 +58,11 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/dinero_salon5"
-        app:layout_constraintTop_toTopOf="@+id/dinero_salon5" />
+        app:layout_constraintStart_toEndOf="@+id/dinero_tienda"
+        app:layout_constraintTop_toTopOf="@+id/dinero_tienda" />
 
     <TextView
-        android:id="@+id/dinero_salon5"
+        android:id="@+id/dinero_tienda"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
-        android:id="@+id/sueno_salon5"
+        android:id="@+id/sueno_tienda"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginEnd="5dp"
@@ -86,11 +86,11 @@
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/diversion_salon5"
-        app:layout_constraintTop_toTopOf="@+id/diversion_salon5" />
+        app:layout_constraintStart_toEndOf="@+id/diversion_tienda"
+        app:layout_constraintTop_toTopOf="@+id/diversion_tienda" />
 
     <TextView
-        android:id="@+id/salud_salon5"
+        android:id="@+id/salud_tienda"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:fontFamily="@font/pou_font"
@@ -98,8 +98,8 @@
         android:text="100"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintStart_toEndOf="@+id/hambre_salon5"
-        app:layout_constraintTop_toTopOf="@+id/hambre_salon5" />
+        app:layout_constraintStart_toEndOf="@+id/hambre_tienda"
+        app:layout_constraintTop_toTopOf="@+id/hambre_tienda" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -120,7 +120,7 @@
         android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salud_salon5"
+        app:layout_constraintTop_toBottomOf="@+id/salud_tienda"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -141,5 +141,6 @@
         android:background="@drawable/display_tienda_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_salon7" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo_acceso"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
