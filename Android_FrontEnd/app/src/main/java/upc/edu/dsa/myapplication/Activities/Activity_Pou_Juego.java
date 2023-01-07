@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +22,19 @@ import upc.edu.dsa.myapplication.R;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.w3c.dom.Text;
+
 import upc.edu.dsa.myapplication.Entities.VO.*;
 
 public class Activity_Pou_Juego extends AppCompatActivity{
 
     ImageButton btnLeft, btnRight;
+
+    TextView titulo_diasSinMorir,titulo_record,titulo_informativo;
+    TextView numero_diasSinMorir;
+    TextView dinero_juego,hambre_juego,salud_juego,diversion_juego,sueno_juego;
+    ImageButton btn_iniciarJuego;
 
     @SuppressLint("CutPasteId")
     @Override
@@ -35,6 +44,11 @@ public class Activity_Pou_Juego extends AppCompatActivity{
 
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_juego);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_juego);
+
+        // TextView ---> textPou = findViewById(R.id.textPou);
+        // Button ---> botonLogin = (Button) findViewById(R.id.botonLogin);
+        // ImageButton ---> btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
+        // ImageView ---> estado_salon = findViewById(R.id.estado_salon);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

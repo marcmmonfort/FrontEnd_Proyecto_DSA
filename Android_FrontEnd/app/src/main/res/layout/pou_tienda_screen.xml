@@ -135,7 +135,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_abrirTienda"
         android:layout_width="178dp"
         android:layout_height="190dp"
         android:background="@drawable/display_tienda_button"

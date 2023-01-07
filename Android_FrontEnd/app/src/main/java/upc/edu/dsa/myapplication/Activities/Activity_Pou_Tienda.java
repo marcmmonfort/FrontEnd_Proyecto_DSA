@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,10 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
 
+    TextView dinero_tienda,hambre_tienda,salud_tienda,diversion_tienda,sueno_tienda;
+    TextView titulo_acceso;
+    ImageButton btn_abrirTienda;
+
     @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,11 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
 
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_tienda);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_tienda);
+
+        // TextView ---> textPou = findViewById(R.id.textPou);
+        // Button ---> botonLogin = (Button) findViewById(R.id.botonLogin);
+        // ImageButton ---> btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
+        // ImageView ---> estado_salon = findViewById(R.id.estado_salon);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {

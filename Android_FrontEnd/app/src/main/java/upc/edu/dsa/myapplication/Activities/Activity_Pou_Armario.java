@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,8 +27,9 @@ import upc.edu.dsa.myapplication.Entities.VO.*;
 public class Activity_Pou_Armario extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
-
     RecyclerView rv_articuloTienda;
+
+    TextView dinero_armario,hambre_armario,salud_armario,diversion_armario,sueno_armario;
 
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
@@ -43,6 +45,11 @@ public class Activity_Pou_Armario extends AppCompatActivity {
 
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_armario);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_armario);
+
+        // TextView ---> textPou = findViewById(R.id.textPou);
+        // Button ---> botonLogin = (Button) findViewById(R.id.botonLogin);
+        // ImageButton ---> btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
+        // ImageView ---> estado_salon = findViewById(R.id.estado_salon);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
