@@ -103,7 +103,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/titulo_salon13"
-        app:layout_constraintTop_toBottomOf="@+id/btn_derecha_salon2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_derecha_info" />
 
     <TextView
         android:id="@+id/titulo_salon13"
@@ -117,7 +117,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_salon2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_info" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -150,10 +150,10 @@
         android:text="INFO"
         android:textColor="@color/black"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_izquierda_salon2"
-        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_salon2"
-        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_salon2"
-        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon2" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_izquierda_info"
+        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_info"
+        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_info"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_info" />
 
     <TextView
         android:id="@+id/hambre_salon2"
@@ -208,21 +208,23 @@
         app:layout_constraintTop_toTopOf="@+id/hambre_salon2" />
 
     <ImageButton
-        android:id="@+id/btn_derecha_salon2"
+        android:id="@+id/btn_derecha_info"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginEnd="10dp"
+        android:onClick="btnRight"
         android:background="@drawable/display_right_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon2"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_info"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/btn_izquierda_salon2"
+        android:id="@+id/btn_izquierda_info"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/salud_salon2"

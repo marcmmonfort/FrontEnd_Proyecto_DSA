@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,8 @@ import upc.edu.dsa.myapplication.Entities.VO.*;
 
 public class Activity_Pou_Armario extends AppCompatActivity {
 
+    ImageButton btnLeft, btnRight;
+
     RecyclerView rv_articuloTienda;
 
     RecyclerView.Adapter adapter;
@@ -37,6 +40,23 @@ public class Activity_Pou_Armario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pou_armario_screen);
+
+        btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_armario);
+        btnRight =(ImageButton)findViewById(R.id.btn_derecha_armario);
+
+        btnLeft.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)  {
+                Intent myIntent1 = new Intent(Activity_Pou_Armario.this, Activity_Pou_Tienda.class);
+                Activity_Pou_Armario.this.startActivity(myIntent1);
+            }
+        });
+
+        btnRight.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)  {
+                Intent myIntent2 = new Intent(Activity_Pou_Armario.this, Activity_Pou_Cocina.class);
+                Activity_Pou_Armario.this.startActivity(myIntent2);
+            }
+        });
 
         /*
         layoutManager = new LinearLayoutManager(this);

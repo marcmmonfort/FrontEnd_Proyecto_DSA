@@ -21,7 +21,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_salon5" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_tienda" />
 
     <TextView
         android:id="@+id/diversion_salon5"
@@ -44,10 +44,10 @@
         android:text="TIENDA"
         android:textColor="@color/white"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_derecha_salon5"
-        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_salon5"
-        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_salon5"
-        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon5" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_derecha_tienda"
+        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_tienda"
+        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_tienda"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_tienda" />
 
     <TextView
         android:id="@+id/hambre_salon5"
@@ -112,24 +112,26 @@
         app:srcCompat="@drawable/display_barra_superior" />
 
     <ImageButton
-        android:id="@+id/btn_izquierda_salon5"
+        android:id="@+id/btn_izquierda_tienda"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/salud_salon5"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/btn_derecha_salon5"
+        android:id="@+id/btn_derecha_tienda"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginEnd="10dp"
+        android:onClick="btnRight"
         android:background="@drawable/display_right_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon5"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_tienda"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton

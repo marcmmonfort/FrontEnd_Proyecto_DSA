@@ -42,10 +42,10 @@
         android:text="ARMARIO"
         android:textColor="@color/black"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_izquierda_salon7"
-        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_salon7"
-        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_salon7"
-        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon7" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_izquierda_armario"
+        app:layout_constraintEnd_toStartOf="@+id/btn_derecha_armario"
+        app:layout_constraintStart_toEndOf="@+id/btn_izquierda_armario"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_armario" />
 
     <TextView
         android:id="@+id/salud_salon7"
@@ -94,24 +94,26 @@
         app:srcCompat="@drawable/display_barra_superior" />
 
     <ImageButton
-        android:id="@+id/btn_izquierda_salon7"
+        android:id="@+id/btn_izquierda_armario"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:onClick="btnLeft"
         android:background="@drawable/display_left_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hambre_salon7"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/btn_derecha_salon7"
+        android:id="@+id/btn_derecha_armario"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginEnd="10dp"
+        android:onClick="btnRight"
         android:background="@drawable/display_right_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_salon7"
+        app:layout_constraintTop_toTopOf="@+id/btn_izquierda_armario"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -123,6 +125,6 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_salon7" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_armario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,5 +33,12 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 Activity_Pou_Salon.this.startActivity(myIntent1);
             }
         });
+
+        btnRight.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)  {
+                Intent myIntent2 = new Intent(Activity_Pou_Salon.this, Activity_Pou_Tienda.class);
+                Activity_Pou_Salon.this.startActivity(myIntent2);
+            }
+        });
     }
 }

@@ -104,10 +104,10 @@
         android:id="@+id/btn_izquierda_salon"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:onClick="btnLeft"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/display_left_button"
+        android:onClick="btnLeft"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dinero_salon"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
