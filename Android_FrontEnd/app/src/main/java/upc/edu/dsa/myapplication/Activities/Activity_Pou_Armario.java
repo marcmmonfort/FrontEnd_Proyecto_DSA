@@ -24,32 +24,21 @@ import upc.edu.dsa.myapplication.Entities.VO.*;
 
 public class Activity_Pou_Armario extends AppCompatActivity {
 
-    // Nuevo ...
     RecyclerView rv_articuloTienda;
 
-    // Tienda antigua ...
-    Button tienda_backHome;
-    TextView tienda_textPou, tienda_textLasAventurasDe;
-
-    // Atributos para las cards ...
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
     ArrayList<DataModel> data;
     static View.OnClickListener myOnClickListener;
 
-    // RETROFIT (Service) ...
     PouServices pouServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        // tienda_textPou = findViewById(R.id.tienda_textPou);
-        // tienda_textLasAventurasDe = findViewById(R.id.tienda_textLasAventurasDe);
-        // tienda_backHome = (Button) findViewById(R.id.tienda_backHome);
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.extra_armario_activity_main);
+        setContentView(R.layout.pou_armario_screen);
 
+        /*
         layoutManager = new LinearLayoutManager(this);
 
         rv_articuloTienda = (RecyclerView) findViewById(R.id.rv_articuloTienda);
@@ -68,13 +57,10 @@ public class Activity_Pou_Armario extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
     }
 
-    public void backHome(View view) {
-        Intent myIntent1 = new Intent(Activity_Pou_Armario.this, Activity_Pou_Home.class);
-        Activity_Pou_Armario.this.startActivity(myIntent1);
-    }
-
+    /*
     @SuppressLint("SetTextI18n")
     private ArrayList<DataModel> answersToData(Call<List<ObjetoTienda>> call) throws IOException {
         List<ObjetoTienda> objetosTienda = call.execute().body();
@@ -97,4 +83,5 @@ public class Activity_Pou_Armario extends AppCompatActivity {
 
         return data;
     }
+    */
 }

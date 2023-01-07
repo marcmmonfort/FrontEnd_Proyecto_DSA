@@ -22,7 +22,7 @@ import upc.edu.dsa.myapplication.R;
 import android.content.SharedPreferences;
 
 public class Activity_Pou_Login extends AppCompatActivity implements View.OnClickListener{
-    TextView login_textPou, login_textLasAventurasDe;
+    TextView login_textLasAventurasDe;
     Button login_botonHacerLogin, login_backHome;
     TextInputEditText login_correoPou, login_passwordPou;
     PouServices pouServices;
@@ -33,7 +33,6 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pou_login_screen);
 
-        login_textPou = findViewById(R.id.login_textPou);
         login_textLasAventurasDe = findViewById(R.id.login_textLasAventurasDe);
 
         login_botonHacerLogin = (Button) findViewById(R.id.login_botonHacerLogin);

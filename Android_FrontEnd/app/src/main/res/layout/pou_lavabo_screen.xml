@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color4">
+    android:background="@color/color4"
+    tools:context=".Activities.Activity_Pou_Lavabo">
 
     <TextView
         android:id="@+id/titulo_salon3"

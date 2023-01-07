@@ -20,7 +20,7 @@ import upc.edu.dsa.myapplication.R;
 
 public class Activity_Pou_Register extends AppCompatActivity implements View.OnClickListener{
 
-    TextView registro_textPou, registro_textLasAventurasDe;
+    TextView registro_textLasAventurasDe;
     Button registro_botonHacerRegistro, registro_backHome;
     TextInputEditText registro_nacimientoPou, registro_correoPou, registro_correoPouConfirmar, registro_nombrePou, registro_pouId, registro_passwordPou, registro_passwordPouConfirmar;
     PouServices pouServices;
@@ -31,17 +31,15 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pou_register_screen);
 
-        registro_textPou = findViewById(R.id.registro_textPou);
         registro_textLasAventurasDe = findViewById(R.id.registro_textLasAventurasDe);
 
         registro_botonHacerRegistro = (Button) findViewById(R.id.registro_botonHacerRegistro);
 
         registro_nacimientoPou = findViewById(R.id.registro_nacimientoPou);
         registro_correoPou = findViewById(R.id.registro_correoPou);
-        registro_correoPouConfirmar = findViewById(R.id.registro_correoPouConfirmar);
         registro_nombrePou = findViewById(R.id.registro_nombrePou);
         registro_pouId = findViewById(R.id.registro_pouId);
-        registro_passwordPou = findViewById(R.id.registro_correoPouConfirmar);
+        registro_passwordPou = findViewById(R.id.registro_passwordPou);
         registro_passwordPouConfirmar = findViewById(R.id.registro_passwordPouConfirmar);
     }
 

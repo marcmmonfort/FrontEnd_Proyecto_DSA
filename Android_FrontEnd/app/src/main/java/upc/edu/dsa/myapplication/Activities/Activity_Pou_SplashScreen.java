@@ -27,10 +27,10 @@ public class Activity_Pou_SplashScreen extends AppCompatActivity {
                     e.printStackTrace();
                 } finally {
                     if (isLogged) {
-                        Intent intent1 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Home.class);
+                        Intent intent1 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Info.class);
                         startActivity(intent1);
                     } else {
-                        Intent intent2 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Login.class);
+                        Intent intent2 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Armario.class);
                         startActivity(intent2);
                     }
                 }

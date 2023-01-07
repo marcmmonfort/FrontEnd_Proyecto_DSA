@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color5">
+    android:background="@color/color5"
+    tools:context=".Activities.Activity_Pou_Juego">
 
     <TextView
         android:id="@+id/titulo_salon10"
