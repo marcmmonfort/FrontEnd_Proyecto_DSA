@@ -92,6 +92,15 @@ public class Activity_Pou_Salon extends AppCompatActivity{
 
         blink_salon.setVisibility(View.INVISIBLE);
 
+        // Si venimos desde otra Activity que nos pasa Datos ...
+        Bundle infoRecibida = getIntent().getExtras();
+        if (infoRecibida!=null){ // A no ser que venda de una actividad que no se le pasa nada ...
+            lvlHambre = Integer.parseInt(infoRecibida.getString("pasarHambre"));
+            lvlSalud = Integer.parseInt(infoRecibida.getString("pasarSalud"));
+            lvlDiversion = Integer.parseInt(infoRecibida.getString("pasarDiversion"));
+            lvlSueno = Integer.parseInt(infoRecibida.getString("pasarSueno"));
+        }
+
         // Declaración de los 4 Estados del Pou ...
         hambre_salon.setText(Integer.toString(lvlHambre));
         salud_salon.setText(Integer.toString(lvlSalud));
@@ -112,10 +121,10 @@ public class Activity_Pou_Salon extends AppCompatActivity{
         btnRight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent2 = new Intent(Activity_Pou_Salon.this, Activity_Pou_Tienda.class);
-                myIntent2.putExtra("lvlHambre",lvlHambre);
-                myIntent2.putExtra("lvlSalud",lvlSalud);
-                myIntent2.putExtra("lvlDiversion",lvlDiversion);
-                myIntent2.putExtra("lvlSueno",lvlSueno);
+                myIntent2.putExtra("pasarHambre",Integer.toString(lvlHambre));
+                myIntent2.putExtra("pasarSalud",Integer.toString(lvlSalud));
+                myIntent2.putExtra("pasarDiversion",Integer.toString(lvlDiversion));
+                myIntent2.putExtra("pasarSueno",Integer.toString(lvlSueno));
                 Activity_Pou_Salon.this.startActivity(myIntent2);
             }
         });

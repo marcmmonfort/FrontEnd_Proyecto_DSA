@@ -57,6 +57,15 @@ public class Activity_Pou_Armario extends AppCompatActivity {
         sueno_armario = findViewById(R.id.sueno_armario);
         titulo_armario = findViewById(R.id.titulo_armario);
 
+        // Si venimos desde otra Activity que nos pasa Datos ...
+        Bundle infoRecibida = getIntent().getExtras();
+        if (infoRecibida!=null){ // A no ser que venda de una actividad que no se le pasa nada ...
+            lvlHambre = Integer.parseInt(infoRecibida.getString("pasarHambre"));
+            lvlSalud = Integer.parseInt(infoRecibida.getString("pasarSalud"));
+            lvlDiversion = Integer.parseInt(infoRecibida.getString("pasarDiversion"));
+            lvlSueno = Integer.parseInt(infoRecibida.getString("pasarSueno"));
+        }
+
         // Declaración de los 4 Estados del Pou ...
         hambre_armario.setText(Integer.toString(lvlHambre));
         salud_armario.setText(Integer.toString(lvlSalud));
@@ -66,6 +75,10 @@ public class Activity_Pou_Armario extends AppCompatActivity {
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent1 = new Intent(Activity_Pou_Armario.this, Activity_Pou_Tienda.class);
+                myIntent1.putExtra("pasarHambre",Integer.toString(lvlHambre));
+                myIntent1.putExtra("pasarSalud",Integer.toString(lvlSalud));
+                myIntent1.putExtra("pasarDiversion",Integer.toString(lvlDiversion));
+                myIntent1.putExtra("pasarSueno",Integer.toString(lvlSueno));
                 Activity_Pou_Armario.this.startActivity(myIntent1);
             }
         });
@@ -73,6 +86,10 @@ public class Activity_Pou_Armario extends AppCompatActivity {
         btnRight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent2 = new Intent(Activity_Pou_Armario.this, Activity_Pou_Cocina.class);
+                myIntent2.putExtra("pasarHambre",Integer.toString(lvlHambre));
+                myIntent2.putExtra("pasarSalud",Integer.toString(lvlSalud));
+                myIntent2.putExtra("pasarDiversion",Integer.toString(lvlDiversion));
+                myIntent2.putExtra("pasarSueno",Integer.toString(lvlSueno));
                 Activity_Pou_Armario.this.startActivity(myIntent2);
             }
         });

@@ -84,6 +84,10 @@ public class Activity_Pou_Info extends AppCompatActivity {
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent1 = new Intent(Activity_Pou_Info.this, Activity_Pou_Juego.class);
+                myIntent1.putExtra("pasarHambre",Integer.toString(lvlHambre));
+                myIntent1.putExtra("pasarSalud",Integer.toString(lvlSalud));
+                myIntent1.putExtra("pasarDiversion",Integer.toString(lvlDiversion));
+                myIntent1.putExtra("pasarSueno",Integer.toString(lvlSueno));
                 Activity_Pou_Info.this.startActivity(myIntent1);
             }
         });
@@ -91,6 +95,10 @@ public class Activity_Pou_Info extends AppCompatActivity {
         btnRight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
                 Intent myIntent2 = new Intent(Activity_Pou_Info.this, Activity_Pou_Salon.class);
+                myIntent2.putExtra("pasarHambre",Integer.toString(lvlHambre));
+                myIntent2.putExtra("pasarSalud",Integer.toString(lvlSalud));
+                myIntent2.putExtra("pasarDiversion",Integer.toString(lvlDiversion));
+                myIntent2.putExtra("pasarSueno",Integer.toString(lvlSueno));
                 Activity_Pou_Info.this.startActivity(myIntent2);
             }
         });
