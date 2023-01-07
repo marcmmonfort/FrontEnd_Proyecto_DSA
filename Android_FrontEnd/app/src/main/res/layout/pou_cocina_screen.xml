@@ -8,6 +8,127 @@
     tools:context=".Activities.Activity_Pou_Cocina">
 
     <TextView
+        android:id="@+id/txt_cantidad_apple"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_cantidad_candy"
+        app:layout_constraintTop_toTopOf="@+id/txt_cantidad_candy" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_roncola"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="60"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_cantidad_aquarius"
+        app:layout_constraintTop_toTopOf="@+id/txt_cantidad_aquarius" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_aquarius"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="8"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_cantidad_agua"
+        app:layout_constraintTop_toTopOf="@+id/txt_cantidad_agua" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_agua"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="120"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_cantidad_pizza"
+        app:layout_constraintTop_toTopOf="@+id/txt_cantidad_pizza" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_pizza"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="22"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_cantidad_apple"
+        app:layout_constraintTop_toTopOf="@+id/txt_cantidad_apple" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_candy"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="6"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_candy"
+        app:layout_constraintTop_toBottomOf="@+id/btn_consumir_candy" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_roncola"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="9dp"
+        android:background="@drawable/articulo_consumible_roncola"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_aquarius"
+        app:layout_constraintTop_toTopOf="@+id/btn_consumir_aquarius"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_aquarius"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="@drawable/articulo_consumible_aquarius"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_agua"
+        app:layout_constraintTop_toTopOf="@+id/btn_consumir_agua"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_agua"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="@drawable/articulo_consumible_agua"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_pizza"
+        app:layout_constraintTop_toTopOf="@+id/btn_consumir_pizza"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_pizza"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="@drawable/articulo_consumible_pizza"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_manzana"
+        app:layout_constraintTop_toTopOf="@+id/btn_consumir_manzana"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_candy"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/articulo_consumible_candy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estado_cocina"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
         android:id="@+id/titulo_cocina"
         android:layout_width="220dp"
         android:layout_height="45dp"
@@ -174,4 +295,14 @@
         app:layout_constraintStart_toStartOf="@+id/estado_cocina"
         app:layout_constraintTop_toTopOf="@+id/estado_cocina"
         app:srcCompat="@drawable/outfit_gorra_cerveza" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_manzana"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="@drawable/articulo_consumible_manzana"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_candy"
+        app:layout_constraintTop_toTopOf="@+id/btn_consumir_candy"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

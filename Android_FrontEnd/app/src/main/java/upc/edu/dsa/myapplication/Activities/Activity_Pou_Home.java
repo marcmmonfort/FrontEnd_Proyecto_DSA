@@ -47,13 +47,4 @@ public class Activity_Pou_Home extends AppCompatActivity{
             Activity_Pou_Home.this.startActivity(myIntent3);
         }
     }
-
-    public void clickLogout(View view) throws IOException {
-        SharedPreferences preferencias=getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor Obj_editor=preferencias.edit();
-        Obj_editor.putBoolean("isLogged",false);
-        Obj_editor.apply();
-        Intent i = new Intent(Activity_Pou_Home.this, Activity_Pou_Login.class);
-        startActivity(i);
-    }
 }

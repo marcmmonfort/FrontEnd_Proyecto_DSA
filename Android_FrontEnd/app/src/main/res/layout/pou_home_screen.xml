@@ -66,23 +66,23 @@
     <Button
         android:id="@+id/botonRegistro"
         android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#730000"
-        android:text="NEW"
+        android:layout_height="54dp"
+        android:backgroundTint="@color/color11"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
+        android:onClick="clickBoton"
+        android:text="NEW"
         android:textSize="26dp"
         app:cornerRadius="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRegistro"
-        android:onClick="clickBoton" />
+        app:layout_constraintTop_toBottomOf="@+id/textRegistro" />
 
     <Button
         android:id="@+id/botonLogin"
         android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#730000"
+        android:layout_height="54dp"
+        android:backgroundTint="@color/color10"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:onClick="clickBoton"

@@ -7,6 +7,24 @@
     android:background="@color/color2"
     tools:context=".Activities.Activity_Pou_Info">
 
+    <Button
+        android:id="@+id/botonLogout"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/color10"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:onClick="clickLogout"
+        android:text="LOGOUT"
+        android:textSize="26dp"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_correo_info"
+        tools:ignore="UsingOnClickInXml" />
+
     <TextView
         android:id="@+id/titulo_correo_info"
         android:layout_width="176dp"

@@ -1,7 +1,9 @@
 package upc.edu.dsa.myapplication.Activities;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +28,7 @@ import upc.edu.dsa.myapplication.Entities.VO.*;
 public class Activity_Pou_Info extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
+    Button botonLogout;
 
     @SuppressLint("CutPasteId")
     @Override
@@ -35,6 +38,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
 
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_info);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_info);
+        botonLogout = (Button) findViewById(R.id.botonLogout);
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
@@ -49,5 +53,14 @@ public class Activity_Pou_Info extends AppCompatActivity {
                 Activity_Pou_Info.this.startActivity(myIntent2);
             }
         });
+    }
+
+    public void clickLogout(View view) throws IOException {
+        SharedPreferences preferencias=getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor Obj_editor=preferencias.edit();
+        Obj_editor.putBoolean("isLogged",false);
+        Obj_editor.apply();
+        Intent i = new Intent(Activity_Pou_Info.this, Activity_Pou_Home.class);
+        startActivity(i);
     }
 }

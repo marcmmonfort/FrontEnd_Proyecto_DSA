@@ -179,9 +179,9 @@
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="178dp"
-        android:layout_height="180dp"
-        android:background="@drawable/display_play_button"
+        android:layout_width="134dp"
+        android:layout_height="68dp"
+        android:background="@drawable/display_play_button_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

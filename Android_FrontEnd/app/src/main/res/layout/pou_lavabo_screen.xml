@@ -7,6 +7,94 @@
     android:background="@color/color4"
     tools:context=".Activities.Activity_Pou_Lavabo">
 
+    <ImageButton
+        android:id="@+id/btn_consumir_sueno"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="75dp"
+        android:background="@drawable/articulo_consumible_sueno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_diversion"
+        app:layout_constraintTop_toTopOf="@+id/btn_consumir_diversion"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_sueno"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="18"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_sueno"
+        app:layout_constraintTop_toBottomOf="@+id/btn_consumir_sueno" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_diversion"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="@drawable/articulo_consumible_diversion"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_salud"
+        app:layout_constraintTop_toTopOf="@+id/btn_consumir_salud"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_diversion"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="6"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_diversion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_consumir_diversion" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_salud"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="@drawable/articulo_consumible_salud"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_hambre"
+        app:layout_constraintTop_toTopOf="@+id/btn_consumir_hambre"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_salud"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="20"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_salud"
+        app:layout_constraintTop_toBottomOf="@+id/btn_consumir_salud" />
+
+    <ImageButton
+        android:id="@+id/btn_consumir_hambre"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/articulo_consumible_hambre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estado_lavabo"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txt_cantidad_hambre"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_hambre"
+        app:layout_constraintTop_toBottomOf="@+id/btn_consumir_hambre" />
+
     <TextView
         android:id="@+id/titulo_lavabo"
         android:layout_width="220dp"
