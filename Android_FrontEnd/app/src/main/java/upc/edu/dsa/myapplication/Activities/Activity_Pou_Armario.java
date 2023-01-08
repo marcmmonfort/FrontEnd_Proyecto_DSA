@@ -122,7 +122,22 @@ public class Activity_Pou_Armario extends AppCompatActivity {
         btn_Armario_Gorra_nada =(ImageButton)findViewById(R.id.btn_Armario_Gorra_nada);
         btn_Armario_Gorra_nada.setVisibility(View.INVISIBLE);
 
-        img_Armario_Camiseta_nada=(ImageView) findViewById(R.id.img_Armario_Camiseta_nada);
+        img_Armario_Camiseta_pijama =(ImageView) findViewById(R.id.img_Armario_Camiseta_pijama);
+        img_Armario_Camiseta_fcb =(ImageView)findViewById(R.id.img_Armario_Camiseta_fcb);
+        img_Armario_Camiseta_spain =(ImageView)findViewById(R.id.img_Armario_Camiseta_spain);
+        img_Armario_Bambas_messi =(ImageView)findViewById(R.id.img_Armario_Bambas_messi);
+        img_Armario_Bambas_rafa =(ImageView)findViewById(R.id.img_Armario_Bambas_rafa);
+        img_Armario_Bambas_veja =(ImageView)findViewById(R.id.img_Armario_Bambas_veja);
+        img_Armario_Gafas_fiesta =(ImageView)findViewById(R.id.img_Armario_Gafas_fiesta);
+        img_Armario_Gafas_rayban =(ImageView)findViewById(R.id.img_Armario_Gafas_rayban);
+        img_Armario_Gafas_ciclismo =(ImageView)findViewById(R.id.img_Armario_Gafas_ciclismo);
+        img_Armario_Gorra_cerveza =(ImageView)findViewById(R.id.img_Armario_Gorra_cerveza);
+        img_Armario_Gorra_boina =(ImageView)findViewById(R.id.img_Armario_Gorra_boina);
+        img_Armario_Gorra_polo =(ImageView)findViewById(R.id.img_Armario_Gorra_polo);
+        img_Armario_Camiseta_nada =(ImageView)findViewById(R.id.img_Armario_Camiseta_nada);
+        img_Armario_Bambas_nada =(ImageView)findViewById(R.id.img_Armario_Bambas_nada);
+        img_Armario_Gafas_nada =(ImageView)findViewById(R.id.img_Armario_Gafas_nada);
+        img_Armario_Gorra_nada =(ImageView)findViewById(R.id.img_Armario_Gorra_nada);
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // RECEPCIÓN DE DATOS DESDE OTRA ACTIVIDAD
@@ -366,61 +381,59 @@ public class Activity_Pou_Armario extends AppCompatActivity {
     }
 
     public void clicarArmario(View view) throws IOException{
-
         // CAMISETAS ...
-        if (view==btn_Armario_Camiseta_pijama){
+        if (view==img_Armario_Camiseta_pijama){
             pouCamiseta = "pijama";
         }
-        if (view==btn_Armario_Camiseta_fcb){
+        if (view==img_Armario_Camiseta_fcb){
             pouCamiseta = "fcb";
         }
-        if (view==btn_Armario_Camiseta_spain){
+        if (view==img_Armario_Camiseta_spain){
             pouCamiseta = "spain";
         }
         // BAMBAS ...
-        if (view==btn_Armario_Bambas_messi){
+        if (view==img_Armario_Bambas_messi){
             pouBambas = "messi";
         }
-        if (view==btn_Armario_Bambas_rafa){
+        if (view==img_Armario_Bambas_rafa){
             pouBambas = "rafa";
         }
-        if (view==btn_Armario_Bambas_veja){
+        if (view==img_Armario_Bambas_veja){
             pouBambas = "veja";
         }
         // GAFAS ...
-        if (view==btn_Armario_Gafas_fiesta){
+        if (view==img_Armario_Gafas_fiesta){
             pouGafas = "fiesta";
         }
-        if (view==btn_Armario_Gafas_rayban){
+        if (view==img_Armario_Gafas_rayban){
             pouGafas = "rayban";
         }
-        if (view==btn_Armario_Gafas_ciclismo){
+        if (view==img_Armario_Gafas_ciclismo){
             pouGafas = "ciclismo";
         }
         // GORRAS ...
-        if (view==btn_Armario_Gorra_cerveza){
+        if (view==img_Armario_Gorra_cerveza){
             pouGorro = "cerveza";
         }
-        if (view==btn_Armario_Gorra_boina){
+        if (view==img_Armario_Gorra_boina){
             pouGorro = "boina";
         }
-        if (view==btn_Armario_Gorra_polo){
+        if (view==img_Armario_Gorra_polo){
             pouGorro = "polo";
         }
         // NADA ...
-        if (view==btn_Armario_Camiseta_nada || view==img_Armario_Camiseta_nada){
+        if (view==img_Armario_Camiseta_nada){
             pouCamiseta = "nada";
         }
-        if (view==btn_Armario_Bambas_nada){
+        if (view==img_Armario_Bambas_nada){
             pouBambas = "nada";
         }
-        if (view==btn_Armario_Gafas_nada){
+        if (view==img_Armario_Gafas_nada){
             pouGafas = "nada";
         }
-        if (view==btn_Armario_Gorra_nada){
+        if (view==img_Armario_Gorra_nada){
             pouGorro = "nada";
         }
-
     }
 
     /*
