@@ -53,20 +53,20 @@ public class Activity_Pou_Salon extends AppCompatActivity{
     String pouEstado = "normal";
     String pouCamiseta = "spain";
     String pouBambas = "veja";
-    String pouGafas = "rayban";
+    String pouGafas = "nada";
     String pouGorro = "cerveza";
     String posee_pijama = "NO";
     String posee_fcb = "NO";
-    String posee_spain = "NO";
+    String posee_spain = "YES";
     String posee_messi = "NO";
-    String posee_rafa = "NO";
+    String posee_rafa = "YES";
     String posee_veja = "NO";
     String posee_fiesta = "NO";
-    String posee_rayban = "NO";
+    String posee_rayban = "YES";
     String posee_ciclismo = "NO";
-    String posee_cerveza = "NO";
+    String posee_cerveza = "YES";
     String posee_boina = "NO";
-    String posee_polo = "NO";
+    String posee_polo = "YES";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private void startTimer()
@@ -154,6 +154,24 @@ public class Activity_Pou_Salon extends AppCompatActivity{
             pouBambas = infoRecibida.getString("pasarPouBambas");
             pouGafas = infoRecibida.getString("pasarPouGafas");
             pouGorro = infoRecibida.getString("pasarPouGorro");
+
+            data_pouId = infoRecibida.getString("pasarDataPouId");
+            data_nombrePou = infoRecibida.getString("pasarDataNombrePou");
+            data_nacimientoPou = infoRecibida.getString("pasarDataNacimientoPou");
+            data_correoPou = infoRecibida.getString("pasarDataCorreoPou");
+
+            posee_pijama = infoRecibida.getString("pasarPoseePijama");
+            posee_fcb = infoRecibida.getString("pasarPoseeFcb");
+            posee_spain = infoRecibida.getString("pasarPoseeSpain");
+            posee_messi = infoRecibida.getString("pasarPoseeMessi");
+            posee_rafa = infoRecibida.getString("pasarPoseeRafa");
+            posee_veja = infoRecibida.getString("pasarPoseeVeja");
+            posee_fiesta = infoRecibida.getString("pasarPoseeFiesta");
+            posee_rayban = infoRecibida.getString("pasarPoseeRayban");
+            posee_ciclismo = infoRecibida.getString("pasarPoseeCiclismo");
+            posee_cerveza = infoRecibida.getString("pasarPoseeCerveza");
+            posee_boina = infoRecibida.getString("pasarPoseeBoina");
+            posee_polo = infoRecibida.getString("pasarPoseePolo");
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -205,6 +223,24 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 myIntent1.putExtra("pasarPouGafas",pouGafas);
                 myIntent1.putExtra("pasarPouGorro",pouGorro);
 
+                myIntent1.putExtra("pasarDataPouId",data_pouId);
+                myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
+                myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
+                myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+
+                myIntent1.putExtra("pasarPoseePijama",posee_pijama);
+                myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
+                myIntent1.putExtra("pasarPoseeSpain",posee_spain);
+                myIntent1.putExtra("pasarPoseeMessi",posee_messi);
+                myIntent1.putExtra("pasarPoseeRafa",posee_rafa);
+                myIntent1.putExtra("pasarPoseeVeja",posee_veja);
+                myIntent1.putExtra("pasarPoseeFiesta",posee_fiesta);
+                myIntent1.putExtra("pasarPoseeRayban",posee_rayban);
+                myIntent1.putExtra("pasarPoseeCiclismo",posee_ciclismo);
+                myIntent1.putExtra("pasarPoseeCerveza",posee_cerveza);
+                myIntent1.putExtra("pasarPoseeBoina",posee_boina);
+                myIntent1.putExtra("pasarPoseePolo",posee_polo);
+
                 Activity_Pou_Salon.this.startActivity(myIntent1);
             }
         });
@@ -236,6 +272,24 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 myIntent2.putExtra("pasarPouBambas",pouBambas);
                 myIntent2.putExtra("pasarPouGafas",pouGafas);
                 myIntent2.putExtra("pasarPouGorro",pouGorro);
+
+                myIntent2.putExtra("pasarDataPouId",data_pouId);
+                myIntent2.putExtra("pasarDataNombrePou",data_nombrePou);
+                myIntent2.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
+                myIntent2.putExtra("pasarDataCorreoPou",data_correoPou);
+
+                myIntent2.putExtra("pasarPoseePijama",posee_pijama);
+                myIntent2.putExtra("pasarPoseeFcb",posee_fcb);
+                myIntent2.putExtra("pasarPoseeSpain",posee_spain);
+                myIntent2.putExtra("pasarPoseeMessi",posee_messi);
+                myIntent2.putExtra("pasarPoseeRafa",posee_rafa);
+                myIntent2.putExtra("pasarPoseeVeja",posee_veja);
+                myIntent2.putExtra("pasarPoseeFiesta",posee_fiesta);
+                myIntent2.putExtra("pasarPoseeRayban",posee_rayban);
+                myIntent2.putExtra("pasarPoseeCiclismo",posee_ciclismo);
+                myIntent2.putExtra("pasarPoseeCerveza",posee_cerveza);
+                myIntent2.putExtra("pasarPoseeBoina",posee_boina);
+                myIntent2.putExtra("pasarPoseePolo",posee_polo);
 
                 Activity_Pou_Salon.this.startActivity(myIntent2);
             }
