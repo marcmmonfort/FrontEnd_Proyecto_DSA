@@ -32,6 +32,7 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
     ImageButton btn_abrirTienda;
+    ImageButton btn_actualizarEstado;
 
     TextView dinero_tienda,hambre_tienda,salud_tienda,diversion_tienda,sueno_tienda,titulo_tienda;
     TextView titulo_acceso;
@@ -88,6 +89,7 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_tienda);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_tienda);
         btn_abrirTienda =(ImageButton)findViewById(R.id.btn_abrirTienda);
+        btn_actualizarEstado =(ImageButton)findViewById(R.id.btn_actualizarEstado);
 
         dinero_tienda = findViewById(R.id.dinero_tienda);
         hambre_tienda = findViewById(R.id.hambre_tienda);
@@ -268,6 +270,11 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
             StyleableToast.makeText(this, "Abriendo la Tienda Web", R.style.exampleToast).show();
             Intent abrirWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=BqucGvLxrEk"));
             startActivity(abrirWeb);
+        }
+
+        if (view==btn_actualizarEstado){
+            StyleableToast.makeText(this, "Se ha actualizado la información del Pou.", R.style.exampleToast).show();
+            // ACTUALIZAR AQUÍ.
         }
     }
 }
