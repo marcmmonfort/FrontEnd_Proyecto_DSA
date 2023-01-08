@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
 import upc.edu.dsa.myapplication.Entities.ObjetoTienda;
 import upc.edu.dsa.myapplication.PouRetrofit;
@@ -27,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.w3c.dom.Text;
 
 import upc.edu.dsa.myapplication.Entities.VO.*;
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Activity_Pou_Juego extends AppCompatActivity{
 
@@ -36,6 +39,8 @@ public class Activity_Pou_Juego extends AppCompatActivity{
     TextView numero_diasSinMorir;
     TextView dinero_juego,hambre_juego,salud_juego,diversion_juego,sueno_juego,titulo_juego;
     ImageButton btn_iniciarJuego;
+
+    PouServices pouServices;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // VARIABLES GLOBALES DEL POU QUE SE PASAN ENTRE LAS ACTIVITIES.
@@ -276,6 +281,8 @@ public class Activity_Pou_Juego extends AppCompatActivity{
             {
                 // SE PUEDE INICIAR EL JUEGO.
 
+                StyleableToast.makeText(this, "¡Suerte!", R.style.exampleToast).show();
+
                 int recordJuegoInt = recordPou;
                 recordJuegoInt = recordJuegoInt + 1;
                 String recordJuegoStr = Integer.toString(recordJuegoInt);
@@ -312,8 +319,7 @@ public class Activity_Pou_Juego extends AppCompatActivity{
                 lvlSueno = cantidadSuenoInt;
             }
             else{
-                Toast pouNoPreparadoParaJugar = Toast.makeText(Activity_Pou_Juego.this, "¡"+data_nombrePou+", mejora la Salud de tu Pou para Jugar!", Toast.LENGTH_SHORT);
-                pouNoPreparadoParaJugar.show();
+                StyleableToast.makeText(this, "¡"+data_nombrePou+", mejora la Salud de tu Pou para Jugar!", R.style.exampleToast).show();
             }
         }
     }

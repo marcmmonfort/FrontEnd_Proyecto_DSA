@@ -14,15 +14,24 @@ import retrofit2.http.POST;
 
 public interface PouServices {
 
-    // Hacer Login en un Pou.
+    // UBICACIÓN: Activity_Pou_Login.
+    // DESCRIPCIÓN: Hacer Login en un Pou.
     @POST("/dsaApp/pougame/pou/login")
     Call<Void> login(@Body Credenciales credenciales);
 
-    // Registrar un Pou.
+    // UBICACIÓN: Activity_Pou_Register.
+    // DESCRIPCIÓN: Registrar un nuevo Pou.
     @POST("/dsaApp/pougame/pou/registro")
     Call<Void> registro(@Body InfoRegistro infoRegistro);
 
-    // Obtener todos los Artículos de la Tienda.
-    @GET("/dsaApp/pougame/tienda/listaObjetos")
-    Call<List<ObjetoTienda>> obtenerObjetosTienda();
+    // UBICACIÓN: Activity_Pou_Login.
+    // DESCRIPCIÓN: Se obtienen todos los parámetros del Pou y se pasan al salón cuando el Login se hace correctamente.
+
+    // UBICACIÓN: Activity_Pou_Salon / Activity_Pou_Info / Activity_Pou_Juego / Activity_Pou_Tienda.
+    // DESCRIPCIÓN: Se guardan todos los parámetros del Pou al pulsar el botón de Guardar Partida / al hacer Logout / al iniciar el Juego / cuando arrancas la Web.
+
+    // UBICACIÓN: '-'.
+    // DESCRIPCIÓN: Obtener todos los artículos de la tienda.
+    // @GET("/dsaApp/pougame/tienda/listaObjetos")
+    // Call<List<ObjetoTienda>> obtenerObjetosTienda();
 }

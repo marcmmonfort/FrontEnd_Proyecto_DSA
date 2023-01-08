@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
 import upc.edu.dsa.myapplication.Entities.ObjetoTienda;
 import upc.edu.dsa.myapplication.PouRetrofit;
@@ -26,6 +28,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import upc.edu.dsa.myapplication.Entities.VO.*;
 
 import java.util.*;
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Activity_Pou_Lavabo extends AppCompatActivity {
 
@@ -35,6 +38,8 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
     ImageView estado_lavabo,camiseta_lavabo,bambas_lavabo,blink_lavabo,gafas_lavabo,gorra_lavabo;
     ImageButton btn_consumir_sueno,btn_consumir_diversion,btn_consumir_salud,btn_consumir_hambre;
     TextView txt_cantidad_sueno,txt_cantidad_diversion,txt_cantidad_salud,txt_cantidad_hambre;
+
+    PouServices pouServices;
 
     Timer timer;
     TimerTask timerTask;
@@ -333,8 +338,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
             int cantidadInt = Integer.parseInt(txt_cantidad_sueno.getText().toString());
             cantidadInt = cantidadInt - 1;
             if (cantidadInt<0){ // Si no hay más.
-                Toast debesComprar = Toast.makeText(Activity_Pou_Lavabo.this, "¡No tienes más Pociones de Sueño!", Toast.LENGTH_SHORT);
-                debesComprar.show();
+                StyleableToast.makeText(this, "¡Debes comprar Pociones de Sueño!", R.style.exampleToast).show();
             }
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
@@ -373,8 +377,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
             int cantidadInt = Integer.parseInt(txt_cantidad_diversion.getText().toString());
             cantidadInt = cantidadInt - 1;
             if (cantidadInt<0){ // Si no hay más.
-                Toast debesComprar = Toast.makeText(Activity_Pou_Lavabo.this, "¡No tienes más Pociones de Diversión!", Toast.LENGTH_SHORT);
-                debesComprar.show();
+                StyleableToast.makeText(this, "¡Debes comprar Pociones de Diversión!", R.style.exampleToast).show();
             }
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
@@ -413,8 +416,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
             int cantidadInt = Integer.parseInt(txt_cantidad_salud.getText().toString());
             cantidadInt = cantidadInt - 1;
             if (cantidadInt<0){ // Si no hay más.
-                Toast debesComprar = Toast.makeText(Activity_Pou_Lavabo.this, "¡No tienes más Pociones de Salud!", Toast.LENGTH_SHORT);
-                debesComprar.show();
+                StyleableToast.makeText(this, "¡Debes comprar Pociones de Salud!", R.style.exampleToast).show();
             }
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
@@ -453,8 +455,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
             int cantidadInt = Integer.parseInt(txt_cantidad_hambre.getText().toString());
             cantidadInt = cantidadInt - 1;
             if (cantidadInt<0){ // Si no hay más.
-                Toast debesComprar = Toast.makeText(Activity_Pou_Lavabo.this, "¡No tienes más Pociones de Hambre!", Toast.LENGTH_SHORT);
-                debesComprar.show();
+                StyleableToast.makeText(this, "¡Debes comprar Pociones de Hambre!", R.style.exampleToast).show();
             }
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);

@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import upc.edu.dsa.myapplication.R;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 public class Activity_Pou_SplashScreen extends AppCompatActivity {
 
     @Override
@@ -27,7 +29,7 @@ public class Activity_Pou_SplashScreen extends AppCompatActivity {
                     e.printStackTrace();
                 } finally {
                     if (isLogged) {
-                        Intent intent1 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Info.class);
+                        Intent intent1 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Salon.class);
                         startActivity(intent1);
                     } else {
                         Intent intent2 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Salon.class);

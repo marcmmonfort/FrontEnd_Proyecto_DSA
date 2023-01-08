@@ -16,12 +16,17 @@ import upc.edu.dsa.myapplication.R;
 
 import java.util.*;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 public class Activity_Pou_Salon extends AppCompatActivity{
 
     ImageButton btnLeft, btnRight;
+    ImageButton save_partida_salon;
 
     TextView dinero_salon,hambre_salon,titulo_salon,salud_salon,diversion_salon,sueno_salon;
     ImageView estado_salon,camiseta_salon,bambas_salon,blink_salon,gafas_salon,gorra_salon;
+
+    PouServices pouServices;
 
     Timer timer;
     TimerTask timerTask;
@@ -110,6 +115,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
 
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_salon);
+        save_partida_salon =(ImageButton)findViewById(R.id.save_partida_salon);
 
         dinero_salon = findViewById(R.id.dinero_salon);
         hambre_salon = findViewById(R.id.hambre_salon);
@@ -300,5 +306,14 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 Activity_Pou_Salon.this.startActivity(myIntent2);
             }
         });
+    }
+
+    public void guardarPartida(View view) throws IOException {
+        if (view == save_partida_salon) {
+
+            // PONER AQUÍ EL MECANISMO PARA QUE GUARDE LA PARTIDA EN LA BASE DE DATOS.
+
+            StyleableToast.makeText(this, "¡Partida Guardada!", R.style.exampleToast).show();
+        }
     }
 }

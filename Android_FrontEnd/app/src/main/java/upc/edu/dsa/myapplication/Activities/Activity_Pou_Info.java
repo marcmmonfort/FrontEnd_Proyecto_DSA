@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
 import upc.edu.dsa.myapplication.Entities.ObjetoTienda;
 import upc.edu.dsa.myapplication.PouRetrofit;
@@ -33,6 +35,8 @@ public class Activity_Pou_Info extends AppCompatActivity {
     Button botonLogout;
     TextView titulo_correo_info,correo_info,titulo_nacimiento_info,nacimiento_info,titulo_nombre_info,nombre_info,titulo_id_info,id_info;
     TextView diversion_info,titulo_info,hambre_info,dinero_info,sueno_info,salud_info;
+
+    PouServices pouServices;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // VARIABLES GLOBALES DEL POU QUE SE PASAN ENTRE LAS ACTIVITIES.
@@ -275,6 +279,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
         SharedPreferences.Editor Obj_editor=preferencias.edit();
         Obj_editor.putBoolean("isLogged",false);
         Obj_editor.apply();
+        StyleableToast.makeText(this, "¡Se ha hecho Logout del Pou!", R.style.exampleToast).show();
         Intent i = new Intent(Activity_Pou_Info.this, Activity_Pou_Home.class);
         startActivity(i);
     }

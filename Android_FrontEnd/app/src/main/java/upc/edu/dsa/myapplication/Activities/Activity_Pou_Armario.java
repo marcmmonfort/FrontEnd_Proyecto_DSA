@@ -13,11 +13,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import io.github.muddz.styleabletoast.StyleableToast;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
 
 import androidx.recyclerview.widget.RecyclerView;
 import upc.edu.dsa.myapplication.Entities.VO.*;
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Activity_Pou_Armario extends AppCompatActivity {
 
@@ -389,55 +391,71 @@ public class Activity_Pou_Armario extends AppCompatActivity {
     public void clicarArmario(View view) throws IOException{
         // CAMISETAS ...
         if (view==img_Armario_Camiseta_pijama){
+            StyleableToast.makeText(this, "Te has puesto el Pijama.", R.style.exampleToast).show();
             pouCamiseta = "pijama";
         }
         if (view==img_Armario_Camiseta_fcb){
+            StyleableToast.makeText(this, "Te has puesto la camiseta del Barça.", R.style.exampleToast).show();
             pouCamiseta = "fcb";
         }
         if (view==img_Armario_Camiseta_spain){
+            StyleableToast.makeText(this, "Te has puesto la camiseta de España.", R.style.exampleToast).show();
             pouCamiseta = "spain";
         }
         // BAMBAS ...
         if (view==img_Armario_Bambas_messi){
+            StyleableToast.makeText(this, "Te has puesto las bambas de Messi.", R.style.exampleToast).show();
             pouBambas = "messi";
         }
         if (view==img_Armario_Bambas_rafa){
+            StyleableToast.makeText(this, "Te has puesto las bambas de Rafa Nadal.", R.style.exampleToast).show();
             pouBambas = "rafa";
         }
         if (view==img_Armario_Bambas_veja){
+            StyleableToast.makeText(this, "Te has puesto las zapatillas Veja.", R.style.exampleToast).show();
             pouBambas = "veja";
         }
         // GAFAS ...
         if (view==img_Armario_Gafas_fiesta){
+            StyleableToast.makeText(this, "Te has puesto las gafas de Fiesta.", R.style.exampleToast).show();
             pouGafas = "fiesta";
         }
         if (view==img_Armario_Gafas_rayban){
+            StyleableToast.makeText(this, "Te has puesto las gafas Rayban.", R.style.exampleToast).show();
             pouGafas = "rayban";
         }
         if (view==img_Armario_Gafas_ciclismo){
+            StyleableToast.makeText(this, "Te has puesto las gafas de Enric Mas.", R.style.exampleToast).show();
             pouGafas = "ciclismo";
         }
         // GORRAS ...
         if (view==img_Armario_Gorra_cerveza){
+            StyleableToast.makeText(this, "Te has puesto el gorro de Estrella Damm.", R.style.exampleToast).show();
             pouGorro = "cerveza";
         }
         if (view==img_Armario_Gorra_boina){
+            StyleableToast.makeText(this, "Te has puesto una Boina.", R.style.exampleToast).show();
             pouGorro = "boina";
         }
         if (view==img_Armario_Gorra_polo){
+            StyleableToast.makeText(this, "Te has puesto la gorra Polo Ralph Lauren.", R.style.exampleToast).show();
             pouGorro = "polo";
         }
         // NADA ...
         if (view==img_Armario_Camiseta_nada){
+            StyleableToast.makeText(this, "Te has quitado la camiseta.", R.style.exampleToast).show();
             pouCamiseta = "nada";
         }
         if (view==img_Armario_Bambas_nada){
+            StyleableToast.makeText(this, "Tu Pou ahora está descalzo.", R.style.exampleToast).show();
             pouBambas = "nada";
         }
         if (view==img_Armario_Gafas_nada){
+            StyleableToast.makeText(this, "Te has quitado las gafas.", R.style.exampleToast).show();
             pouGafas = "nada";
         }
         if (view==img_Armario_Gorra_nada){
+            StyleableToast.makeText(this, "Te has quitado la gorra.", R.style.exampleToast).show();
             pouGorro = "nada";
         }
     }

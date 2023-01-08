@@ -2,6 +2,7 @@ package upc.edu.dsa.myapplication.Activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
 import upc.edu.dsa.myapplication.Entities.ObjetoTienda;
 import upc.edu.dsa.myapplication.PouRetrofit;
@@ -23,14 +26,17 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import upc.edu.dsa.myapplication.Entities.VO.*;
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Activity_Pou_Tienda extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
+    ImageButton btn_abrirTienda;
 
     TextView dinero_tienda,hambre_tienda,salud_tienda,diversion_tienda,sueno_tienda,titulo_tienda;
     TextView titulo_acceso;
-    ImageButton btn_abrirTienda;
+
+    PouServices pouServices;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // VARIABLES GLOBALES DEL POU QUE SE PASAN ENTRE LAS ACTIVITIES.
@@ -81,6 +87,7 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
 
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_tienda);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_tienda);
+        btn_abrirTienda =(ImageButton)findViewById(R.id.btn_abrirTienda);
 
         dinero_tienda = findViewById(R.id.dinero_tienda);
         hambre_tienda = findViewById(R.id.hambre_tienda);
@@ -254,5 +261,13 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
                 Activity_Pou_Tienda.this.startActivity(myIntent2);
             }
         });
+    }
+
+    public void abrirTienda(View view) throws IOException {
+        if (view==btn_abrirTienda){
+            StyleableToast.makeText(this, "Abriendo la Tienda Web", R.style.exampleToast).show();
+            Intent abrirWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/"));
+            startActivity(abrirWeb);
+        }
     }
 }

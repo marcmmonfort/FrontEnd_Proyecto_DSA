@@ -174,4 +174,15 @@
         app:layout_constraintTop_toTopOf="@+id/estado_salon"
         app:srcCompat="@drawable/outfit_gorra_cerveza" />
 
+    <ImageButton
+        android:id="@+id/save_partida_salon"
+        android:layout_width="138dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="10dp"
+        android:onClick="guardarPartida"
+        android:background="@drawable/display_guardar_partida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estado_salon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

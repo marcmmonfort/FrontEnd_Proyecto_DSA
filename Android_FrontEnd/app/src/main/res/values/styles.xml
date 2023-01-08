@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="exampleToast">
+        <item name="stTextSize">18sp</item>
+        <item name="stRadius">80dp</item>
+        <item name="stFont">@font/pou_font</item>
+        <item name="stTextColor">@color/white</item>
+        <item name="stColorBackground">@color/black</item>
+    </style>
+
+</resources>

@@ -179,8 +179,8 @@
 
     <ImageButton
         android:id="@+id/btn_iniciarJuego"
-        android:layout_width="134dp"
-        android:layout_height="68dp"
+        android:layout_width="94dp"
+        android:layout_height="48dp"
         android:background="@drawable/display_play_button_2"
         android:onClick="clicarJugar"
         app:layout_constraintEnd_toEndOf="parent"
