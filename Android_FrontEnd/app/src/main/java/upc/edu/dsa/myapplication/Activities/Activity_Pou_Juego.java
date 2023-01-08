@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
@@ -146,6 +147,8 @@ public class Activity_Pou_Juego extends AppCompatActivity{
             posee_cerveza = infoRecibida.getString("pasarPoseeCerveza");
             posee_boina = infoRecibida.getString("pasarPoseeBoina");
             posee_polo = infoRecibida.getString("pasarPoseePolo");
+
+            recordPou = Integer.parseInt(infoRecibida.getString("pasarRecordPou"));
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -156,6 +159,8 @@ public class Activity_Pou_Juego extends AppCompatActivity{
         diversion_juego.setText(Integer.toString(lvlDiversion));
         sueno_juego.setText(Integer.toString(lvlSueno));
         dinero_juego.setText(Integer.toString(amountDinero));
+
+        numero_diasSinMorir.setText(Integer.toString(recordPou));
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
@@ -203,6 +208,8 @@ public class Activity_Pou_Juego extends AppCompatActivity{
                 myIntent1.putExtra("pasarPoseeCerveza",posee_cerveza);
                 myIntent1.putExtra("pasarPoseeBoina",posee_boina);
                 myIntent1.putExtra("pasarPoseePolo",posee_polo);
+
+                myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
 
                 Activity_Pou_Juego.this.startActivity(myIntent1);
             }
@@ -254,8 +261,60 @@ public class Activity_Pou_Juego extends AppCompatActivity{
                 myIntent2.putExtra("pasarPoseeBoina",posee_boina);
                 myIntent2.putExtra("pasarPoseePolo",posee_polo);
 
+                myIntent2.putExtra("pasarRecordPou",Integer.toString(recordPou));
+
                 Activity_Pou_Juego.this.startActivity(myIntent2);
             }
         });
+    }
+
+    public void clicarJugar(View view) throws IOException {
+        if (view==btn_iniciarJuego){
+            // EL SIGUIENTE CÓDIGO ES A MODO DE TEST DE ESTE BOTÓN ...
+
+            if ((Integer.parseInt(hambre_juego.getText().toString())>=20)&&(Integer.parseInt(salud_juego.getText().toString())>=20)&&(Integer.parseInt(sueno_juego.getText().toString())>=20))
+            {
+                // SE PUEDE INICIAR EL JUEGO.
+
+                int recordJuegoInt = recordPou;
+                recordJuegoInt = recordJuegoInt + 1;
+                String recordJuegoStr = Integer.toString(recordJuegoInt);
+                numero_diasSinMorir.setText(recordJuegoStr);
+                recordPou = recordJuegoInt;
+
+                // (1) HAMBRE ...
+                int cantidadHambreInt = Integer.parseInt(hambre_juego.getText().toString());
+                cantidadHambreInt = cantidadHambreInt - 20;
+                if (cantidadHambreInt<0){ cantidadHambreInt = 0; }
+                String cantidadHambreString = Integer.toString(cantidadHambreInt);
+                hambre_juego.setText(cantidadHambreString);
+                lvlHambre = cantidadHambreInt;
+                // (2) SALUD ...
+                int cantidadSaludInt = Integer.parseInt(salud_juego.getText().toString());
+                cantidadSaludInt = cantidadSaludInt - 20;
+                if (cantidadSaludInt<0){ cantidadSaludInt = 0; }
+                String cantidadSaludString = Integer.toString(cantidadSaludInt);
+                salud_juego.setText(cantidadSaludString);
+                lvlSalud = cantidadSaludInt;
+                // (3) DIVERSIÓN ...
+                int cantidadDiversionInt = Integer.parseInt(diversion_juego.getText().toString());
+                cantidadDiversionInt = cantidadDiversionInt + 20;
+                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
+                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
+                diversion_juego.setText(cantidadDiversionString);
+                lvlDiversion = cantidadDiversionInt;
+                // (4) SUEÑO ...
+                int cantidadSuenoInt = Integer.parseInt(sueno_juego.getText().toString());
+                cantidadSuenoInt = cantidadSuenoInt - 20;
+                if (cantidadSuenoInt<0){ cantidadSuenoInt = 0; }
+                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
+                sueno_juego.setText(cantidadSuenoString);
+                lvlSueno = cantidadSuenoInt;
+            }
+            else{
+                Toast pouNoPreparadoParaJugar = Toast.makeText(Activity_Pou_Juego.this, "¡"+data_nombrePou+", mejora la Salud de tu Pou para Jugar!", Toast.LENGTH_SHORT);
+                pouNoPreparadoParaJugar.show();
+            }
+        }
     }
 }

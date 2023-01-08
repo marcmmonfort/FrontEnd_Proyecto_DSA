@@ -184,6 +184,8 @@ public class Activity_Pou_Armario extends AppCompatActivity {
             posee_cerveza = infoRecibida.getString("pasarPoseeCerveza");
             posee_boina = infoRecibida.getString("pasarPoseeBoina");
             posee_polo = infoRecibida.getString("pasarPoseePolo");
+
+            recordPou= Integer.parseInt(infoRecibida.getString("pasarRecordPou"));
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -304,6 +306,8 @@ public class Activity_Pou_Armario extends AppCompatActivity {
                 myIntent1.putExtra("pasarPoseeBoina",posee_boina);
                 myIntent1.putExtra("pasarPoseePolo",posee_polo);
 
+                myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
+
                 Activity_Pou_Armario.this.startActivity(myIntent1);
             }
         });
@@ -353,6 +357,8 @@ public class Activity_Pou_Armario extends AppCompatActivity {
                 myIntent2.putExtra("pasarPoseeCerveza",posee_cerveza);
                 myIntent2.putExtra("pasarPoseeBoina",posee_boina);
                 myIntent2.putExtra("pasarPoseePolo",posee_polo);
+
+                myIntent2.putExtra("pasarRecordPou",Integer.toString(recordPou));
 
                 Activity_Pou_Armario.this.startActivity(myIntent2);
             }
