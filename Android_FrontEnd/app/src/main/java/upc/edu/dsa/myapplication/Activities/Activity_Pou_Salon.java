@@ -30,6 +30,11 @@ public class Activity_Pou_Salon extends AppCompatActivity{
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // VARIABLES GLOBALES DEL POU QUE SE PASAN ENTRE LAS ACTIVITIES.
+    String data_pouId = "marc";
+    String data_nombrePou = "Marc";
+    String data_nacimientoPou = "28/10/2001";
+    String data_correoPou = "marc@gmail.com";
+    int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
     int lvlDiversion = 200;
@@ -46,10 +51,22 @@ public class Activity_Pou_Salon extends AppCompatActivity{
     int amountDiversion = 1;
     int amountSueno = 1;
     String pouEstado = "normal";
-    String pouCamiseta = "fcb";
+    String pouCamiseta = "spain";
     String pouBambas = "veja";
-    String pouGafas = "ciclismo";
+    String pouGafas = "rayban";
     String pouGorro = "cerveza";
+    String posee_pijama = "NO";
+    String posee_fcb = "NO";
+    String posee_spain = "NO";
+    String posee_messi = "NO";
+    String posee_rafa = "NO";
+    String posee_veja = "NO";
+    String posee_fiesta = "NO";
+    String posee_rayban = "NO";
+    String posee_ciclismo = "NO";
+    String posee_cerveza = "NO";
+    String posee_boina = "NO";
+    String posee_polo = "NO";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private void startTimer()
@@ -147,8 +164,6 @@ public class Activity_Pou_Salon extends AppCompatActivity{
         diversion_salon.setText(Integer.toString(lvlDiversion));
         sueno_salon.setText(Integer.toString(lvlSueno));
         dinero_salon.setText(Integer.toString(amountDinero));
-
-        // Place HERE the Dood, Drinks and Potions declared (if necessary).
 
         String refEstado = "outfit_base_"+pouEstado;
         estado_salon.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
