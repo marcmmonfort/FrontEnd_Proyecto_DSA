@@ -266,7 +266,7 @@ public class Activity_Pou_Tienda extends AppCompatActivity {
     public void abrirTienda(View view) throws IOException {
         if (view==btn_abrirTienda){
             StyleableToast.makeText(this, "Abriendo la Tienda Web", R.style.exampleToast).show();
-            Intent abrirWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/"));
+            Intent abrirWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=BqucGvLxrEk"));
             startActivity(abrirWeb);
         }
     }

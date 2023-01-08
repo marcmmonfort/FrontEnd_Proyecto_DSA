@@ -1,0 +1,41 @@
+package upc.edu.dsa.myapplication.Entities.VO;
+
+public class InformacionPou {
+    String data_pouId;
+    String data_nombrePou;
+    String data_nacimientoPou;
+    String data_correoPou;
+    int recordPou;
+    int lvlHambre;
+    int lvlSalud;
+    int lvlDiversion;
+    int lvlSueno;
+    int amountDinero;
+    int amountCandy;
+    int amountManzana;
+    int amountPizza;
+    int amountAgua;
+    int amountAquarius;
+    int amountRoncola;
+    int amountHambre;
+    int amountSalud;
+    int amountDiversion;
+    int amountSueno;
+    String pouEstado;
+    String pouCamiseta;
+    String pouBambas;
+    String pouGafas;
+    String pouGorro;
+    String posee_pijama;
+    String posee_fcb;
+    String posee_spain;
+    String posee_messi;
+    String posee_rafa;
+    String posee_veja;
+    String posee_fiesta;
+    String posee_rayban;
+    String posee_ciclismo;
+    String posee_cerveza;
+    String posee_boina;
+    String posee_polo;
+}
