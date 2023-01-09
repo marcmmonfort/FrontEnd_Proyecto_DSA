@@ -25,7 +25,7 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
 
     TextView registro_textLasAventurasDe;
     Button registro_botonHacerRegistro, registro_backHome;
-    TextInputEditText registro_nacimientoPou, registro_correoPou, registro_correoPouConfirmar, registro_nombrePou, registro_pouId, registro_passwordPou, registro_passwordPouConfirmar;
+    TextInputEditText registro_nacimientoPou, registro_correoPou, registro_nombrePou, registro_pouId, registro_passwordPou, registro_passwordPouConfirmar;
 
     PouServices pouServices;
 
@@ -38,6 +38,7 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
         registro_textLasAventurasDe = findViewById(R.id.registro_textLasAventurasDe);
 
         registro_botonHacerRegistro = (Button) findViewById(R.id.registro_botonHacerRegistro);
+        registro_backHome = (Button) findViewById(R.id.registro_backHome);
 
         registro_nacimientoPou = findViewById(R.id.registro_nacimientoPou);
         registro_correoPou = findViewById(R.id.registro_correoPou);
@@ -54,12 +55,8 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
 
     public void registroPou(View view) {
 
-        if ((registro_correoPou.getText())!=(registro_correoPouConfirmar.getText())){
-            // Correos diferentes. Se avisa y no se procede con el registro.
-            StyleableToast.makeText(Activity_Pou_Register.this, "¡Los correos no coinciden!", R.style.exampleToast).show();
-
-        }
-        if ((registro_passwordPou.getText())!=(registro_passwordPouConfirmar.getText())){
+        StyleableToast.makeText(Activity_Pou_Register.this, "Contraseñas:" + registro_passwordPou.getText() + registro_passwordPouConfirmar.getText() + ".", R.style.exampleToast).show();
+        if (!registro_passwordPou.getText().toString().equals(registro_passwordPouConfirmar.getText().toString())){
             // Contraseñas diferentes. Se avisa y no se procede con el registro.
             StyleableToast.makeText(Activity_Pou_Register.this, "¡Las contraseñas no coinciden!", R.style.exampleToast).show();
 

@@ -39,6 +39,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
     String data_nombrePou = "Marc";
     String data_nacimientoPou = "28/10/2001";
     String data_correoPou = "marc@gmail.com";
+    String data_passwordPou = "Calella";
     int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
@@ -165,6 +166,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
             data_nombrePou = infoRecibida.getString("pasarDataNombrePou");
             data_nacimientoPou = infoRecibida.getString("pasarDataNacimientoPou");
             data_correoPou = infoRecibida.getString("pasarDataCorreoPou");
+            data_passwordPou = infoRecibida.getString("pasarDataPasswordPou");
 
             posee_pijama = infoRecibida.getString("pasarPoseePijama");
             posee_fcb = infoRecibida.getString("pasarPoseeFcb");
@@ -235,6 +237,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
                 myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                 myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent1.putExtra("pasarDataPasswordPou", data_passwordPou);
 
                 myIntent1.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
@@ -287,6 +290,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 myIntent2.putExtra("pasarDataNombrePou",data_nombrePou);
                 myIntent2.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                 myIntent2.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent2.putExtra("pasarDataPasswordPou", data_passwordPou);
 
                 myIntent2.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent2.putExtra("pasarPoseeFcb",posee_fcb);

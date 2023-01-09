@@ -44,6 +44,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
     String data_nombrePou = "Marc";
     String data_nacimientoPou = "28/10/2001";
     String data_correoPou = "marc@gmail.com";
+    String data_passwordPou = "Calella";
     int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
@@ -63,20 +64,20 @@ public class Activity_Pou_Info extends AppCompatActivity {
     String pouEstado = "normal";
     String pouCamiseta = "spain";
     String pouBambas = "veja";
-    String pouGafas = "rayban";
+    String pouGafas = "nada";
     String pouGorro = "cerveza";
     String posee_pijama = "NO";
     String posee_fcb = "NO";
-    String posee_spain = "NO";
+    String posee_spain = "YES";
     String posee_messi = "NO";
-    String posee_rafa = "NO";
+    String posee_rafa = "YES";
     String posee_veja = "NO";
     String posee_fiesta = "NO";
-    String posee_rayban = "NO";
+    String posee_rayban = "YES";
     String posee_ciclismo = "NO";
-    String posee_cerveza = "NO";
+    String posee_cerveza = "YES";
     String posee_boina = "NO";
-    String posee_polo = "NO";
+    String posee_polo = "YES";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @SuppressLint({"CutPasteId", "SetTextI18n"})

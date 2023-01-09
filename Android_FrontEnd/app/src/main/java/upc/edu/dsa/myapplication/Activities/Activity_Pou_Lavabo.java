@@ -52,6 +52,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
     String data_nombrePou = "Marc";
     String data_nacimientoPou = "28/10/2001";
     String data_correoPou = "marc@gmail.com";
+    String data_passwordPou = "Calella";
     int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
@@ -71,20 +72,20 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
     String pouEstado = "normal";
     String pouCamiseta = "spain";
     String pouBambas = "veja";
-    String pouGafas = "rayban";
+    String pouGafas = "nada";
     String pouGorro = "cerveza";
     String posee_pijama = "NO";
     String posee_fcb = "NO";
-    String posee_spain = "NO";
+    String posee_spain = "YES";
     String posee_messi = "NO";
-    String posee_rafa = "NO";
+    String posee_rafa = "YES";
     String posee_veja = "NO";
     String posee_fiesta = "NO";
-    String posee_rayban = "NO";
+    String posee_rayban = "YES";
     String posee_ciclismo = "NO";
-    String posee_cerveza = "NO";
+    String posee_cerveza = "YES";
     String posee_boina = "NO";
-    String posee_polo = "NO";
+    String posee_polo = "YES";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private void startTimer()
@@ -213,7 +214,10 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
         sueno_lavabo.setText(Integer.toString(lvlSueno));
         dinero_lavabo.setText(Integer.toString(amountDinero));
 
-        // Place HERE the Dood, Drinks and Potions declared (if necessary).
+        txt_cantidad_diversion.setText(Integer.toString(amountDiversion));
+        txt_cantidad_salud.setText(Integer.toString(amountSalud));
+        txt_cantidad_hambre.setText(Integer.toString(amountHambre));
+        txt_cantidad_sueno.setText(Integer.toString(amountSueno));
 
         String refEstado = "outfit_base_"+pouEstado;
         estado_lavabo.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
@@ -343,6 +347,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_sueno.setText(cantidadString);
+                amountSueno = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_lavabo.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;
@@ -382,6 +387,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_diversion.setText(cantidadString);
+                amountDiversion = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_lavabo.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;
@@ -421,6 +427,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_salud.setText(cantidadString);
+                amountSalud = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_lavabo.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;
@@ -460,6 +467,7 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_hambre.setText(cantidadString);
+                amountHambre = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_lavabo.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;

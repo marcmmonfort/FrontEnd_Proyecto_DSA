@@ -53,6 +53,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
     String data_nombrePou = "Marc";
     String data_nacimientoPou = "28/10/2001";
     String data_correoPou = "marc@gmail.com";
+    String data_passwordPou = "Calella";
     int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
@@ -72,20 +73,20 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
     String pouEstado = "normal";
     String pouCamiseta = "spain";
     String pouBambas = "veja";
-    String pouGafas = "rayban";
+    String pouGafas = "nada";
     String pouGorro = "cerveza";
     String posee_pijama = "NO";
     String posee_fcb = "NO";
-    String posee_spain = "NO";
+    String posee_spain = "YES";
     String posee_messi = "NO";
-    String posee_rafa = "NO";
+    String posee_rafa = "YES";
     String posee_veja = "NO";
     String posee_fiesta = "NO";
-    String posee_rayban = "NO";
+    String posee_rayban = "YES";
     String posee_ciclismo = "NO";
-    String posee_cerveza = "NO";
+    String posee_cerveza = "YES";
     String posee_boina = "NO";
-    String posee_polo = "NO";
+    String posee_polo = "YES";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private void startTimer()
@@ -218,7 +219,12 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
         sueno_cocina.setText(Integer.toString(lvlSueno));
         dinero_cocina.setText(Integer.toString(amountDinero));
 
-        // Place HERE the Dood, Drinks and Potions declared (if necessary).
+        txt_cantidad_apple.setText(Integer.toString(amountManzana));
+        txt_cantidad_candy.setText(Integer.toString(amountCandy));
+        txt_cantidad_pizza.setText(Integer.toString(amountPizza));
+        txt_cantidad_roncola.setText(Integer.toString(amountRoncola));
+        txt_cantidad_agua.setText(Integer.toString(amountAgua));
+        txt_cantidad_aquarius.setText(Integer.toString(amountAquarius));
 
         String refEstado = "outfit_base_"+pouEstado;
         estado_cocina.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
@@ -348,6 +354,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_roncola.setText(cantidadString);
+                amountRoncola = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;
@@ -387,6 +394,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_aquarius.setText(cantidadString);
+                amountAquarius = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;
@@ -426,6 +434,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_agua.setText(cantidadString);
+                amountAgua = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;
@@ -465,6 +474,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_pizza.setText(cantidadString);
+                amountPizza = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;
@@ -504,6 +514,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_candy.setText(cantidadString);
+                amountCandy = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;
@@ -543,6 +554,7 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             else{ // Si hay suficientes ...
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_apple.setText(cantidadString);
+                amountManzana = cantidadInt;
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_cocina.getText().toString());
                 cantidadHambreInt = cantidadHambreInt + 20;

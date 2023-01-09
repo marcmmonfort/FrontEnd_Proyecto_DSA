@@ -18,6 +18,7 @@ import retrofit2.Response;
 import android.widget.Toast;
 
 import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
+import upc.edu.dsa.myapplication.Entities.VO.InformacionPou;
 import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
@@ -37,6 +38,7 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
     String data_nombrePou = "Marc";
     String data_nacimientoPou = "28/10/2001";
     String data_correoPou = "marc@gmail.com";
+    String data_passwordPou = "Calella";
     int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
@@ -116,58 +118,114 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
                         Obj_editor.putBoolean("isLogged",true);
                         Obj_editor.apply();
 
-                        // Login del Pou satisfactorio. Nos dirigimos al menú principal.
-                        StyleableToast.makeText(Activity_Pou_Login.this, "¡Has accedido correctamente a tu Pou!", R.style.exampleToast).show();
-                        // Nos vamos al Home.
-                        Intent myIntent1 = new Intent(Activity_Pou_Login.this, Activity_Pou_Salon.class);
+                        //Petición para rellenar todos los parametros
+                        Call<InformacionPou> cargarDatos = pouServices.getInfoAndroidPou(nuevasCredenciales.getCorreoPou(), nuevasCredenciales.getPasswordPou());
+                        cargarDatos.enqueue(new Callback<InformacionPou>() {
+                            @Override
+                            public void onResponse(Call<InformacionPou> cargarDatos, Response<InformacionPou> respuestaDatos) {
+                                switch (respuestaDatos.code()) {
+                                    case 201:
+                                        InformacionPou datosPou = respuestaDatos.body();
+                                        data_pouId = datosPou.getData_pouId();
+                                        data_nombrePou = datosPou.getData_nombrePou();
+                                        data_nacimientoPou = datosPou.getData_nacimientoPou();
+                                        data_correoPou = datosPou.getData_correoPou();
+                                        recordPou = datosPou.getRecordPou();
+                                        lvlHambre = datosPou.getLvlHambre();
+                                        lvlSalud = datosPou.getLvlSalud();
+                                        lvlDiversion = datosPou.getLvlDiversion();
+                                        lvlSueno = datosPou.getLvlSueno();
+                                        amountDinero = datosPou.getAmountDinero();
+                                        amountCandy = datosPou.getAmountCandy();
+                                        amountManzana = datosPou.getAmountManzana();
+                                        amountPizza = datosPou.getAmountPizza();
+                                        amountAgua = datosPou.getAmountAgua();
+                                        amountAquarius = datosPou.getAmountAquarius();
+                                        amountRoncola = datosPou.getAmountRoncola();
+                                        amountHambre = datosPou.getAmountHambre();
+                                        amountSalud = datosPou.getAmountSalud();
+                                        amountDiversion = datosPou.getAmountDiversion();
+                                        amountSueno = datosPou.getAmountSueno();
+                                        pouCamiseta = datosPou.getPouCamiseta();
+                                        pouBambas = datosPou.getPouBambas();
+                                        pouGafas = datosPou.getPouGafas();
+                                        pouGorro = datosPou.getPouGorro();
+                                        posee_pijama = datosPou.getPosee_pijama();
+                                        posee_fcb = datosPou.getPosee_fcb();
+                                        posee_spain = datosPou.getPosee_spain();
+                                        posee_messi = datosPou.getPosee_messi();
+                                        posee_rafa = datosPou.getPosee_rafa();
+                                        posee_veja = datosPou.getPosee_veja();
+                                        posee_fiesta = datosPou.getPosee_fiesta();
+                                        posee_rayban = datosPou.getPosee_rayban();
+                                        posee_ciclismo = datosPou.getPosee_ciclismo();
+                                        posee_cerveza = datosPou.getPosee_cerveza();
+                                        posee_boina = datosPou.getPosee_boina();
+                                        StyleableToast.makeText(Activity_Pou_Login.this, "Boina:" + posee_polo, R.style.exampleToast).show();
+                                        posee_polo = datosPou.getPosee_polo();
 
-                        /*
-                        myIntent1.putExtra("pasarNivelHambre",Integer.toString(lvlHambre));
-                        myIntent1.putExtra("pasarNivelSalud",Integer.toString(lvlSalud));
-                        myIntent1.putExtra("pasarNivelDiversion",Integer.toString(lvlDiversion));
-                        myIntent1.putExtra("pasarNivelSueno",Integer.toString(lvlSueno));
-                        myIntent1.putExtra("pasarDinero",Integer.toString(amountDinero));
+                                        // Login del Pou satisfactorio. Nos dirigimos al menú principal.
+                                        StyleableToast.makeText(Activity_Pou_Login.this, "¡Has accedido correctamente a tu Pou!", R.style.exampleToast).show();
+                                        // Nos vamos al Home.
+                                        Intent myIntent1 = new Intent(Activity_Pou_Login.this, Activity_Pou_Salon.class);
 
-                        myIntent1.putExtra("pasarCandy",Integer.toString(amountCandy));
-                        myIntent1.putExtra("pasarManzana",Integer.toString(amountManzana));
-                        myIntent1.putExtra("pasarPizza",Integer.toString(amountPizza));
-                        myIntent1.putExtra("pasarAgua",Integer.toString(amountAgua));
-                        myIntent1.putExtra("pasarAquarius",Integer.toString(amountAquarius));
-                        myIntent1.putExtra("pasarRoncola",Integer.toString(amountRoncola));
 
-                        myIntent1.putExtra("pasarPocionHambre",Integer.toString(amountHambre));
-                        myIntent1.putExtra("pasarPocionSalud",Integer.toString(amountSalud));
-                        myIntent1.putExtra("pasarPocionDiversion",Integer.toString(amountDiversion));
-                        myIntent1.putExtra("pasarPocionSueno",Integer.toString(amountSueno));
+                                        myIntent1.putExtra("pasarNivelHambre",Integer.toString(lvlHambre));
+                                        myIntent1.putExtra("pasarNivelSalud",Integer.toString(lvlSalud));
+                                        myIntent1.putExtra("pasarNivelDiversion",Integer.toString(lvlDiversion));
+                                        myIntent1.putExtra("pasarNivelSueno",Integer.toString(lvlSueno));
+                                        myIntent1.putExtra("pasarDinero",Integer.toString(amountDinero));
 
-                        myIntent1.putExtra("pasarPouEstado",pouEstado);
-                        myIntent1.putExtra("pasarPouCamiseta",pouCamiseta);
-                        myIntent1.putExtra("pasarPouBambas",pouBambas);
-                        myIntent1.putExtra("pasarPouGafas",pouGafas);
-                        myIntent1.putExtra("pasarPouGorro",pouGorro);
+                                        myIntent1.putExtra("pasarCandy",Integer.toString(amountCandy));
+                                        myIntent1.putExtra("pasarManzana",Integer.toString(amountManzana));
+                                        myIntent1.putExtra("pasarPizza",Integer.toString(amountPizza));
+                                        myIntent1.putExtra("pasarAgua",Integer.toString(amountAgua));
+                                        myIntent1.putExtra("pasarAquarius",Integer.toString(amountAquarius));
+                                        myIntent1.putExtra("pasarRoncola",Integer.toString(amountRoncola));
 
-                        myIntent1.putExtra("pasarDataPouId",data_pouId);
-                        myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
-                        myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
-                        myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+                                        myIntent1.putExtra("pasarPocionHambre",Integer.toString(amountHambre));
+                                        myIntent1.putExtra("pasarPocionSalud",Integer.toString(amountSalud));
+                                        myIntent1.putExtra("pasarPocionDiversion",Integer.toString(amountDiversion));
+                                        myIntent1.putExtra("pasarPocionSueno",Integer.toString(amountSueno));
 
-                        myIntent1.putExtra("pasarPoseePijama",posee_pijama);
-                        myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
-                        myIntent1.putExtra("pasarPoseeSpain",posee_spain);
-                        myIntent1.putExtra("pasarPoseeMessi",posee_messi);
-                        myIntent1.putExtra("pasarPoseeRafa",posee_rafa);
-                        myIntent1.putExtra("pasarPoseeVeja",posee_veja);
-                        myIntent1.putExtra("pasarPoseeFiesta",posee_fiesta);
-                        myIntent1.putExtra("pasarPoseeRayban",posee_rayban);
-                        myIntent1.putExtra("pasarPoseeCiclismo",posee_ciclismo);
-                        myIntent1.putExtra("pasarPoseeCerveza",posee_cerveza);
-                        myIntent1.putExtra("pasarPoseeBoina",posee_boina);
-                        myIntent1.putExtra("pasarPoseePolo",posee_polo);
+                                        myIntent1.putExtra("pasarPouEstado",pouEstado);
+                                        myIntent1.putExtra("pasarPouCamiseta",pouCamiseta);
+                                        myIntent1.putExtra("pasarPouBambas",pouBambas);
+                                        myIntent1.putExtra("pasarPouGafas",pouGafas);
+                                        myIntent1.putExtra("pasarPouGorro",pouGorro);
 
-                        myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
-                        */
+                                        myIntent1.putExtra("pasarDataPouId",data_pouId);
+                                        StyleableToast.makeText(Activity_Pou_Login.this, "Pou ID:" + data_pouId, R.style.exampleToast).show();
+                                        myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
+                                        myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
+                                        myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
 
-                        Activity_Pou_Login.this.startActivity(myIntent1);
+                                        myIntent1.putExtra("pasarPoseePijama",posee_pijama);
+                                        myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
+                                        myIntent1.putExtra("pasarPoseeSpain",posee_spain);
+                                        myIntent1.putExtra("pasarPoseeMessi",posee_messi);
+                                        myIntent1.putExtra("pasarPoseeRafa",posee_rafa);
+                                        myIntent1.putExtra("pasarPoseeVeja",posee_veja);
+                                        myIntent1.putExtra("pasarPoseeFiesta",posee_fiesta);
+                                        myIntent1.putExtra("pasarPoseeRayban",posee_rayban);
+                                        myIntent1.putExtra("pasarPoseeCiclismo",posee_ciclismo);
+                                        myIntent1.putExtra("pasarPoseeCerveza",posee_cerveza);
+                                        myIntent1.putExtra("pasarPoseeBoina",posee_boina);
+                                        myIntent1.putExtra("pasarPoseePolo",posee_polo);
+
+                                        myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
+
+
+                                        Activity_Pou_Login.this.startActivity(myIntent1);
+                                }
+                            }
+                            @Override
+                            public void onFailure(Call<InformacionPou> cargarDatos, Throwable t) {
+                                Log.d("POU"," onFailure", t);
+                                StyleableToast.makeText(Activity_Pou_Login.this, "¡Error!", R.style.exampleToast).show();
+                            }
+                        });
+
                         break;
                     case 404:
                         // El correo no existe. Nos dirigimos al registro.
