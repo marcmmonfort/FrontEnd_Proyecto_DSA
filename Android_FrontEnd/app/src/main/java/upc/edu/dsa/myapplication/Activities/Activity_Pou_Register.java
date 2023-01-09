@@ -103,5 +103,7 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
     }
 
     @Override
-    public void onClick(View view) {}
+    public void onClick(View view) {
+
+    }
 }
