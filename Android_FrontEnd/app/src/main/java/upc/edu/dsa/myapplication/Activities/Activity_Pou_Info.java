@@ -78,6 +78,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
     String posee_cerveza = "YES";
     String posee_boina = "NO";
     String posee_polo = "YES";
+    String activityOrigen = "Juego";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @SuppressLint({"CutPasteId", "SetTextI18n"})
@@ -138,6 +139,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
             data_nombrePou = infoRecibida.getString("pasarDataNombrePou");
             data_nacimientoPou = infoRecibida.getString("pasarDataNacimientoPou");
             data_correoPou = infoRecibida.getString("pasarDataCorreoPou");
+            data_passwordPou = infoRecibida.getString("pasarDataPasswordPou");
 
             posee_pijama = infoRecibida.getString("pasarPoseePijama");
             posee_fcb = infoRecibida.getString("pasarPoseeFcb");
@@ -153,6 +155,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
             posee_polo = infoRecibida.getString("pasarPoseePolo");
 
             recordPou = Integer.parseInt(infoRecibida.getString("pasarRecordPou"));
+            activityOrigen =infoRecibida.getString("pasarActividadOrigen");
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -202,6 +205,8 @@ public class Activity_Pou_Info extends AppCompatActivity {
                 myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
                 myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                 myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent1.putExtra("pasarDataPasswordPou", data_passwordPou);
+
 
                 myIntent1.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
@@ -217,6 +222,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
                 myIntent1.putExtra("pasarPoseePolo",posee_polo);
 
                 myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
+                myIntent1.putExtra("pasarActividadOrigen",activityOrigen);
 
                 Activity_Pou_Info.this.startActivity(myIntent1);
             }
@@ -254,6 +260,8 @@ public class Activity_Pou_Info extends AppCompatActivity {
                 myIntent2.putExtra("pasarDataNombrePou",data_nombrePou);
                 myIntent2.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                 myIntent2.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent2.putExtra("pasarDataPasswordPou", data_passwordPou);
+
 
                 myIntent2.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent2.putExtra("pasarPoseeFcb",posee_fcb);
@@ -269,6 +277,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
                 myIntent2.putExtra("pasarPoseePolo",posee_polo);
 
                 myIntent2.putExtra("pasarRecordPou",Integer.toString(recordPou));
+                myIntent2.putExtra("pasarActividadOrigen",activityOrigen);
 
                 Activity_Pou_Info.this.startActivity(myIntent2);
             }
