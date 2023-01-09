@@ -18,6 +18,7 @@ import retrofit2.Response;
 import android.widget.Toast;
 
 import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
+import upc.edu.dsa.myapplication.Entities.VO.InformacionPou;
 import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
@@ -37,6 +38,7 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
     String data_nombrePou = "Marc";
     String data_nacimientoPou = "28/10/2001";
     String data_correoPou = "marc@gmail.com";
+    String data_passwordPou = "Calella";
     int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
@@ -70,6 +72,7 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
     String posee_cerveza = "YES";
     String posee_boina = "NO";
     String posee_polo = "YES";
+    String activityOrigen = "Menu";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     PouServices pouServices;
@@ -116,12 +119,15 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
                         Obj_editor.putBoolean("isLogged",true);
                         Obj_editor.apply();
 
+                        data_correoPou = login_correoPou.getText().toString();
+                        data_passwordPou = login_passwordPou.getText().toString();
+
                         // Login del Pou satisfactorio. Nos dirigimos al menú principal.
                         StyleableToast.makeText(Activity_Pou_Login.this, "¡Has accedido correctamente a tu Pou!", R.style.exampleToast).show();
                         // Nos vamos al Home.
                         Intent myIntent1 = new Intent(Activity_Pou_Login.this, Activity_Pou_Salon.class);
 
-                        /*
+
                         myIntent1.putExtra("pasarNivelHambre",Integer.toString(lvlHambre));
                         myIntent1.putExtra("pasarNivelSalud",Integer.toString(lvlSalud));
                         myIntent1.putExtra("pasarNivelDiversion",Integer.toString(lvlDiversion));
@@ -150,6 +156,7 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
                         myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
                         myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                         myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+                        myIntent1.putExtra("pasarDataPasswordPou",data_passwordPou);
 
                         myIntent1.putExtra("pasarPoseePijama",posee_pijama);
                         myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
@@ -165,9 +172,12 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
                         myIntent1.putExtra("pasarPoseePolo",posee_polo);
 
                         myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
-                        */
+                        myIntent1.putExtra("pasarActividadOrigen", activityOrigen);
+
+
 
                         Activity_Pou_Login.this.startActivity(myIntent1);
+
                         break;
                     case 404:
                         // El correo no existe. Nos dirigimos al registro.

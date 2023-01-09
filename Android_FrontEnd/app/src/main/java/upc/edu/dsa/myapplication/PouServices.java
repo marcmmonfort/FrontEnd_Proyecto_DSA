@@ -2,6 +2,7 @@ package upc.edu.dsa.myapplication;
 
 import java.util.List;
 
+import retrofit2.http.Path;
 import upc.edu.dsa.myapplication.Entities.*;
 import upc.edu.dsa.myapplication.Activities.*;
 import upc.edu.dsa.myapplication.Entities.*;
@@ -11,6 +12,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import upc.edu.dsa.myapplication.Entities.VO.InformacionPou;
 
 public interface PouServices {
 
@@ -30,8 +32,8 @@ public interface PouServices {
 
     // UBICACIÓN: Activity_Pou_Login.
     // DESCRIPCIÓN: Se obtienen todos los parámetros del Pou y se pasan al salón cuando el Login se hace correctamente.
-    // @GET("/dsaApp/pougame/pou/{idUser}")
-    // Call<InformacionPou> obtenerInformacionPou(@Path("pouId") String pouId);
+    @GET("/dsaApp/pougame/pou/cargarDatos/{gmail}/{password}")
+    Call<InformacionPou> getInfoAndroidPou(@Path("gmail") String gmail, @Path("password") String password);
 
     // UBICACIÓN: Activity_Pou_Salon / Activity_Pou_Info / Activity_Pou_Juego / Activity_Pou_Tienda.
     // DESCRIPCIÓN: Se guardan todos los parámetros del Pou al pulsar el botón de Guardar Partida / al hacer Logout / al iniciar el Juego / cuando arrancas la Web.

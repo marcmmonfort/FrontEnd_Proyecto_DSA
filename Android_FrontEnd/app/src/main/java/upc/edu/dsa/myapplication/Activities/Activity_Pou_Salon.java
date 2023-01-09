@@ -6,10 +6,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
 import java.io.IOException;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import upc.edu.dsa.myapplication.Entities.VO.InformacionPou;
+import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
 import upc.edu.dsa.myapplication.R;
@@ -39,6 +46,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
     String data_nombrePou = "Marc";
     String data_nacimientoPou = "28/10/2001";
     String data_correoPou = "marc@gmail.com";
+    String data_passwordPou = "Calella";
     int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
@@ -72,6 +80,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
     String posee_cerveza = "YES";
     String posee_boina = "NO";
     String posee_polo = "YES";
+    String activityOrigen = "Juego";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     private void startTimer()
@@ -165,6 +174,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
             data_nombrePou = infoRecibida.getString("pasarDataNombrePou");
             data_nacimientoPou = infoRecibida.getString("pasarDataNacimientoPou");
             data_correoPou = infoRecibida.getString("pasarDataCorreoPou");
+            data_passwordPou = infoRecibida.getString("pasarDataPasswordPou");
 
             posee_pijama = infoRecibida.getString("pasarPoseePijama");
             posee_fcb = infoRecibida.getString("pasarPoseeFcb");
@@ -179,29 +189,109 @@ public class Activity_Pou_Salon extends AppCompatActivity{
             posee_boina = infoRecibida.getString("pasarPoseeBoina");
             posee_polo = infoRecibida.getString("pasarPoseePolo");
 
-            recordPou= Integer.parseInt(infoRecibida.getString("pasarRecordPou"));
+            recordPou = Integer.parseInt(infoRecibida.getString("pasarRecordPou"));
+            activityOrigen =infoRecibida.getString("pasarActividadOrigen");
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        // DECLARACIÓN INICIAL DE LOS DATOS.
-        hambre_salon.setText(Integer.toString(lvlHambre));
-        salud_salon.setText(Integer.toString(lvlSalud));
-        diversion_salon.setText(Integer.toString(lvlDiversion));
-        sueno_salon.setText(Integer.toString(lvlSueno));
-        dinero_salon.setText(Integer.toString(amountDinero));
+        if("Menu".equals(activityOrigen)){
+            pouServices = PouRetrofit.getInstance().getPouServices();
+            //Petición para rellenar todos los parametros
+            Call<InformacionPou> cargarDatos = pouServices.getInfoAndroidPou(data_correoPou, data_passwordPou);
+            cargarDatos.enqueue(new Callback<InformacionPou>() {
+                @Override
+                public void onResponse(Call<InformacionPou> cargarDatos, Response<InformacionPou> respuestaDatos) {
+                    switch (respuestaDatos.code()) {
+                        case 201:
+                            InformacionPou datosPou = respuestaDatos.body();
+                            data_pouId = datosPou.getData_pouId();
+                            data_nombrePou = datosPou.getData_nombrePou();
+                            data_nacimientoPou = datosPou.getData_nacimientoPou();
+                            data_correoPou = datosPou.getData_correoPou();
+                            recordPou = datosPou.getRecordPou();
+                            lvlHambre = datosPou.getLvlHambre();
+                            lvlSalud = datosPou.getLvlSalud();
+                            lvlDiversion = datosPou.getLvlDiversion();
+                            lvlSueno = datosPou.getLvlSueno();
+                            amountDinero = datosPou.getAmountDinero();
+                            amountCandy = datosPou.getAmountCandy();
+                            amountManzana = datosPou.getAmountManzana();
+                            amountPizza = datosPou.getAmountPizza();
+                            amountAgua = datosPou.getAmountAgua();
+                            amountAquarius = datosPou.getAmountAquarius();
+                            amountRoncola = datosPou.getAmountRoncola();
+                            amountHambre = datosPou.getAmountHambre();
+                            amountSalud = datosPou.getAmountSalud();
+                            amountDiversion = datosPou.getAmountDiversion();
+                            amountSueno = datosPou.getAmountSueno();
+                            pouCamiseta = datosPou.getPouCamiseta();
+                            pouBambas = datosPou.getPouBambas();
+                            pouGafas = datosPou.getPouGafas();
+                            pouGorro = datosPou.getPouGorro();
+                            posee_pijama = datosPou.getPosee_pijama();
+                            posee_fcb = datosPou.getPosee_fcb();
+                            posee_spain = datosPou.getPosee_spain();
+                            posee_messi = datosPou.getPosee_messi();
+                            posee_rafa = datosPou.getPosee_rafa();
+                            posee_veja = datosPou.getPosee_veja();
+                            posee_fiesta = datosPou.getPosee_fiesta();
+                            posee_rayban = datosPou.getPosee_rayban();
+                            posee_ciclismo = datosPou.getPosee_ciclismo();
+                            posee_cerveza = datosPou.getPosee_cerveza();
+                            posee_boina = datosPou.getPosee_boina();
+                            posee_polo = datosPou.getPosee_polo();
 
-        String refEstado = "outfit_base_"+pouEstado;
-        estado_salon.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
-        String refCamiseta = "outfit_camiseta_"+pouCamiseta;
-        camiseta_salon.setImageResource(getResources().getIdentifier(refCamiseta, "drawable", getPackageName()));
-        String refBambas = "outfit_bambas_"+pouBambas;
-        bambas_salon.setImageResource(getResources().getIdentifier(refBambas, "drawable", getPackageName()));
-        String refGafas = "outfit_gafas_"+pouGafas;
-        gafas_salon.setImageResource(getResources().getIdentifier(refGafas, "drawable", getPackageName()));
-        String refGorro = "outfit_gorra_"+pouGorro;
-        gorra_salon.setImageResource(getResources().getIdentifier(refGorro, "drawable", getPackageName()));
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                            // DECLARACIÓN INICIAL DE LOS DATOS.
+                            hambre_salon.setText(Integer.toString(lvlHambre));
+                            salud_salon.setText(Integer.toString(lvlSalud));
+                            diversion_salon.setText(Integer.toString(lvlDiversion));
+                            sueno_salon.setText(Integer.toString(lvlSueno));
+                            dinero_salon.setText(Integer.toString(amountDinero));
+
+                            String refEstado = "outfit_base_"+pouEstado;
+                            estado_salon.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
+                            String refCamiseta = "outfit_camiseta_"+pouCamiseta;
+                            camiseta_salon.setImageResource(getResources().getIdentifier(refCamiseta, "drawable", getPackageName()));
+                            String refBambas = "outfit_bambas_"+pouBambas;
+                            bambas_salon.setImageResource(getResources().getIdentifier(refBambas, "drawable", getPackageName()));
+                            String refGafas = "outfit_gafas_"+pouGafas;
+                            gafas_salon.setImageResource(getResources().getIdentifier(refGafas, "drawable", getPackageName()));
+                            String refGorro = "outfit_gorra_"+pouGorro;
+                            gorra_salon.setImageResource(getResources().getIdentifier(refGorro, "drawable", getPackageName()));
+                            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                    }
+                }
+                @Override
+                public void onFailure(Call<InformacionPou> cargarDatos, Throwable t) {
+                    Log.d("POU"," onFailure", t);
+                    StyleableToast.makeText(Activity_Pou_Salon.this, "¡Error!", R.style.exampleToast).show();
+                }
+            });
+            activityOrigen = "Juego";
+        }else{
+            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            // DECLARACIÓN INICIAL DE LOS DATOS.
+            hambre_salon.setText(Integer.toString(lvlHambre));
+            salud_salon.setText(Integer.toString(lvlSalud));
+            diversion_salon.setText(Integer.toString(lvlDiversion));
+            sueno_salon.setText(Integer.toString(lvlSueno));
+            dinero_salon.setText(Integer.toString(amountDinero));
+
+            String refEstado = "outfit_base_"+pouEstado;
+            estado_salon.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
+            String refCamiseta = "outfit_camiseta_"+pouCamiseta;
+            camiseta_salon.setImageResource(getResources().getIdentifier(refCamiseta, "drawable", getPackageName()));
+            String refBambas = "outfit_bambas_"+pouBambas;
+            bambas_salon.setImageResource(getResources().getIdentifier(refBambas, "drawable", getPackageName()));
+            String refGafas = "outfit_gafas_"+pouGafas;
+            gafas_salon.setImageResource(getResources().getIdentifier(refGafas, "drawable", getPackageName()));
+            String refGorro = "outfit_gorra_"+pouGorro;
+            gorra_salon.setImageResource(getResources().getIdentifier(refGorro, "drawable", getPackageName()));
+            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        }
+
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)  {
@@ -235,6 +325,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
                 myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                 myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent1.putExtra("pasarDataPasswordPou", data_passwordPou);
 
                 myIntent1.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
@@ -250,6 +341,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 myIntent1.putExtra("pasarPoseePolo",posee_polo);
 
                 myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
+                myIntent1.putExtra("pasarActividadOrigen",activityOrigen);
 
                 Activity_Pou_Salon.this.startActivity(myIntent1);
             }
@@ -287,6 +379,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 myIntent2.putExtra("pasarDataNombrePou",data_nombrePou);
                 myIntent2.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                 myIntent2.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent2.putExtra("pasarDataPasswordPou", data_passwordPou);
 
                 myIntent2.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent2.putExtra("pasarPoseeFcb",posee_fcb);
@@ -302,6 +395,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 myIntent2.putExtra("pasarPoseePolo",posee_polo);
 
                 myIntent2.putExtra("pasarRecordPou",Integer.toString(recordPou));
+                myIntent2.putExtra("pasarActividadOrigen",activityOrigen);
 
                 Activity_Pou_Salon.this.startActivity(myIntent2);
             }

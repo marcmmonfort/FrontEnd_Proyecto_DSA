@@ -51,6 +51,7 @@ public class Activity_Pou_Armario extends AppCompatActivity {
     String data_nombrePou = "Marc";
     String data_nacimientoPou = "28/10/2001";
     String data_correoPou = "marc@gmail.com";
+    String data_passwordPou = "Calella";
     int recordPou = 0;
     int lvlHambre = 28;
     int lvlSalud = 10;
@@ -70,20 +71,21 @@ public class Activity_Pou_Armario extends AppCompatActivity {
     String pouEstado = "normal";
     String pouCamiseta = "spain";
     String pouBambas = "veja";
-    String pouGafas = "rayban";
+    String pouGafas = "nada";
     String pouGorro = "cerveza";
     String posee_pijama = "NO";
     String posee_fcb = "NO";
-    String posee_spain = "NO";
+    String posee_spain = "YES";
     String posee_messi = "NO";
-    String posee_rafa = "NO";
+    String posee_rafa = "YES";
     String posee_veja = "NO";
     String posee_fiesta = "NO";
-    String posee_rayban = "NO";
+    String posee_rayban = "YES";
     String posee_ciclismo = "NO";
-    String posee_cerveza = "NO";
+    String posee_cerveza = "YES";
     String posee_boina = "NO";
-    String posee_polo = "NO";
+    String posee_polo = "YES";
+    String activityOrigen = "Juego";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @SuppressLint("SetTextI18n")
@@ -173,6 +175,7 @@ public class Activity_Pou_Armario extends AppCompatActivity {
             data_nombrePou = infoRecibida.getString("pasarDataNombrePou");
             data_nacimientoPou = infoRecibida.getString("pasarDataNacimientoPou");
             data_correoPou = infoRecibida.getString("pasarDataCorreoPou");
+            data_passwordPou = infoRecibida.getString("pasarDataPasswordPou");
 
             posee_pijama = infoRecibida.getString("pasarPoseePijama");
             posee_fcb = infoRecibida.getString("pasarPoseeFcb");
@@ -188,6 +191,7 @@ public class Activity_Pou_Armario extends AppCompatActivity {
             posee_polo = infoRecibida.getString("pasarPoseePolo");
 
             recordPou= Integer.parseInt(infoRecibida.getString("pasarRecordPou"));
+            activityOrigen =infoRecibida.getString("pasarActividadOrigen");
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -294,6 +298,8 @@ public class Activity_Pou_Armario extends AppCompatActivity {
                 myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
                 myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                 myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent1.putExtra("pasarDataPasswordPou", data_passwordPou);
+
 
                 myIntent1.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
@@ -309,6 +315,7 @@ public class Activity_Pou_Armario extends AppCompatActivity {
                 myIntent1.putExtra("pasarPoseePolo",posee_polo);
 
                 myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
+                myIntent1.putExtra("pasarActividadOrigen",activityOrigen);
 
                 Activity_Pou_Armario.this.startActivity(myIntent1);
             }
@@ -346,6 +353,8 @@ public class Activity_Pou_Armario extends AppCompatActivity {
                 myIntent2.putExtra("pasarDataNombrePou",data_nombrePou);
                 myIntent2.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
                 myIntent2.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent2.putExtra("pasarDataPasswordPou", data_passwordPou);
+
 
                 myIntent2.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent2.putExtra("pasarPoseeFcb",posee_fcb);
@@ -361,6 +370,7 @@ public class Activity_Pou_Armario extends AppCompatActivity {
                 myIntent2.putExtra("pasarPoseePolo",posee_polo);
 
                 myIntent2.putExtra("pasarRecordPou",Integer.toString(recordPou));
+                myIntent2.putExtra("pasarActividadOrigen",activityOrigen);
 
                 Activity_Pou_Armario.this.startActivity(myIntent2);
             }
