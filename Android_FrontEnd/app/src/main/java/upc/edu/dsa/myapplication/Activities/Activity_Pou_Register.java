@@ -55,7 +55,6 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
 
     public void registroPou(View view) {
 
-        StyleableToast.makeText(Activity_Pou_Register.this, "Contraseñas:" + registro_passwordPou.getText() + registro_passwordPouConfirmar.getText() + ".", R.style.exampleToast).show();
         if (!registro_passwordPou.getText().toString().equals(registro_passwordPouConfirmar.getText().toString())){
             // Contraseñas diferentes. Se avisa y no se procede con el registro.
             StyleableToast.makeText(Activity_Pou_Register.this, "¡Las contraseñas no coinciden!", R.style.exampleToast).show();

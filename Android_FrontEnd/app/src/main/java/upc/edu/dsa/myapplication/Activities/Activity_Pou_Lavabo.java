@@ -357,34 +357,17 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_sueno.setText(cantidadString);
                 amountSueno = cantidadInt;
-                // (1) HAMBRE ...
-                int cantidadHambreInt = Integer.parseInt(hambre_lavabo.getText().toString());
-                cantidadHambreInt = cantidadHambreInt + 20;
-                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
-                String cantidadHambreString = Integer.toString(cantidadHambreInt);
-                hambre_lavabo.setText(cantidadHambreString);
-                lvlHambre = cantidadHambreInt;
-                // (2) SALUD ...
-                int cantidadSaludInt = Integer.parseInt(salud_lavabo.getText().toString());
-                cantidadSaludInt = cantidadSaludInt + 20;
-                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
-                String cantidadSaludString = Integer.toString(cantidadSaludInt);
-                salud_lavabo.setText(cantidadSaludString);
-                lvlSalud = cantidadSaludInt;
-                // (3) DIVERSIÓN ...
-                int cantidadDiversionInt = Integer.parseInt(diversion_lavabo.getText().toString());
-                cantidadDiversionInt = cantidadDiversionInt + 20;
-                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
-                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
-                diversion_lavabo.setText(cantidadDiversionString);
-                lvlDiversion = cantidadDiversionInt;
-                // (4) SUEÑO ...
+                // (1) HAMBRE ... +0
+                // (2) SALUD ... +0
+                // (3) DIVERSIÓN ... +0
+                // (4) SUEÑO ... +50
                 int cantidadSuenoInt = Integer.parseInt(sueno_lavabo.getText().toString());
-                cantidadSuenoInt = cantidadSuenoInt + 20;
+                cantidadSuenoInt = cantidadSuenoInt + 50;
                 if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
                 String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
                 sueno_lavabo.setText(cantidadSuenoString);
                 lvlSueno = cantidadSuenoInt;
+                setCaraPouSegunEstados (lvlHambre, lvlSalud, lvlDiversion, lvlSueno);
             }
         }
         if (view==btn_consumir_diversion){
@@ -397,34 +380,17 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_diversion.setText(cantidadString);
                 amountDiversion = cantidadInt;
-                // (1) HAMBRE ...
-                int cantidadHambreInt = Integer.parseInt(hambre_lavabo.getText().toString());
-                cantidadHambreInt = cantidadHambreInt + 20;
-                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
-                String cantidadHambreString = Integer.toString(cantidadHambreInt);
-                hambre_lavabo.setText(cantidadHambreString);
-                lvlHambre = cantidadHambreInt;
-                // (2) SALUD ...
-                int cantidadSaludInt = Integer.parseInt(salud_lavabo.getText().toString());
-                cantidadSaludInt = cantidadSaludInt + 20;
-                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
-                String cantidadSaludString = Integer.toString(cantidadSaludInt);
-                salud_lavabo.setText(cantidadSaludString);
-                lvlSalud = cantidadSaludInt;
-                // (3) DIVERSIÓN ...
+                // (1) HAMBRE ... +0
+                // (2) SALUD ... +0
+                // (3) DIVERSIÓN ... +50
                 int cantidadDiversionInt = Integer.parseInt(diversion_lavabo.getText().toString());
-                cantidadDiversionInt = cantidadDiversionInt + 20;
+                cantidadDiversionInt = cantidadDiversionInt + 50;
                 if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
                 String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
                 diversion_lavabo.setText(cantidadDiversionString);
                 lvlDiversion = cantidadDiversionInt;
-                // (4) SUEÑO ...
-                int cantidadSuenoInt = Integer.parseInt(sueno_lavabo.getText().toString());
-                cantidadSuenoInt = cantidadSuenoInt + 20;
-                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
-                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
-                sueno_lavabo.setText(cantidadSuenoString);
-                lvlSueno = cantidadSuenoInt;
+                // (4) SUEÑO ... +0
+                setCaraPouSegunEstados (lvlHambre, lvlSalud, lvlDiversion, lvlSueno);
             }
         }
         if (view==btn_consumir_salud){
@@ -437,34 +403,17 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_salud.setText(cantidadString);
                 amountSalud = cantidadInt;
-                // (1) HAMBRE ...
-                int cantidadHambreInt = Integer.parseInt(hambre_lavabo.getText().toString());
-                cantidadHambreInt = cantidadHambreInt + 20;
-                if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
-                String cantidadHambreString = Integer.toString(cantidadHambreInt);
-                hambre_lavabo.setText(cantidadHambreString);
-                lvlHambre = cantidadHambreInt;
-                // (2) SALUD ...
+                // (1) HAMBRE ... +0
+                // (2) SALUD ... +50
                 int cantidadSaludInt = Integer.parseInt(salud_lavabo.getText().toString());
-                cantidadSaludInt = cantidadSaludInt + 20;
+                cantidadSaludInt = cantidadSaludInt + 50;
                 if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
                 String cantidadSaludString = Integer.toString(cantidadSaludInt);
                 salud_lavabo.setText(cantidadSaludString);
                 lvlSalud = cantidadSaludInt;
-                // (3) DIVERSIÓN ...
-                int cantidadDiversionInt = Integer.parseInt(diversion_lavabo.getText().toString());
-                cantidadDiversionInt = cantidadDiversionInt + 20;
-                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
-                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
-                diversion_lavabo.setText(cantidadDiversionString);
-                lvlDiversion = cantidadDiversionInt;
-                // (4) SUEÑO ...
-                int cantidadSuenoInt = Integer.parseInt(sueno_lavabo.getText().toString());
-                cantidadSuenoInt = cantidadSuenoInt + 20;
-                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
-                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
-                sueno_lavabo.setText(cantidadSuenoString);
-                lvlSueno = cantidadSuenoInt;
+                // (3) DIVERSIÓN ... +0
+                // (4) SUEÑO ... +0
+                setCaraPouSegunEstados (lvlHambre, lvlSalud, lvlDiversion, lvlSueno);
             }
         }
         if (view==btn_consumir_hambre){
@@ -477,35 +426,35 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
                 String cantidadString = Integer.toString(cantidadInt);
                 txt_cantidad_hambre.setText(cantidadString);
                 amountHambre = cantidadInt;
-                // (1) HAMBRE ...
+                // (1) HAMBRE ... +50
                 int cantidadHambreInt = Integer.parseInt(hambre_lavabo.getText().toString());
-                cantidadHambreInt = cantidadHambreInt + 20;
+                cantidadHambreInt = cantidadHambreInt + 50;
                 if (cantidadHambreInt>100){ cantidadHambreInt = 100; }
                 String cantidadHambreString = Integer.toString(cantidadHambreInt);
                 hambre_lavabo.setText(cantidadHambreString);
                 lvlHambre = cantidadHambreInt;
-                // (2) SALUD ...
-                int cantidadSaludInt = Integer.parseInt(salud_lavabo.getText().toString());
-                cantidadSaludInt = cantidadSaludInt + 20;
-                if (cantidadSaludInt>100){ cantidadSaludInt = 100; }
-                String cantidadSaludString = Integer.toString(cantidadSaludInt);
-                salud_lavabo.setText(cantidadSaludString);
-                lvlSalud = cantidadSaludInt;
-                // (3) DIVERSIÓN ...
-                int cantidadDiversionInt = Integer.parseInt(diversion_lavabo.getText().toString());
-                cantidadDiversionInt = cantidadDiversionInt + 20;
-                if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
-                String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
-                diversion_lavabo.setText(cantidadDiversionString);
-                lvlDiversion = cantidadDiversionInt;
-                // (4) SUEÑO ...
-                int cantidadSuenoInt = Integer.parseInt(sueno_lavabo.getText().toString());
-                cantidadSuenoInt = cantidadSuenoInt + 20;
-                if (cantidadSuenoInt>100){ cantidadSuenoInt = 100; }
-                String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
-                sueno_lavabo.setText(cantidadSuenoString);
-                lvlSueno = cantidadSuenoInt;
+                // (2) SALUD ... +0
+                // (3) DIVERSIÓN ... +0
+                // (4) SUEÑO ... +0
+                setCaraPouSegunEstados (lvlHambre, lvlSalud, lvlDiversion, lvlSueno);
             }
         }
+    }
+
+    public void setCaraPouSegunEstados (int h, int sa, int d, int su){
+        if (d < 50){
+            pouEstado = "aburrido";
+        }
+        if (su < 50){
+            pouEstado = "cansado";
+        }
+        if (h < 50){
+            pouEstado = "hambriento";
+        }
+        if (sa < 50){
+            pouEstado = "enfermo";
+        }
+        String refEstado = "outfit_base_"+pouEstado;
+        estado_lavabo.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
     }
 }

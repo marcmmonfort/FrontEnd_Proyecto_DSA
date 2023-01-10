@@ -293,6 +293,11 @@ public class Activity_Pou_Juego extends AppCompatActivity{
 
                 StyleableToast.makeText(this, "¡Suerte!", R.style.exampleToast).show();
 
+                int rebajaHambreJuego = 20;
+                int rebajaSaludJuego = 20;
+                int aumentoDiversionJuego = 20;
+                int rebajaSuenoJuego = 20;
+
                 int recordJuegoInt = recordPou;
                 recordJuegoInt = recordJuegoInt + 1;
                 String recordJuegoStr = Integer.toString(recordJuegoInt);
@@ -301,36 +306,53 @@ public class Activity_Pou_Juego extends AppCompatActivity{
 
                 // (1) HAMBRE ...
                 int cantidadHambreInt = Integer.parseInt(hambre_juego.getText().toString());
-                cantidadHambreInt = cantidadHambreInt - 20;
+                cantidadHambreInt = cantidadHambreInt - rebajaHambreJuego;
                 if (cantidadHambreInt<0){ cantidadHambreInt = 0; }
                 String cantidadHambreString = Integer.toString(cantidadHambreInt);
                 hambre_juego.setText(cantidadHambreString);
                 lvlHambre = cantidadHambreInt;
                 // (2) SALUD ...
                 int cantidadSaludInt = Integer.parseInt(salud_juego.getText().toString());
-                cantidadSaludInt = cantidadSaludInt - 20;
+                cantidadSaludInt = cantidadSaludInt - rebajaSaludJuego;
                 if (cantidadSaludInt<0){ cantidadSaludInt = 0; }
                 String cantidadSaludString = Integer.toString(cantidadSaludInt);
                 salud_juego.setText(cantidadSaludString);
                 lvlSalud = cantidadSaludInt;
                 // (3) DIVERSIÓN ...
                 int cantidadDiversionInt = Integer.parseInt(diversion_juego.getText().toString());
-                cantidadDiversionInt = cantidadDiversionInt + 20;
+                cantidadDiversionInt = cantidadDiversionInt + aumentoDiversionJuego;
                 if (cantidadDiversionInt>100){ cantidadDiversionInt = 100; }
                 String cantidadDiversionString = Integer.toString(cantidadDiversionInt);
                 diversion_juego.setText(cantidadDiversionString);
                 lvlDiversion = cantidadDiversionInt;
                 // (4) SUEÑO ...
                 int cantidadSuenoInt = Integer.parseInt(sueno_juego.getText().toString());
-                cantidadSuenoInt = cantidadSuenoInt - 20;
+                cantidadSuenoInt = cantidadSuenoInt - rebajaSuenoJuego;
                 if (cantidadSuenoInt<0){ cantidadSuenoInt = 0; }
                 String cantidadSuenoString = Integer.toString(cantidadSuenoInt);
                 sueno_juego.setText(cantidadSuenoString);
                 lvlSueno = cantidadSuenoInt;
+
+                setCaraPouSegunEstados (lvlHambre, lvlSalud, lvlDiversion, lvlSueno);
             }
             else{
                 StyleableToast.makeText(this, "¡"+data_nombrePou+", mejora la Salud de tu Pou para Jugar!", R.style.exampleToast).show();
             }
+        }
+    }
+
+    public void setCaraPouSegunEstados (int h, int sa, int d, int su){
+        if (d < 50){
+            pouEstado = "aburrido";
+        }
+        if (su < 50){
+            pouEstado = "cansado";
+        }
+        if (h < 50){
+            pouEstado = "hambriento";
+        }
+        if (sa < 50){
+            pouEstado = "enfermo";
         }
     }
 }
