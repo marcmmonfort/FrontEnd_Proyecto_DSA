@@ -2,6 +2,7 @@ package upc.edu.dsa.myapplication;
 
 import java.util.List;
 
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import upc.edu.dsa.myapplication.Entities.*;
 import upc.edu.dsa.myapplication.Activities.*;
@@ -37,7 +38,8 @@ public interface PouServices {
 
     // UBICACIÓN: Activity_Pou_Salon / Activity_Pou_Info / Activity_Pou_Juego / Activity_Pou_Tienda.
     // DESCRIPCIÓN: Se guardan todos los parámetros del Pou al pulsar el botón de Guardar Partida / al hacer Logout / al iniciar el Juego / cuando arrancas la Web.
-    // @PUT
+    @PUT("/dsaApp/pougame/pou/actualizarDatos")
+    Call<Void> updateObjetoArmario(@Body InfoRegistro infoRegistro);
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // SERVICIOS ANTIGUOS DE NUESTRO JUEGO POU

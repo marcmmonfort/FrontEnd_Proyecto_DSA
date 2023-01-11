@@ -208,6 +208,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                             data_nombrePou = datosPou.getData_nombrePou();
                             data_nacimientoPou = datosPou.getData_nacimientoPou();
                             data_correoPou = datosPou.getData_correoPou();
+                            data_passwordPou = datosPou.getData_passwordPou();
                             recordPou = datosPou.getRecordPou();
                             lvlHambre = datosPou.getLvlHambre();
                             lvlSalud = datosPou.getLvlSalud();
