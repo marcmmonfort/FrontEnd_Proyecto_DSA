@@ -302,31 +302,74 @@ public class Activity_Pou_Info extends AppCompatActivity {
         if(!Objects.equals(data_correoPou, inputCorreoPou.getText().toString())){
 
             //Hacer la petición
-            //En caso de que funcione
-            //data_correoPou = inputCorreoPou.getText().toString();
-            //En caso de que no funcione toast de que no se ha cambiado el correo pero si el resto
-            //inputCorreoPou.setText(data_correoPou);
-
-        }
-
-        pouServices = PouRetrofit.getInstance().getPouServices();
-        //Petición para rellenar todos los parametros
-        Call<Void> cargarDatos = pouServices.updateObjetoArmario(new InformacionPou(data_pouId, data_nombrePou, data_nacimientoPou, data_correoPou, data_passwordPou, recordPou, lvlHambre, lvlSalud, lvlDiversion, lvlSueno, amountDinero, amountCandy, amountManzana, amountPizza, amountAgua, amountAquarius, amountRoncola, amountHambre, amountSalud, amountDiversion, amountSueno, pouCamiseta, pouBambas, pouGafas, pouGorro, posee_pijama, posee_fcb, posee_spain, posee_messi, posee_rafa, posee_veja, posee_fiesta, posee_rayban, posee_ciclismo, posee_cerveza, posee_boina, posee_polo));
-        cargarDatos.enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> cargarDatos, Response<Void> respuestaDatos) {
-                switch (respuestaDatos.code()) {
-                    case 201:
-                        StyleableToast.makeText(Activity_Pou_Info.this, "¡Se ha guardado toda la información y se ha hecho Logout del Pou!", R.style.exampleToast).show();
-
+            pouServices = PouRetrofit.getInstance().getPouServices();
+            Call<Void> comprobarMail = pouServices.comprobarCorreo(inputCorreoPou.getText().toString());
+            comprobarMail.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(Call<Void> comprobarMail, Response<Void> respuestaComprobacion) {
+                    switch (respuestaComprobacion.code()) {
+                        case 201:
+                            // Si el correo está disponible.
+                            data_correoPou = inputCorreoPou.getText().toString();
+                            pouServices = PouRetrofit.getInstance().getPouServices();
+                            Call<Void> cargarDatos1 = pouServices.updateObjetoArmario(new InformacionPou(data_pouId, data_nombrePou, data_nacimientoPou, data_correoPou, data_passwordPou, recordPou, lvlHambre, lvlSalud, lvlDiversion, lvlSueno, amountDinero, amountCandy, amountManzana, amountPizza, amountAgua, amountAquarius, amountRoncola, amountHambre, amountSalud, amountDiversion, amountSueno, pouCamiseta, pouBambas, pouGafas, pouGorro, posee_pijama, posee_fcb, posee_spain, posee_messi, posee_rafa, posee_veja, posee_fiesta, posee_rayban, posee_ciclismo, posee_cerveza, posee_boina, posee_polo));
+                            cargarDatos1.enqueue(new Callback<Void>() {
+                                @Override
+                                public void onResponse(Call<Void> cargarDatos1, Response<Void> respuestaDatos1) {
+                                    switch (respuestaDatos1.code()) {
+                                        case 201:
+                                            StyleableToast.makeText(Activity_Pou_Info.this, "¡Se ha guardado toda la información.", R.style.exampleToast).show();
+                                    }
+                                }
+                                @Override
+                                public void onFailure(Call<Void> cargarDatos1, Throwable t) {
+                                    Log.d("POU"," onFailure", t);
+                                    StyleableToast.makeText(Activity_Pou_Info.this, "¡Error!", R.style.exampleToast).show();
+                                }
+                            });
+                            SharedPreferences preferencias1=getSharedPreferences("datos",Context.MODE_PRIVATE);
+                            SharedPreferences.Editor Obj_editor1=preferencias1.edit();
+                            Obj_editor1.putString("mail",data_correoPou);
+                            Obj_editor1.putString("password",data_passwordPou);
+                            Obj_editor1.putBoolean("isLogged",true);
+                            Obj_editor1.apply();
+                            break;
+                        case 405:
+                            // Si el correo no está disponible.
+                            inputCorreoPou.setText(data_correoPou);
+                            StyleableToast.makeText(Activity_Pou_Info.this, "¡El correo introducido no está disponible!", R.style.exampleToast).show();
+                            pouServices = PouRetrofit.getInstance().getPouServices();
+                            Call<Void> cargarDatos2 = pouServices.updateObjetoArmario(new InformacionPou(data_pouId, data_nombrePou, data_nacimientoPou, data_correoPou, data_passwordPou, recordPou, lvlHambre, lvlSalud, lvlDiversion, lvlSueno, amountDinero, amountCandy, amountManzana, amountPizza, amountAgua, amountAquarius, amountRoncola, amountHambre, amountSalud, amountDiversion, amountSueno, pouCamiseta, pouBambas, pouGafas, pouGorro, posee_pijama, posee_fcb, posee_spain, posee_messi, posee_rafa, posee_veja, posee_fiesta, posee_rayban, posee_ciclismo, posee_cerveza, posee_boina, posee_polo));
+                            cargarDatos2.enqueue(new Callback<Void>() {
+                                @Override
+                                public void onResponse(Call<Void> cargarDatos2, Response<Void> respuestaDatos2) {
+                                    switch (respuestaDatos2.code()) {
+                                        case 201:
+                                            StyleableToast.makeText(Activity_Pou_Info.this, "¡Se ha guardado toda la información.", R.style.exampleToast).show();
+                                    }
+                                }
+                                @Override
+                                public void onFailure(Call<Void> cargarDatos2, Throwable t) {
+                                    Log.d("POU"," onFailure", t);
+                                    StyleableToast.makeText(Activity_Pou_Info.this, "¡Error!", R.style.exampleToast).show();
+                                }
+                            });
+                            SharedPreferences preferencias2=getSharedPreferences("datos",Context.MODE_PRIVATE);
+                            SharedPreferences.Editor Obj_editor2=preferencias2.edit();
+                            Obj_editor2.putString("mail",data_correoPou);
+                            Obj_editor2.putString("password",data_passwordPou);
+                            Obj_editor2.putBoolean("isLogged",true);
+                            Obj_editor2.apply();
+                            break;
+                    }
                 }
-            }
-            @Override
-            public void onFailure(Call<Void> cargarDatos, Throwable t) {
-                Log.d("POU"," onFailure", t);
-                StyleableToast.makeText(Activity_Pou_Info.this, "¡Error!", R.style.exampleToast).show();
-            }
-        });
+                @Override
+                public void onFailure(Call<Void> comprobarMail, Throwable t) {
+                    Log.d("POU"," onFailure", t);
+                    StyleableToast.makeText(Activity_Pou_Info.this, "¡Error!", R.style.exampleToast).show();
+                }
+            });
+        }
     }
 
     public void clickLogout(View view) throws IOException {
@@ -344,7 +387,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
                 switch (respuestaDatos.code()) {
                     case 201:
                         StyleableToast.makeText(Activity_Pou_Info.this, "¡Se ha guardado toda la información y se ha hecho Logout del Pou!", R.style.exampleToast).show();
-
+                        break;
                 }
             }
             @Override
