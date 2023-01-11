@@ -525,6 +525,9 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
         if (sa < 50){
             pouEstado = "enfermo";
         }
+        if ((sa >= 50)&&(h >= 50)&&(su >= 50)&&(d >= 50)){
+            pouEstado = "normal";
+        }
         String refEstado = "outfit_base_"+pouEstado;
         estado_cocina.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
     }
