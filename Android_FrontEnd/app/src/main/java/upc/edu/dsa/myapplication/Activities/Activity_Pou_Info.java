@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -19,6 +20,8 @@ import java.util.List;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import upc.edu.dsa.myapplication.Entities.ObjetoTienda;
 import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
@@ -289,7 +292,26 @@ public class Activity_Pou_Info extends AppCompatActivity {
         SharedPreferences.Editor Obj_editor=preferencias.edit();
         Obj_editor.putBoolean("isLogged",false);
         Obj_editor.apply();
-        StyleableToast.makeText(this, "¡Se ha hecho Logout del Pou!", R.style.exampleToast).show();
+
+        pouServices = PouRetrofit.getInstance().getPouServices();
+        //Petición para rellenar todos los parametros
+        Call<Void> cargarDatos = pouServices.updateObjetoArmario(new InformacionPou(data_pouId, data_nombrePou, data_nacimientoPou, data_correoPou, data_passwordPou, recordPou, lvlHambre, lvlSalud, lvlDiversion, lvlSueno, amountDinero, amountCandy, amountManzana, amountPizza, amountAgua, amountAquarius, amountRoncola, amountHambre, amountSalud, amountDiversion, amountSueno, pouCamiseta, pouBambas, pouGafas, pouGorro, posee_pijama, posee_fcb, posee_spain, posee_messi, posee_rafa, posee_veja, posee_fiesta, posee_rayban, posee_ciclismo, posee_cerveza, posee_boina, posee_polo));
+        cargarDatos.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> cargarDatos, Response<Void> respuestaDatos) {
+                switch (respuestaDatos.code()) {
+                    case 201:
+                        StyleableToast.makeText(Activity_Pou_Info.this, "¡Se ha guardado toda la información y se ha hecho Logout del Pou!", R.style.exampleToast).show();
+
+                }
+            }
+            @Override
+            public void onFailure(Call<Void> cargarDatos, Throwable t) {
+                Log.d("POU"," onFailure", t);
+                StyleableToast.makeText(Activity_Pou_Info.this, "¡Error!", R.style.exampleToast).show();
+            }
+        });
+
         Intent i = new Intent(Activity_Pou_Info.this, Activity_Pou_Home.class);
         startActivity(i);
     }
