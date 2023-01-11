@@ -8,6 +8,50 @@
     tools:context=".Activities.Activity_Pou_Lavabo">
 
     <ImageButton
+        android:id="@+id/btn_info_hambre"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toStartOf="@+id/btn_consumir_salud"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_hambre"
+        app:layout_constraintTop_toBottomOf="@+id/estado_lavabo"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_info_salud"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toStartOf="@+id/btn_consumir_diversion"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_salud"
+        app:layout_constraintTop_toBottomOf="@+id/estado_lavabo"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_info_diversion"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toStartOf="@+id/btn_consumir_sueno"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_diversion"
+        app:layout_constraintTop_toBottomOf="@+id/estado_lavabo"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_info_sueno"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toEndOf="@+id/btn_consumir_sueno"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_sueno"
+        app:layout_constraintTop_toBottomOf="@+id/estado_lavabo"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
         android:id="@+id/btn_consumir_sueno"
         android:layout_width="66dp"
         android:layout_height="66dp"
@@ -22,7 +66,7 @@
     <TextView
         android:id="@+id/txt_cantidad_sueno"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="18"
@@ -35,8 +79,8 @@
         android:id="@+id/btn_consumir_diversion"
         android:layout_width="66dp"
         android:layout_height="66dp"
-        android:onClick="clicarPociones"
         android:background="@drawable/articulo_consumible_diversion"
+        android:onClick="clicarPociones"
         app:layout_constraintStart_toEndOf="@+id/btn_consumir_salud"
         app:layout_constraintTop_toTopOf="@+id/btn_consumir_salud"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -44,7 +88,7 @@
     <TextView
         android:id="@+id/txt_cantidad_diversion"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="6"
@@ -66,7 +110,7 @@
     <TextView
         android:id="@+id/txt_cantidad_salud"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="20"
@@ -80,17 +124,16 @@
         android:layout_width="66dp"
         android:layout_height="66dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="10dp"
-        android:onClick="clicarPociones"
         android:background="@drawable/articulo_consumible_hambre"
+        android:onClick="clicarPociones"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/estado_lavabo"
+        app:layout_constraintTop_toBottomOf="@+id/btn_info_hambre"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/txt_cantidad_hambre"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="4"

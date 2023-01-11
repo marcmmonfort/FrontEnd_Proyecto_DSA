@@ -7,10 +7,76 @@
     android:background="@color/color3"
     tools:context=".Activities.Activity_Pou_Cocina">
 
+    <ImageButton
+        android:id="@+id/btn_info_roncola"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toEndOf="@+id/btn_consumir_roncola"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_roncola"
+        app:layout_constraintTop_toBottomOf="@+id/estado_cocina"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_info_aquarius"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toStartOf="@+id/btn_consumir_roncola"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_aquarius"
+        app:layout_constraintTop_toBottomOf="@+id/estado_cocina"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_info_agua"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toStartOf="@+id/btn_consumir_aquarius"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_agua"
+        app:layout_constraintTop_toBottomOf="@+id/estado_cocina"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_info_pizza"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toStartOf="@+id/btn_consumir_agua"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_pizza"
+        app:layout_constraintTop_toBottomOf="@+id/estado_cocina"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_info_manzana"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toStartOf="@+id/btn_consumir_pizza"
+        app:layout_constraintStart_toEndOf="@+id/btn_consumir_candy"
+        app:layout_constraintTop_toBottomOf="@+id/estado_cocina"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_info_candy"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/info_button_article"
+        android:onClick="darInfoArticulo"
+        app:layout_constraintEnd_toEndOf="@+id/btn_consumir_candy"
+        app:layout_constraintStart_toStartOf="@+id/btn_consumir_candy"
+        app:layout_constraintTop_toBottomOf="@+id/estado_cocina"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
     <TextView
         android:id="@+id/txt_cantidad_apple"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="4"
@@ -22,7 +88,7 @@
     <TextView
         android:id="@+id/txt_cantidad_roncola"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="10"
@@ -34,7 +100,7 @@
     <TextView
         android:id="@+id/txt_cantidad_aquarius"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="8"
@@ -46,7 +112,7 @@
     <TextView
         android:id="@+id/txt_cantidad_agua"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="120"
@@ -58,7 +124,7 @@
     <TextView
         android:id="@+id/txt_cantidad_pizza"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="22"
@@ -70,7 +136,7 @@
     <TextView
         android:id="@+id/txt_cantidad_candy"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="6"
@@ -84,9 +150,10 @@
         android:layout_width="66dp"
         android:layout_height="66dp"
         android:layout_marginEnd="9dp"
-        android:onClick="clicarConsumible"
         android:background="@drawable/articulo_consumible_roncola"
+        android:onClick="clicarConsumible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btn_consumir_aquarius"
         app:layout_constraintTop_toTopOf="@+id/btn_consumir_aquarius"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -126,11 +193,10 @@
         android:layout_width="66dp"
         android:layout_height="66dp"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="10dp"
-        android:onClick="clicarConsumible"
         android:background="@drawable/articulo_consumible_candy"
+        android:onClick="clicarConsumible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/estado_cocina"
+        app:layout_constraintTop_toBottomOf="@+id/btn_info_candy"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
