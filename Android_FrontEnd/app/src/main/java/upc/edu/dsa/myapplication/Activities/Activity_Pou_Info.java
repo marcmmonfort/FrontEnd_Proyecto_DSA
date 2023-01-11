@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
@@ -30,14 +31,18 @@ import upc.edu.dsa.myapplication.R;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.textfield.TextInputEditText;
+
 import upc.edu.dsa.myapplication.Entities.VO.*;
 
 public class Activity_Pou_Info extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
-    Button botonLogout;
-    TextView titulo_correo_info,correo_info,titulo_nacimiento_info,nacimiento_info,titulo_nombre_info,nombre_info,titulo_id_info,id_info;
+    Button botonLogout, botonActualizar;
+    TextView id_info;
     TextView diversion_info,titulo_info,hambre_info,dinero_info,sueno_info,salud_info;
+    TextInputEditText inputNombrePou, inputNacimientoPou, inputCorreoPou, inputPasswordPou;
 
     PouServices pouServices;
 
@@ -92,15 +97,13 @@ public class Activity_Pou_Info extends AppCompatActivity {
 
         btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_info);
         btnRight =(ImageButton)findViewById(R.id.btn_derecha_info);
-        botonLogout = (Button) findViewById(R.id.botonLogout);
+        botonLogout = (Button)findViewById(R.id.botonLogout);
+        botonActualizar = (Button)findViewById(R.id.botonActualizar);
 
-        titulo_correo_info = findViewById(R.id.titulo_correo_info);
-        correo_info = findViewById(R.id.correo_info);
-        titulo_nacimiento_info = findViewById(R.id.titulo_nacimiento_info);
-        nacimiento_info = findViewById(R.id.nacimiento_info);
-        titulo_nombre_info = findViewById(R.id.titulo_nombre_info);
-        nombre_info = findViewById(R.id.nombre_info);
-        titulo_id_info = findViewById(R.id.titulo_id_info);
+        inputNombrePou = (TextInputEditText)findViewById(R.id.inputNombrePou);
+        inputNacimientoPou = (TextInputEditText)findViewById(R.id.inputNacimientoPou);
+        inputCorreoPou = (TextInputEditText)findViewById(R.id.inputCorreoPou);
+        inputPasswordPou = (TextInputEditText)findViewById(R.id.inputPasswordPou);
         id_info = findViewById(R.id.id_info);
 
         diversion_info = findViewById(R.id.diversion_info);
@@ -171,9 +174,10 @@ public class Activity_Pou_Info extends AppCompatActivity {
         dinero_info.setText(Integer.toString(amountDinero));
 
         id_info.setText(data_pouId);
-        nombre_info.setText(data_nombrePou);
-        nacimiento_info.setText(data_nacimientoPou);
-        correo_info.setText(data_correoPou);
+        inputNombrePou.setText(data_nombrePou);
+        inputNacimientoPou.setText(data_nacimientoPou);
+        inputCorreoPou.setText(data_correoPou);
+        inputPasswordPou.setText(data_passwordPou);
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
@@ -283,6 +287,44 @@ public class Activity_Pou_Info extends AppCompatActivity {
                 myIntent2.putExtra("pasarActividadOrigen",activityOrigen);
 
                 Activity_Pou_Info.this.startActivity(myIntent2);
+            }
+        });
+    }
+
+    public void clickActualizar(View view){
+
+
+        data_nombrePou = inputNombrePou.getText().toString();
+        data_nacimientoPou = inputNacimientoPou.getText().toString();
+        data_passwordPou= inputPasswordPou.getText().toString();
+
+        //SI SE HA CAMBIADO EL CORREO
+        if(!Objects.equals(data_correoPou, inputCorreoPou.getText().toString())){
+
+            //Hacer la petición
+            //En caso de que funcione
+            //data_correoPou = inputCorreoPou.getText().toString();
+            //En caso de que no funcione toast de que no se ha cambiado el correo pero si el resto
+            //inputCorreoPou.setText(data_correoPou);
+
+        }
+
+        pouServices = PouRetrofit.getInstance().getPouServices();
+        //Petición para rellenar todos los parametros
+        Call<Void> cargarDatos = pouServices.updateObjetoArmario(new InformacionPou(data_pouId, data_nombrePou, data_nacimientoPou, data_correoPou, data_passwordPou, recordPou, lvlHambre, lvlSalud, lvlDiversion, lvlSueno, amountDinero, amountCandy, amountManzana, amountPizza, amountAgua, amountAquarius, amountRoncola, amountHambre, amountSalud, amountDiversion, amountSueno, pouCamiseta, pouBambas, pouGafas, pouGorro, posee_pijama, posee_fcb, posee_spain, posee_messi, posee_rafa, posee_veja, posee_fiesta, posee_rayban, posee_ciclismo, posee_cerveza, posee_boina, posee_polo));
+        cargarDatos.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> cargarDatos, Response<Void> respuestaDatos) {
+                switch (respuestaDatos.code()) {
+                    case 201:
+                        StyleableToast.makeText(Activity_Pou_Info.this, "¡Se ha guardado toda la información y se ha hecho Logout del Pou!", R.style.exampleToast).show();
+
+                }
+            }
+            @Override
+            public void onFailure(Call<Void> cargarDatos, Throwable t) {
+                Log.d("POU"," onFailure", t);
+                StyleableToast.makeText(Activity_Pou_Info.this, "¡Error!", R.style.exampleToast).show();
             }
         });
     }

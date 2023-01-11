@@ -41,6 +41,11 @@ public interface PouServices {
     @PUT("/dsaApp/pougame/pou/actualizarDatos")
     Call<Void> updateObjetoArmario(@Body InformacionPou informacionPou);
 
+    // UBICACIÓN: Activity_Pou_Info.
+    // DESCRIPCIÓN: Comprobamos los correos de todos los pous. 201 si no existe y 404 si existe.
+    @PUT("/dsaApp/pougame/pou/comprobarCorreo/{gmail}")
+    Call<Void> comprobarCorreo(@Path("gmail") String gmail);
+
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // SERVICIOS ANTIGUOS DE NUESTRO JUEGO POU
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

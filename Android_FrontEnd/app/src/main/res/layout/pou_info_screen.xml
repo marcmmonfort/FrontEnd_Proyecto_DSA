@@ -8,10 +8,67 @@
     tools:context=".Activities.Activity_Pou_Info">
 
     <Button
+        android:id="@+id/botonActualizar"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/color11"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:onClick="clickActualizar"
+        android:text="ACTUALIZAR"
+        android:textSize="26dp"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout14"
+        tools:ignore="UsingOnClickInXml" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout14"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout13">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPasswordPou"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:fontFamily="@font/pou_font"
+            android:gravity="center"
+            android:hint="Password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout11"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_info">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputNombrePou"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:fontFamily="@font/pou_font"
+            android:gravity="center"
+            android:hint="Nombre" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
         android:id="@+id/botonLogout"
         android:layout_width="140dp"
         android:layout_height="60dp"
-        android:layout_marginTop="40dp"
         android:backgroundTint="@color/color10"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
@@ -22,92 +79,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_correo_info"
+        app:layout_constraintTop_toBottomOf="@+id/botonActualizar"
         tools:ignore="UsingOnClickInXml" />
-
-    <TextView
-        android:id="@+id/titulo_correo_info"
-        android:layout_width="176dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="right"
-        android:text="Correo"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_nacimiento_info" />
-
-    <TextView
-        android:id="@+id/correo_info"
-        android:layout_width="180dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="left"
-        android:text="victor@gmail.com"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/titulo_correo_info"
-        app:layout_constraintTop_toBottomOf="@+id/nacimiento_info" />
-
-    <TextView
-        android:id="@+id/titulo_nacimiento_info"
-        android:layout_width="176dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="right"
-        android:text="Nacimiento"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_nombre_info" />
-
-    <TextView
-        android:id="@+id/nacimiento_info"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="left"
-        android:text="13/06/2001"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/titulo_nacimiento_info"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_info" />
-
-    <TextView
-        android:id="@+id/titulo_nombre_info"
-        android:layout_width="176dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="right"
-        android:text="Nombre "
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_id_info" />
-
-    <TextView
-        android:id="@+id/nombre_info"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="left"
-        android:text="Victor"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/titulo_nombre_info"
-        app:layout_constraintTop_toBottomOf="@+id/id_info" />
 
     <TextView
         android:id="@+id/id_info"
@@ -247,5 +220,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/salud_info"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout12"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout11">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputNacimientoPou"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:fontFamily="@font/pou_font"
+            android:gravity="center"
+            android:hint="Nacimiento" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout13"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout12">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputCorreoPou"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:fontFamily="@font/pou_font"
+            android:gravity="center"
+            android:hint="Correo" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
