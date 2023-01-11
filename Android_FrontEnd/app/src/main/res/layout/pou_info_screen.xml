@@ -11,7 +11,7 @@
         android:id="@+id/botonActualizar"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/color11"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
@@ -45,6 +45,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout20"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_info">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputIdPou"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:fontFamily="@font/pou_font"
+            android:gravity="center"
+            android:hint="Pou ID" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout11"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -53,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_info">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout20">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -81,34 +102,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonActualizar"
         tools:ignore="UsingOnClickInXml" />
-
-    <TextView
-        android:id="@+id/id_info"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="left"
-        android:text="Victor el guapo"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/titulo_id_info"
-        app:layout_constraintTop_toBottomOf="@+id/btn_derecha_info" />
-
-    <TextView
-        android:id="@+id/titulo_id_info"
-        android:layout_width="176dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/pou_font"
-        android:gravity="right"
-        android:text="Pou ID"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda_info" />
 
     <ImageView
         android:id="@+id/imageView2"

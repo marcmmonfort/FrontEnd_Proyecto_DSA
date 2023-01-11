@@ -42,7 +42,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
     Button botonLogout, botonActualizar;
     TextView id_info;
     TextView diversion_info,titulo_info,hambre_info,dinero_info,sueno_info,salud_info;
-    TextInputEditText inputNombrePou, inputNacimientoPou, inputCorreoPou, inputPasswordPou;
+    TextInputEditText inputNombrePou, inputNacimientoPou, inputCorreoPou, inputPasswordPou, inputIdPou;
 
     PouServices pouServices;
 
@@ -104,7 +104,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
         inputNacimientoPou = (TextInputEditText)findViewById(R.id.inputNacimientoPou);
         inputCorreoPou = (TextInputEditText)findViewById(R.id.inputCorreoPou);
         inputPasswordPou = (TextInputEditText)findViewById(R.id.inputPasswordPou);
-        id_info = findViewById(R.id.id_info);
+        inputIdPou = (TextInputEditText)findViewById(R.id.inputIdPou);
 
         diversion_info = findViewById(R.id.diversion_info);
         titulo_info = findViewById(R.id.titulo_info);
@@ -173,7 +173,7 @@ public class Activity_Pou_Info extends AppCompatActivity {
         sueno_info.setText(Integer.toString(lvlSueno));
         dinero_info.setText(Integer.toString(amountDinero));
 
-        id_info.setText(data_pouId);
+        inputIdPou.setText(data_pouId);
         inputNombrePou.setText(data_nombrePou);
         inputNacimientoPou.setText(data_nacimientoPou);
         inputCorreoPou.setText(data_correoPou);
