@@ -32,7 +32,7 @@ import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Activity_Pou_Lavabo extends AppCompatActivity {
 
-    ImageButton btnLeft, btnRight;
+    ImageButton btnLeft, btnRight, btn_info_hambre, btn_info_salud, btn_info_diversion, btn_info_sueno;
 
     TextView dinero_lavabo,hambre_lavabo,salud_lavabo,diversion_lavabo,sueno_lavabo,titulo_lavabo;
     ImageView estado_lavabo,camiseta_lavabo,bambas_lavabo,blink_lavabo,gafas_lavabo,gorra_lavabo;
@@ -135,6 +135,11 @@ public class Activity_Pou_Lavabo extends AppCompatActivity {
         btn_consumir_diversion =(ImageButton)findViewById(R.id.btn_consumir_diversion);
         btn_consumir_salud =(ImageButton)findViewById(R.id.btn_consumir_salud);
         btn_consumir_hambre =(ImageButton)findViewById(R.id.btn_consumir_hambre);
+        btn_info_hambre = (ImageButton)findViewById(R.id.btn_info_hambre);
+        btn_info_salud  = (ImageButton)findViewById(R.id.btn_info_salud);
+        btn_info_diversion = (ImageButton)findViewById(R.id.btn_info_diversion);
+        btn_info_sueno = (ImageButton)findViewById(R.id.btn_info_sueno);
+
 
         estado_lavabo = findViewById(R.id.estado_lavabo);
         camiseta_lavabo = findViewById(R.id.camiseta_lavabo);

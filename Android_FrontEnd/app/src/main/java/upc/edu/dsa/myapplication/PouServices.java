@@ -46,6 +46,10 @@ public interface PouServices {
     @PUT("/dsaApp/pougame/pou/comprobarCorreo/{gmail}")
     Call<Void> comprobarCorreo(@Path("gmail") String gmail);
 
+    // UBICACIÓN: Activity_Pou_Cocina / Activity_Pou_Lavabo.
+    // DESCRIPCIÓN: Obtenemos la información de x articulo.
+    @GET("/dsaApp/pougame/tienda/obtenerarticulo/{articuloid}")
+    Call<ObjetoTienda> obtenerInfoObjeto(@Path("articuloid") String articuloId);
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // SERVICIOS ANTIGUOS DE NUESTRO JUEGO POU
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

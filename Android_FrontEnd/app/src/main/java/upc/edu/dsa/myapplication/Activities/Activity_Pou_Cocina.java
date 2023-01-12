@@ -3,10 +3,15 @@ package upc.edu.dsa.myapplication.Activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +38,7 @@ import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Activity_Pou_Cocina extends AppCompatActivity{
 
-    ImageButton btnLeft, btnRight;
+    ImageButton btnLeft, btnRight, btn_info_candy, btn_info_manzana, btn_info_pizza, btn_info_agua, btn_info_aquarius, btn_info_roncola;
 
     TextView txt_cantidad_apple,txt_cantidad_roncola,txt_cantidad_aquarius,txt_cantidad_agua,txt_cantidad_pizza,txt_cantidad_candy;
     TextView dinero_cocina,hambre_cocina,salud_cocina,diversion_cocina,sueno_cocina,titulo_cocina;
@@ -129,15 +134,21 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
         time = 0;
         startTimer();
 
-        btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_cocina);
-        btnRight =(ImageButton)findViewById(R.id.btn_derecha_cocina);
+        btnLeft = (ImageButton)findViewById(R.id.btn_izquierda_cocina);
+        btnRight = (ImageButton)findViewById(R.id.btn_derecha_cocina);
+        btn_info_candy = (ImageButton)findViewById(R.id.btn_info_candy);
+        btn_info_manzana  = (ImageButton)findViewById(R.id.btn_info_manzana);
+        btn_info_pizza = (ImageButton)findViewById(R.id.btn_info_pizza);
+        btn_info_agua = (ImageButton)findViewById(R.id.btn_info_agua);
+        btn_info_aquarius = (ImageButton)findViewById(R.id.btn_info_aquarius);
+        btn_info_roncola = (ImageButton)findViewById(R.id.btn_info_roncola);
 
-        btn_consumir_roncola =(ImageButton)findViewById(R.id.btn_consumir_roncola);
-        btn_consumir_aquarius =(ImageButton)findViewById(R.id.btn_consumir_aquarius);
-        btn_consumir_agua =(ImageButton)findViewById(R.id.btn_consumir_agua);
-        btn_consumir_pizza =(ImageButton)findViewById(R.id.btn_consumir_pizza);
-        btn_consumir_candy =(ImageButton)findViewById(R.id.btn_consumir_candy);
-        btn_consumir_manzana =(ImageButton)findViewById(R.id.btn_consumir_manzana);
+        btn_consumir_roncola = (ImageButton)findViewById(R.id.btn_consumir_roncola);
+        btn_consumir_aquarius =( ImageButton)findViewById(R.id.btn_consumir_aquarius);
+        btn_consumir_agua = (ImageButton)findViewById(R.id.btn_consumir_agua);
+        btn_consumir_pizza = (ImageButton)findViewById(R.id.btn_consumir_pizza);
+        btn_consumir_candy = (ImageButton)findViewById(R.id.btn_consumir_candy);
+        btn_consumir_manzana = (ImageButton)findViewById(R.id.btn_consumir_manzana);
 
         estado_cocina = findViewById(R.id.estado_cocina);
         camiseta_cocina = findViewById(R.id.camiseta_cocina);
@@ -531,4 +542,34 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
         String refEstado = "outfit_base_"+pouEstado;
         estado_cocina.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
     }
+
+    public void darInfoArticulo(View view){
+
+        String articuloID = null;
+        if (view==btn_info_candy){
+            articuloID = "candy";
+        }
+        if(view==btn_info_manzana){
+            articuloID = "manzana";
+        }
+        if(view==btn_info_pizza){
+            articuloID = "pizza";
+        }
+        if(view==btn_info_agua){
+            articuloID = "agua";
+        }
+        if(view==btn_info_aquarius){
+            articuloID = "aquarius";
+        }
+        if(view==btn_info_roncola){
+            articuloID = "roncola";
+        }
+
+        Intent myIntent = new Intent(Activity_Pou_Cocina.this, Extra_Popup.class);
+        myIntent.putExtra("articuloID",articuloID);
+        Activity_Pou_Cocina.this.startActivity(myIntent);
+
+    }
+
+
 }
