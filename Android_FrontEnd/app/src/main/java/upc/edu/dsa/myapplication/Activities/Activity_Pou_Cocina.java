@@ -565,9 +565,58 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
             articuloID = "roncola";
         }
 
-        Intent myIntent = new Intent(Activity_Pou_Cocina.this, Extra_Popup.class);
-        myIntent.putExtra("articuloID",articuloID);
-        Activity_Pou_Cocina.this.startActivity(myIntent);
+        Intent myIntent1 = new Intent(Activity_Pou_Cocina.this, Extra_Popup.class);
+
+        myIntent1.putExtra("pasarNivelHambre",Integer.toString(lvlHambre));
+        myIntent1.putExtra("pasarNivelSalud",Integer.toString(lvlSalud));
+        myIntent1.putExtra("pasarNivelDiversion",Integer.toString(lvlDiversion));
+        myIntent1.putExtra("pasarNivelSueno",Integer.toString(lvlSueno));
+        myIntent1.putExtra("pasarDinero",Integer.toString(amountDinero));
+
+        myIntent1.putExtra("pasarCandy",Integer.toString(amountCandy));
+        myIntent1.putExtra("pasarManzana",Integer.toString(amountManzana));
+        myIntent1.putExtra("pasarPizza",Integer.toString(amountPizza));
+        myIntent1.putExtra("pasarAgua",Integer.toString(amountAgua));
+        myIntent1.putExtra("pasarAquarius",Integer.toString(amountAquarius));
+        myIntent1.putExtra("pasarRoncola",Integer.toString(amountRoncola));
+
+        myIntent1.putExtra("pasarPocionHambre",Integer.toString(amountHambre));
+        myIntent1.putExtra("pasarPocionSalud",Integer.toString(amountSalud));
+        myIntent1.putExtra("pasarPocionDiversion",Integer.toString(amountDiversion));
+        myIntent1.putExtra("pasarPocionSueno",Integer.toString(amountSueno));
+
+        myIntent1.putExtra("pasarPouEstado",pouEstado);
+        myIntent1.putExtra("pasarPouCamiseta",pouCamiseta);
+        myIntent1.putExtra("pasarPouBambas",pouBambas);
+        myIntent1.putExtra("pasarPouGafas",pouGafas);
+        myIntent1.putExtra("pasarPouGorro",pouGorro);
+
+        myIntent1.putExtra("pasarDataPouId",data_pouId);
+        myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
+        myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
+        myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+        myIntent1.putExtra("pasarDataPasswordPou", data_passwordPou);
+
+
+        myIntent1.putExtra("pasarPoseePijama",posee_pijama);
+        myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
+        myIntent1.putExtra("pasarPoseeSpain",posee_spain);
+        myIntent1.putExtra("pasarPoseeMessi",posee_messi);
+        myIntent1.putExtra("pasarPoseeRafa",posee_rafa);
+        myIntent1.putExtra("pasarPoseeVeja",posee_veja);
+        myIntent1.putExtra("pasarPoseeFiesta",posee_fiesta);
+        myIntent1.putExtra("pasarPoseeRayban",posee_rayban);
+        myIntent1.putExtra("pasarPoseeCiclismo",posee_ciclismo);
+        myIntent1.putExtra("pasarPoseeCerveza",posee_cerveza);
+        myIntent1.putExtra("pasarPoseeBoina",posee_boina);
+        myIntent1.putExtra("pasarPoseePolo",posee_polo);
+
+        myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
+        myIntent1.putExtra("pasarActividadOrigen",activityOrigen);
+
+        myIntent1.putExtra("articuloID",articuloID);
+
+        Activity_Pou_Cocina.this.startActivity(myIntent1);
 
     }
 
