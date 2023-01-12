@@ -7,6 +7,22 @@
     android:background="@color/color5"
     tools:context=".Activities.Activity_Pou_Juego">
 
+    <Button
+        android:id="@+id/btn_abrir_ranking"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/color11"
+        android:fontFamily="@font/pou_font"
+        android:gravity="center"
+        android:onClick="clicarJugar"
+        android:text="RANKING"
+        android:textSize="26dp"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_diasSinMorir" />
+
     <TextView
         android:id="@+id/titulo_diasSinMorir"
         android:layout_width="320dp"

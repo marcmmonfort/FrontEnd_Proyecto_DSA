@@ -40,6 +40,8 @@ public class Activity_Pou_Juego extends AppCompatActivity{
     TextView dinero_juego,hambre_juego,salud_juego,diversion_juego,sueno_juego,titulo_juego;
     ImageButton btn_iniciarJuego;
 
+    Button btn_abrir_ranking;
+
     PouServices pouServices;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -97,6 +99,8 @@ public class Activity_Pou_Juego extends AppCompatActivity{
         titulo_diasSinMorir = findViewById(R.id.titulo_diasSinMorir);
         titulo_record = findViewById(R.id.titulo_record);
         titulo_informativo = findViewById(R.id.titulo_informativo);
+
+        btn_abrir_ranking = (Button)findViewById(R.id.btn_abrir_ranking);
 
         numero_diasSinMorir = findViewById(R.id.numero_diasSinMorir);
 
@@ -338,6 +342,10 @@ public class Activity_Pou_Juego extends AppCompatActivity{
             else{
                 StyleableToast.makeText(this, "¡"+data_nombrePou+", mejora la Salud de tu Pou para Jugar!", R.style.exampleToast).show();
             }
+        }
+        if (view==btn_abrir_ranking){
+            Intent myIntent1 = new Intent(Activity_Pou_Juego.this, Extra_Pou_Ranking.class);
+            Activity_Pou_Juego.this.startActivity(myIntent1);
         }
     }
 

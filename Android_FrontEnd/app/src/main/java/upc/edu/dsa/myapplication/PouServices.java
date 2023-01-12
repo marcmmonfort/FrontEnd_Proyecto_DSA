@@ -50,16 +50,11 @@ public interface PouServices {
     // DESCRIPCIÓN: Obtenemos la información de x articulo.
     @GET("/dsaApp/pougame/tienda/obtenerarticulo/{articuloid}")
     Call<ObjetoTienda> obtenerInfoObjeto(@Path("articuloid") String articuloId);
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    // SERVICIOS ANTIGUOS DE NUESTRO JUEGO POU
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    /*
-    // UBICACIÓN: '-'.
-    // DESCRIPCIÓN: Obtener todos los artículos de la tienda.
-    @GET("/dsaApp/pougame/tienda/listaObjetos")
-    Call<List<ObjetoTienda>> obtenerObjetosTienda();
-    */
+    // UBICACIÓN: -
+    // DESCRIPCIÓN: Obtener todos los Pous ordenados.
+    @GET("/dsaApp/pougame/pou/ranking/{rankingId}")
+    Call<List<Pou>> obtenerPousOrdenadosDescendentemente(@Path("rankingId") String rankingId);
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // EJEMPLOS DE SERVICIOS POU (GET, POST Y PUT)
