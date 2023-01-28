@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\DSA_Projects\\UnityTutorial\\UnityAndroidAppAndroid\\launcher\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v30\\values-v30.xml",
+            "outputFile": "C:\\Dades Marc\\UPC\\DSA\\Proyecto\\FrontEnd_Proyecto\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v30\\values-v30.xml",
             "map": [
                 {
-                    "source": "C:\\DSA_Projects\\UnityTutorial\\UnityAndroidAppAndroid\\unityLibrary\\build\\intermediates\\packaged_res\\debug\\values-v30\\values-v30.xml",
+                    "source": "C:\\Dades Marc\\UPC\\DSA\\Proyecto\\FrontEnd_Proyecto\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\unityLibrary\\build\\intermediates\\packaged_res\\debug\\values-v30\\values-v30.xml",
                     "from": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
