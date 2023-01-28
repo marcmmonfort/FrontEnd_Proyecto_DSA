@@ -5,19 +5,27 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.w3c.dom.Text;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import upc.edu.dsa.myapplication.Entities.VO.InfoRegistro;
 import upc.edu.dsa.myapplication.Entities.VO.InformacionPou;
+import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Activity_Pou_SplashScreen extends AppCompatActivity {
+
+    TextView ss_textLasAventurasDe;
+    TextView textCargando;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // VARIABLES GLOBALES DEL POU QUE SE VAN A PASAR AL SALÓN SI EL LOGIN ES CORRECTO.
@@ -74,6 +82,13 @@ public class Activity_Pou_SplashScreen extends AppCompatActivity {
         data_passwordPou = preferencias.getString("password","");
         Boolean isLogged = preferencias.getBoolean("isLogged", false);
 
+        textCargando = findViewById(R.id.textCargando);
+        textCargando.setText(R.string.splash_screen_cargando);
+
+        ss_textLasAventurasDe = findViewById(R.id.ss_textLasAventurasDe);
+        ss_textLasAventurasDe.setText(R.string.lasaventurasde);
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
         Thread timerThread = new Thread() {
             public void run() {
                 try {
@@ -84,7 +99,6 @@ public class Activity_Pou_SplashScreen extends AppCompatActivity {
                     if (isLogged) {
 
                         Intent myIntent1 = new Intent(Activity_Pou_SplashScreen.this, Activity_Pou_Salon.class);
-
 
                         myIntent1.putExtra("pasarNivelHambre",Integer.toString(lvlHambre));
                         myIntent1.putExtra("pasarNivelSalud",Integer.toString(lvlSalud));

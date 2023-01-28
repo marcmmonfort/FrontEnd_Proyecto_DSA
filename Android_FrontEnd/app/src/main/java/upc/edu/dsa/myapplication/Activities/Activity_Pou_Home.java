@@ -2,9 +2,7 @@ package upc.edu.dsa.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -16,11 +14,9 @@ import io.github.muddz.styleabletoast.StyleableToast;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
 
-import io.github.muddz.styleabletoast.StyleableToast;
-
 public class Activity_Pou_Home extends AppCompatActivity{
 
-    TextView textPou, textLasAventurasDe, textRegistro, textLogin;
+    TextView textPou, textLasAventurasDe, textRegistro, textLogin, textWeb, home_languageId;
     Button botonRegistro, botonLogin, botonWeb;
 
     PouServices pouServices;
@@ -32,9 +28,18 @@ public class Activity_Pou_Home extends AppCompatActivity{
         setContentView(R.layout.pou_home_screen);
 
         textPou = findViewById(R.id.textPou);
+
         textLasAventurasDe = findViewById(R.id.textLasAventurasDe);
+        textLasAventurasDe.setText(R.string.lasaventurasde);
+
         textRegistro = findViewById(R.id.textRegistro);
+        textRegistro.setText(R.string.home_registrarunpou);
+
         textLogin = findViewById(R.id.textLogin);
+        textLogin.setText(R.string.home_login);
+
+        textWeb = findViewById(R.id.textWeb);
+        textWeb.setText(R.string.home_abrirweb);
 
         botonRegistro = (Button) findViewById(R.id.botonRegistro);
         botonLogin = (Button) findViewById(R.id.botonLogin);

@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textLasAventurasDe2"
+        android:id="@+id/ss_textLasAventurasDe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -118,24 +118,23 @@
         android:id="@+id/textCargando"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/pou_font"
         android:gravity="center"
         android:text="Cargando ..."
         android:textColor="@color/color11"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="244dp"
-        android:layout_height="261dp"
+        android:layout_height="264dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLasAventurasDe2"
+        app:layout_constraintTop_toBottomOf="@+id/ss_textLasAventurasDe"
         app:srcCompat="@drawable/display_pou_portada" />
 </androidx.constraintlayout.widget.ConstraintLayout>

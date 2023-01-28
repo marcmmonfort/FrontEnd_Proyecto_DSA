@@ -56,18 +56,8 @@ public interface PouServices {
     @GET("/dsaApp/pougame/pou/ranking/{rankingId}")
     Call<List<Pou>> obtenerPousOrdenadosDescendentemente(@Path("rankingId") String rankingId);
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    // EJEMPLOS DE SERVICIOS POU (GET, POST Y PUT)
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    /*
-    @GET("gameManager/characters")
-    Call<List<Characters>> getListCharacters();
-
-    @POST("gameManager/user")
-    Call<User> registerUser(@Body UserRegister userRegister);
-
-    @PUT("gameManager/user/buyObject/{email}/{objectId}")
-    Call<Void> buyObject(@Path("email") String email, @Path("objectId") String objectId);
-    */
+    // UBICACIÓN: Activity_Pou_SplashScreen.
+    // DESCRIPCIÓN: Enviamos al BackEnd la información del idioma con el que estamos cargando la App.
+    @PUT("/dsaApp/pougame/pou/guardaridioma/{userId}/{idioma}")
+    Call<Void> guardarIdioma(@Path("userId") String userId, @Path("idioma") String idioma);
 }

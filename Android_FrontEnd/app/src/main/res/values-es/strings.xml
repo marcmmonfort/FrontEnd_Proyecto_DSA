@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="languageId">Castellano</string>
+    <string name="splash_screen_cargando">Cargando ...</string>
+    <string name="lasaventurasde">LAS AVENTURAS DE</string>
+    <string name="home_registrarunpou">Registrar un Pou</string>
+    <string name="home_abrirweb">Abrir la Página Web</string>
+    <string name="home_login">Jugar con tu Pou</string>
+    <string name="lasaventurasdepou">LAS AVENTURAS DE POU</string>
+    <string name="login_ACCEDER">ACCEDER</string>
+    <string name="hint_Correo">Correo</string>
+    <string name="hint_Password">Contraseña</string>
+    <string name="hint_Username">Usuario</string>
+    <string name="hint_Name">Nombre</string>
+    <string name="hint_Birthdate">Fecha de Nacimiento</string>
+    <string name="hint_ConfirmPassword">Confirmar Contraseña</string>
+    <string name="toast_Login_hasAccedidoCorrectamenteATuPou">¡Has accedido correctamente a tu Pou!</string>
+    <string name="toast_Login_elCorreoIntroducidoNoTieneNingunPouAsociado">¡El Correo introducido no tiene ningún Pou asociado!</string>
+    <string name="toast_Login_laPasswordIntroducidaNoEsLaCorrecta">¡La Contraseña introducida no es la correcta!</string>
+    <string name="toast_Register_lasPasswordsNoCoinciden">¡Las contraseñas no coinciden!</string>
+    <string name="toast_Register_haNacidoTuPou">¡Enhorabuena, ha nacido tu Pou!</string>
+    <string name="toast_Register_elCorreoIntroducidoYaEstaAsociadoAUnaCuenta">¡El Correo introducido ya está asociado a una cuenta!</string>
+    <string name="toast_Register_elUsernameIntroducidoYaEstaEnUso">¡El Username introducido ya está en uso!</string>
+</resources>

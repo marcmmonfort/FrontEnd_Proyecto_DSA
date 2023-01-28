@@ -33,6 +33,8 @@ public class Activity_Pou_Salon extends AppCompatActivity{
     TextView dinero_salon,hambre_salon,titulo_salon,salud_salon,diversion_salon,sueno_salon;
     ImageView estado_salon,camiseta_salon,bambas_salon,blink_salon,gafas_salon,gorra_salon;
 
+    TextView salon_languageId;
+
     PouServices pouServices;
 
     Timer timer;
@@ -141,6 +143,9 @@ public class Activity_Pou_Salon extends AppCompatActivity{
         gorra_salon = findViewById(R.id.gorra_salon);
 
         blink_salon.setVisibility(View.INVISIBLE);
+
+        salon_languageId = findViewById(R.id.salon_languageId);
+        salon_languageId.setVisibility(View.INVISIBLE);
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // RECEPCIÓN DE DATOS DESDE OTRA ACTIVIDAD
@@ -260,6 +265,32 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                             gafas_salon.setImageResource(getResources().getIdentifier(refGafas, "drawable", getPackageName()));
                             String refGorro = "outfit_gorra_"+pouGorro;
                             gorra_salon.setImageResource(getResources().getIdentifier(refGorro, "drawable", getPackageName()));
+                            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                            // Enviar al BackEnd la información del idioma como una String.
+
+                            String languageId = getResources().getString(R.string.languageId);
+
+                            pouServices = PouRetrofit.getInstance().getPouServices();
+
+                            Call<Void> peticion = pouServices.guardarIdioma(data_pouId, languageId);
+
+                            peticion.enqueue(new Callback<Void>() {
+                                @Override
+                                public void onResponse(Call<Void> peticion, Response<Void> respuesta) {
+                                    switch (respuesta.code()){
+                                        case 201:
+                                            // No hacemos nada con lo de guardar el idioma, es simplemente un proceso que el usuario final no va a notar.
+                                            break;
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<Void> peticion, Throwable t) {
+                                    StyleableToast.makeText(Activity_Pou_Salon.this, "¡Error!", R.style.exampleToast).show();
+                                }
+                            });
                             // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                     }
