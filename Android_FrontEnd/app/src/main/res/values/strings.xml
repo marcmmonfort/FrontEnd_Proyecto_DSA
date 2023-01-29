@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="game_view_content_description">Game View</string>
+    <string name="languageId">English</string>
+    <string name="splash_screen_cargando">Loading ...</string>
+    <string name="lasaventurasde">THE ADVENTURES OF</string>
+    <string name="home_registrarunpou">Register a Pou</string>
+    <string name="home_abrirweb">Open the Webpage</string>
+    <string name="home_login">Play with your Pou</string>
+    <string name="lasaventurasdepou">THE ADVENTURES OF POU</string>
+    <string name="login_ACCEDER">LOGIN</string>
+    <string name="hint_Correo">Email</string>
+    <string name="hint_Password">Password</string>
+    <string name="hint_Username">Username</string>
+    <string name="hint_Name">Name</string>
+    <string name="hint_Birthdate">Birthdate</string>
+    <string name="hint_ConfirmPassword">Confirm Password</string>
+    <string name="toast_Login_hasAccedidoCorrectamenteATuPou">¡You have acceeded correctly to your Pou!</string>
+    <string name="toast_Login_elCorreoIntroducidoNoTieneNingunPouAsociado">¡The mail introduced does not have any associated Pou!</string>
+    <string name="toast_Login_laPasswordIntroducidaNoEsLaCorrecta">¡The password introduced is not the correct one!</string>
+    <string name="toast_Register_lasPasswordsNoCoinciden">¡The introduced passwords do not match!</string>
+    <string name="toast_Register_haNacidoTuPou">¡Congratulations, your Pou has been created!</string>
+    <string name="toast_Register_elCorreoIntroducidoYaEstaAsociadoAUnaCuenta">¡The introduced mail is already associated to an account!</string>
+    <string name="toast_Register_elUsernameIntroducidoYaEstaEnUso">¡The introduced username is already in use!</string>
 </resources>

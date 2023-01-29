@@ -117,6 +117,7 @@ public class Activity_Pou_Juego extends AppCompatActivity{
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // RECEPCIÓN DE DATOS DESDE OTRA ACTIVIDAD
+
         Bundle infoRecibida = getIntent().getExtras();
         if (infoRecibida!=null) {
             lvlHambre = Integer.parseInt(infoRecibida.getString("pasarNivelHambre"));
@@ -291,8 +292,11 @@ public class Activity_Pou_Juego extends AppCompatActivity{
         if (view==btn_iniciarJuego){
 
             // SE LANZA UNITY ...
+            /*
             Intent myIntent1 = new Intent(Activity_Pou_Juego.this, UnityPlayerActivity.class);
             Activity_Pou_Juego.this.startActivity(myIntent1);
+
+             */
 
             if ((Integer.parseInt(hambre_juego.getText().toString())>=20)&&(Integer.parseInt(salud_juego.getText().toString())>=20)&&(Integer.parseInt(sueno_juego.getText().toString())>=20))
             {
@@ -300,13 +304,13 @@ public class Activity_Pou_Juego extends AppCompatActivity{
 
                 StyleableToast.makeText(this, "¡Suerte!", R.style.exampleToast).show();
 
-                int rebajaHambreJuego = 20;
-                int rebajaSaludJuego = 20;
-                int aumentoDiversionJuego = 20;
-                int rebajaSuenoJuego = 20;
+                int rebajaHambreJuego = 50;
+                int rebajaSaludJuego = 100;
+                int aumentoDiversionJuego = 100;
+                int rebajaSuenoJuego = 50;
 
                 int recordJuegoInt = recordPou;
-                recordJuegoInt = recordJuegoInt + 1;
+                // recordJuegoInt = recordJuegoInt + 1;
                 String recordJuegoStr = Integer.toString(recordJuegoInt);
                 numero_diasSinMorir.setText(recordJuegoStr);
                 recordPou = recordJuegoInt;

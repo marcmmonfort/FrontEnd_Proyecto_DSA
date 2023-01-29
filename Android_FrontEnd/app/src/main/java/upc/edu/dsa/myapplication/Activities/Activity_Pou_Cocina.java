@@ -616,6 +616,8 @@ public class Activity_Pou_Cocina extends AppCompatActivity{
 
         myIntent1.putExtra("articuloID",articuloID);
 
+        myIntent1.putExtra("origen","Cocina");
+
         Activity_Pou_Cocina.this.startActivity(myIntent1);
 
     }

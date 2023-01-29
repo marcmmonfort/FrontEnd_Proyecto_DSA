@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,9 @@ import upc.edu.dsa.myapplication.R;
 import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Activity_Pou_SplashScreen extends AppCompatActivity {
+
+    TextView ss_textLasAventurasDe;
+    TextView textCargando;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // VARIABLES GLOBALES DEL POU QUE SE VAN A PASAR AL SALÓN SI EL LOGIN ES CORRECTO.
@@ -73,6 +77,12 @@ public class Activity_Pou_SplashScreen extends AppCompatActivity {
         data_correoPou = preferencias.getString("mail","");
         data_passwordPou = preferencias.getString("password","");
         Boolean isLogged = preferencias.getBoolean("isLogged", false);
+
+        textCargando = findViewById(R.id.textCargando);
+        textCargando.setText(R.string.splash_screen_cargando);
+
+        ss_textLasAventurasDe = findViewById(R.id.ss_textLasAventurasDe);
+        ss_textLasAventurasDe.setText(R.string.lasaventurasde);
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

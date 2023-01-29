@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c208a36-793b-4991-9e7f-bd7993b39212" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/PouServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/PouServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Cocina.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Cocina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Lavabo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Lavabo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Extra_Popup.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Extra_Popup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Extra_Pou_Ranking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Extra_Pou_Ranking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/res/layout/extra_spinner_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/res/layout/extra_spinner_row.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/res/layout/pou_ranking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/res/layout/pou_ranking.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

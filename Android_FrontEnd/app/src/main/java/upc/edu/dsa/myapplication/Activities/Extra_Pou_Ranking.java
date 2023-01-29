@@ -104,9 +104,9 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
 
         ArrayList<String> elementos = new ArrayList<String>();
 
-        elementos.add("Seleccione una opción");
-        elementos.add("dineroPou");
-        elementos.add("record");
+        elementos.add("Which Ranking?");
+        elementos.add("Dinero");
+        elementos.add("Record");
         // elementos.add("precioArticulo");
         // elementos.add("cantidad");
 
@@ -174,10 +174,19 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
 
                 pouServices = PouRetrofit.getInstance().getPouServices();
 
-                if (Objects.equals(elemento, "record") || Objects.equals(elemento, "dineroPou")){
+                if (Objects.equals(elemento, "Record") || Objects.equals(elemento, "Dinero")){
 
-                    StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Has escogido el ranking de " + elemento + " !", R.style.exampleToast).show();
-                    Call<List<Pou>> peticion = pouServices.obtenerPousOrdenadosDescendentemente(elemento);
+                    Call<List<Pou>> peticion;
+
+                    if (Objects.equals(elemento, "Record")){
+                        StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Has escogido el Ranking de Record!", R.style.exampleToast).show();
+                        peticion = pouServices.obtenerPousOrdenadosDescendentemente("record");
+                    }
+                    else{
+                        StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Has escogido el Ranking de Dinero!", R.style.exampleToast).show();
+                        peticion = pouServices.obtenerPousOrdenadosDescendentemente("dineroPou");
+                    }
+
                     peticion.enqueue(new Callback<List<Pou>>() {
                         @Override
                         public void onResponse(Call<List<Pou>> peticion, Response<List<Pou>> respuesta) {
@@ -195,7 +204,7 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
                                     columna_position1.setText("Pos");
                                     columna_dinero1.setText("ID");
                                     columna_nombre1.setText("Nombre");
-                                    if (Objects.equals(elemento, "record")){
+                                    if (Objects.equals(elemento, "Record")){
                                         columna_record1.setText("Record");
                                     }
                                     else{

@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/login_textInputLayout_password" />
 
     <Button
         android:id="@+id/login_backHome"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/login_botonHacerLogin" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/login_textInputLayout_correo"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -75,13 +75,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/login_textInputLayout_password"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/login_textInputLayout_correo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_passwordPou"
