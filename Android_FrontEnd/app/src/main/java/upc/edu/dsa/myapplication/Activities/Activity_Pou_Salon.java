@@ -270,6 +270,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                             // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                             // Enviar al BackEnd la información del idioma como una String.
 
+                            /*
                             String languageId = getResources().getString(R.string.languageId);
 
                             pouServices = PouRetrofit.getInstance().getPouServices();
@@ -291,6 +292,8 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                                     StyleableToast.makeText(Activity_Pou_Salon.this, "¡Error!", R.style.exampleToast).show();
                                 }
                             });
+
+                             */
                             // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                     }
@@ -440,6 +443,25 @@ public class Activity_Pou_Salon extends AppCompatActivity{
             // PONER AQUÍ EL MECANISMO PARA QUE GUARDE LA PARTIDA EN LA BASE DE DATOS.
 
             StyleableToast.makeText(this, "¡Partida Guardada!", R.style.exampleToast).show();
+
+            pouServices = PouRetrofit.getInstance().getPouServices();
+            //Petición para rellenar todos los parametros
+            Call<Void> cargarDatos = pouServices.updateObjetoArmario(new InformacionPou(data_pouId, data_nombrePou, data_nacimientoPou, data_correoPou, data_passwordPou, recordPou, lvlHambre, lvlSalud, lvlDiversion, lvlSueno, amountDinero, amountCandy, amountManzana, amountPizza, amountAgua, amountAquarius, amountRoncola, amountHambre, amountSalud, amountDiversion, amountSueno, pouCamiseta, pouBambas, pouGafas, pouGorro, posee_pijama, posee_fcb, posee_spain, posee_messi, posee_rafa, posee_veja, posee_fiesta, posee_rayban, posee_ciclismo, posee_cerveza, posee_boina, posee_polo));
+            cargarDatos.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(Call<Void> cargarDatos, Response<Void> respuestaDatos) {
+                    switch (respuestaDatos.code()) {
+                        case 201:
+                            StyleableToast.makeText(Activity_Pou_Salon.this, "¡Se ha guardado toda la información y se ha hecho Logout del Pou!", R.style.exampleToast).show();
+                            break;
+                    }
+                }
+                @Override
+                public void onFailure(Call<Void> cargarDatos, Throwable t) {
+                    Log.d("POU"," onFailure", t);
+                    StyleableToast.makeText(Activity_Pou_Salon.this, "¡Error!", R.style.exampleToast).show();
+                }
+            });
         }
     }
 }

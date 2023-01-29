@@ -60,7 +60,7 @@ public class Activity_Pou_Home extends AppCompatActivity{
         }
         if (view==botonWeb){
             StyleableToast.makeText(this, "Abriendo la Web", R.style.exampleToast).show();
-            Intent abrirWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=BqucGvLxrEk"));
+            Intent abrirWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("http://147.83.7.203/"));
             startActivity(abrirWeb);
         }
     }
