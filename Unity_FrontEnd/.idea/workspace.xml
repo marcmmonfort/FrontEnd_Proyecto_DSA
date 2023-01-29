@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9befc3b5-2c77-4285-bd14-d522afe9f94e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android_FrontEnd/app/src/main/java/upc/edu/dsa/myapplication/Activities/Activity_Pou_Login.java" afterDir="false" />
@@ -116,6 +117,9 @@
       <change beforePath="$PROJECT_DIR$/unityLibrary/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/unityLibrary/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unityLibrary/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/unityLibrary/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
     </list>
+=======
+    <list default="true" id="9befc3b5-2c77-4285-bd14-d522afe9f94e" name="Changes" comment="" />
+>>>>>>> 3cc8ae720d9db565ad260777ea97acda779335ed
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +166,11 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/AppUnity-main" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../AppUnity-main/AppUnity-main" />
+>>>>>>> 3cc8ae720d9db565ad260777ea97acda779335ed
   </component>
   <component name="RunManager">
     <configuration name="launcher" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">

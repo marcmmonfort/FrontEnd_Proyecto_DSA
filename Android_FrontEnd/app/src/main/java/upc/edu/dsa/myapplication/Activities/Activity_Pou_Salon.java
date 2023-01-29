@@ -25,13 +25,13 @@ import java.util.*;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 
-public class Activity_Pou_Salon extends AppCompatActivity{
+public class Activity_Pou_Salon extends AppCompatActivity {
 
     ImageButton btnLeft, btnRight;
     ImageButton save_partida_salon;
 
-    TextView dinero_salon,hambre_salon,titulo_salon,salud_salon,diversion_salon,sueno_salon;
-    ImageView estado_salon,camiseta_salon,bambas_salon,blink_salon,gafas_salon,gorra_salon;
+    TextView dinero_salon, hambre_salon, titulo_salon, salud_salon, diversion_salon, sueno_salon;
+    ImageView estado_salon, camiseta_salon, bambas_salon, blink_salon, gafas_salon, gorra_salon;
 
     PouServices pouServices;
 
@@ -83,8 +83,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
     String activityOrigen = "Juego";
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    private void startTimer()
-    {
+    private void startTimer() {
         timerTask = new TimerTask()
         {
             @Override
@@ -93,13 +92,12 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                 runOnUiThread(new Runnable()
                 {
                     @Override
-                    public void run()
-                    {
+                    public void run() {
                         time++;
-                        if (time==7) {
+                        if (time == 7) {
                             blink_salon.setVisibility(View.VISIBLE);
                         }
-                        if (time==8){
+                        if (time == 8) {
                             blink_salon.setVisibility(View.INVISIBLE);
                             time = 0;
                         }
@@ -108,7 +106,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
             }
 
         };
-        timer.scheduleAtFixedRate(timerTask, 0 ,300);
+        timer.scheduleAtFixedRate(timerTask, 0, 300);
     }
 
     @SuppressLint({"CutPasteId", "SetTextI18n"})
@@ -122,9 +120,9 @@ public class Activity_Pou_Salon extends AppCompatActivity{
         time = 0;
         startTimer();
 
-        btnLeft =(ImageButton)findViewById(R.id.btn_izquierda_salon);
-        btnRight =(ImageButton)findViewById(R.id.btn_derecha_salon);
-        save_partida_salon =(ImageButton)findViewById(R.id.save_partida_salon);
+        btnLeft = (ImageButton) findViewById(R.id.btn_izquierda_salon);
+        btnRight = (ImageButton) findViewById(R.id.btn_derecha_salon);
+        save_partida_salon = (ImageButton) findViewById(R.id.save_partida_salon);
 
         dinero_salon = findViewById(R.id.dinero_salon);
         hambre_salon = findViewById(R.id.hambre_salon);
@@ -145,7 +143,7 @@ public class Activity_Pou_Salon extends AppCompatActivity{
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // RECEPCIÓN DE DATOS DESDE OTRA ACTIVIDAD
         Bundle infoRecibida = getIntent().getExtras();
-        if (infoRecibida!=null){
+        if (infoRecibida != null) {
             lvlHambre = Integer.parseInt(infoRecibida.getString("pasarNivelHambre"));
             lvlSalud = Integer.parseInt(infoRecibida.getString("pasarNivelSalud"));
             lvlDiversion = Integer.parseInt(infoRecibida.getString("pasarNivelDiversion"));
@@ -190,11 +188,11 @@ public class Activity_Pou_Salon extends AppCompatActivity{
             posee_polo = infoRecibida.getString("pasarPoseePolo");
 
             recordPou = Integer.parseInt(infoRecibida.getString("pasarRecordPou"));
-            activityOrigen =infoRecibida.getString("pasarActividadOrigen");
+            activityOrigen = infoRecibida.getString("pasarActividadOrigen");
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        if("Menu".equals(activityOrigen)){
+        if ("Menu".equals(activityOrigen)){
             pouServices = PouRetrofit.getInstance().getPouServices();
             //Petición para rellenar todos los parametros
             Call<InformacionPou> cargarDatos = pouServices.getInfoAndroidPou(data_correoPou, data_passwordPou);
@@ -250,15 +248,15 @@ public class Activity_Pou_Salon extends AppCompatActivity{
                             sueno_salon.setText(Integer.toString(lvlSueno));
                             dinero_salon.setText(Integer.toString(amountDinero));
 
-                            String refEstado = "outfit_base_"+pouEstado;
+                            String refEstado = "outfit_base_" + pouEstado;
                             estado_salon.setImageResource(getResources().getIdentifier(refEstado, "drawable", getPackageName()));
-                            String refCamiseta = "outfit_camiseta_"+pouCamiseta;
+                            String refCamiseta = "outfit_camiseta_" + pouCamiseta;
                             camiseta_salon.setImageResource(getResources().getIdentifier(refCamiseta, "drawable", getPackageName()));
-                            String refBambas = "outfit_bambas_"+pouBambas;
+                            String refBambas = "outfit_bambas_" + pouBambas;
                             bambas_salon.setImageResource(getResources().getIdentifier(refBambas, "drawable", getPackageName()));
-                            String refGafas = "outfit_gafas_"+pouGafas;
+                            String refGafas = "outfit_gafas_" + pouGafas;
                             gafas_salon.setImageResource(getResources().getIdentifier(refGafas, "drawable", getPackageName()));
-                            String refGorro = "outfit_gorra_"+pouGorro;
+                            String refGorro = "outfit_gorra_" + pouGorro;
                             gorra_salon.setImageResource(getResources().getIdentifier(refGorro, "drawable", getPackageName()));
                             // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -295,112 +293,113 @@ public class Activity_Pou_Salon extends AppCompatActivity{
 
 
         btnLeft.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v)  {
+            public void onClick(View v) {
                 Intent myIntent1 = new Intent(Activity_Pou_Salon.this, Activity_Pou_Info.class);
 
-                myIntent1.putExtra("pasarNivelHambre",Integer.toString(lvlHambre));
-                myIntent1.putExtra("pasarNivelSalud",Integer.toString(lvlSalud));
-                myIntent1.putExtra("pasarNivelDiversion",Integer.toString(lvlDiversion));
-                myIntent1.putExtra("pasarNivelSueno",Integer.toString(lvlSueno));
-                myIntent1.putExtra("pasarDinero",Integer.toString(amountDinero));
+                myIntent1.putExtra("pasarNivelHambre", Integer.toString(lvlHambre));
+                myIntent1.putExtra("pasarNivelSalud", Integer.toString(lvlSalud));
+                myIntent1.putExtra("pasarNivelDiversion", Integer.toString(lvlDiversion));
+                myIntent1.putExtra("pasarNivelSueno", Integer.toString(lvlSueno));
+                myIntent1.putExtra("pasarDinero", Integer.toString(amountDinero));
 
-                myIntent1.putExtra("pasarCandy",Integer.toString(amountCandy));
-                myIntent1.putExtra("pasarManzana",Integer.toString(amountManzana));
-                myIntent1.putExtra("pasarPizza",Integer.toString(amountPizza));
-                myIntent1.putExtra("pasarAgua",Integer.toString(amountAgua));
-                myIntent1.putExtra("pasarAquarius",Integer.toString(amountAquarius));
-                myIntent1.putExtra("pasarRoncola",Integer.toString(amountRoncola));
+                myIntent1.putExtra("pasarCandy", Integer.toString(amountCandy));
+                myIntent1.putExtra("pasarManzana", Integer.toString(amountManzana));
+                myIntent1.putExtra("pasarPizza", Integer.toString(amountPizza));
+                myIntent1.putExtra("pasarAgua", Integer.toString(amountAgua));
+                myIntent1.putExtra("pasarAquarius", Integer.toString(amountAquarius));
+                myIntent1.putExtra("pasarRoncola", Integer.toString(amountRoncola));
 
-                myIntent1.putExtra("pasarPocionHambre",Integer.toString(amountHambre));
-                myIntent1.putExtra("pasarPocionSalud",Integer.toString(amountSalud));
-                myIntent1.putExtra("pasarPocionDiversion",Integer.toString(amountDiversion));
-                myIntent1.putExtra("pasarPocionSueno",Integer.toString(amountSueno));
+                myIntent1.putExtra("pasarPocionHambre", Integer.toString(amountHambre));
+                myIntent1.putExtra("pasarPocionSalud", Integer.toString(amountSalud));
+                myIntent1.putExtra("pasarPocionDiversion", Integer.toString(amountDiversion));
+                myIntent1.putExtra("pasarPocionSueno", Integer.toString(amountSueno));
 
-                myIntent1.putExtra("pasarPouEstado",pouEstado);
-                myIntent1.putExtra("pasarPouCamiseta",pouCamiseta);
-                myIntent1.putExtra("pasarPouBambas",pouBambas);
-                myIntent1.putExtra("pasarPouGafas",pouGafas);
-                myIntent1.putExtra("pasarPouGorro",pouGorro);
+                myIntent1.putExtra("pasarPouEstado", pouEstado);
+                myIntent1.putExtra("pasarPouCamiseta", pouCamiseta);
+                myIntent1.putExtra("pasarPouBambas", pouBambas);
+                myIntent1.putExtra("pasarPouGafas", pouGafas);
+                myIntent1.putExtra("pasarPouGorro", pouGorro);
 
-                myIntent1.putExtra("pasarDataPouId",data_pouId);
-                myIntent1.putExtra("pasarDataNombrePou",data_nombrePou);
-                myIntent1.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
-                myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent1.putExtra("pasarDataPouId", data_pouId);
+                myIntent1.putExtra("pasarDataNombrePou", data_nombrePou);
+                myIntent1.putExtra("pasarDataNacimientoPou", data_nacimientoPou);
+                myIntent1.putExtra("pasarDataCorreoPou", data_correoPou);
                 myIntent1.putExtra("pasarDataPasswordPou", data_passwordPou);
 
-                myIntent1.putExtra("pasarPoseePijama",posee_pijama);
-                myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
-                myIntent1.putExtra("pasarPoseeSpain",posee_spain);
-                myIntent1.putExtra("pasarPoseeMessi",posee_messi);
-                myIntent1.putExtra("pasarPoseeRafa",posee_rafa);
-                myIntent1.putExtra("pasarPoseeVeja",posee_veja);
-                myIntent1.putExtra("pasarPoseeFiesta",posee_fiesta);
-                myIntent1.putExtra("pasarPoseeRayban",posee_rayban);
-                myIntent1.putExtra("pasarPoseeCiclismo",posee_ciclismo);
-                myIntent1.putExtra("pasarPoseeCerveza",posee_cerveza);
-                myIntent1.putExtra("pasarPoseeBoina",posee_boina);
-                myIntent1.putExtra("pasarPoseePolo",posee_polo);
+                myIntent1.putExtra("pasarPoseePijama", posee_pijama);
+                myIntent1.putExtra("pasarPoseeFcb", posee_fcb);
+                myIntent1.putExtra("pasarPoseeSpain", posee_spain);
+                myIntent1.putExtra("pasarPoseeMessi", posee_messi);
+                myIntent1.putExtra("pasarPoseeRafa", posee_rafa);
+                myIntent1.putExtra("pasarPoseeVeja", posee_veja);
+                myIntent1.putExtra("pasarPoseeFiesta", posee_fiesta);
+                myIntent1.putExtra("pasarPoseeRayban", posee_rayban);
+                myIntent1.putExtra("pasarPoseeCiclismo", posee_ciclismo);
+                myIntent1.putExtra("pasarPoseeCerveza", posee_cerveza);
+                myIntent1.putExtra("pasarPoseeBoina", posee_boina);
+                myIntent1.putExtra("pasarPoseePolo", posee_polo);
 
-                myIntent1.putExtra("pasarRecordPou",Integer.toString(recordPou));
-                myIntent1.putExtra("pasarActividadOrigen",activityOrigen);
+                myIntent1.putExtra("pasarRecordPou", Integer.toString(recordPou));
+                myIntent1.putExtra("pasarActividadOrigen", activityOrigen);
 
                 Activity_Pou_Salon.this.startActivity(myIntent1);
             }
         });
 
         btnRight.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v)  {
+            public void onClick(View v) {
                 Intent myIntent2 = new Intent(Activity_Pou_Salon.this, Activity_Pou_Tienda.class);
 
-                myIntent2.putExtra("pasarNivelHambre",Integer.toString(lvlHambre));
-                myIntent2.putExtra("pasarNivelSalud",Integer.toString(lvlSalud));
-                myIntent2.putExtra("pasarNivelDiversion",Integer.toString(lvlDiversion));
-                myIntent2.putExtra("pasarNivelSueno",Integer.toString(lvlSueno));
-                myIntent2.putExtra("pasarDinero",Integer.toString(amountDinero));
+                myIntent2.putExtra("pasarNivelHambre", Integer.toString(lvlHambre));
+                myIntent2.putExtra("pasarNivelSalud", Integer.toString(lvlSalud));
+                myIntent2.putExtra("pasarNivelDiversion", Integer.toString(lvlDiversion));
+                myIntent2.putExtra("pasarNivelSueno", Integer.toString(lvlSueno));
+                myIntent2.putExtra("pasarDinero", Integer.toString(amountDinero));
 
-                myIntent2.putExtra("pasarCandy",Integer.toString(amountCandy));
-                myIntent2.putExtra("pasarManzana",Integer.toString(amountManzana));
-                myIntent2.putExtra("pasarPizza",Integer.toString(amountPizza));
-                myIntent2.putExtra("pasarAgua",Integer.toString(amountAgua));
-                myIntent2.putExtra("pasarAquarius",Integer.toString(amountAquarius));
-                myIntent2.putExtra("pasarRoncola",Integer.toString(amountRoncola));
+                myIntent2.putExtra("pasarCandy", Integer.toString(amountCandy));
+                myIntent2.putExtra("pasarManzana", Integer.toString(amountManzana));
+                myIntent2.putExtra("pasarPizza", Integer.toString(amountPizza));
+                myIntent2.putExtra("pasarAgua", Integer.toString(amountAgua));
+                myIntent2.putExtra("pasarAquarius", Integer.toString(amountAquarius));
+                myIntent2.putExtra("pasarRoncola", Integer.toString(amountRoncola));
 
-                myIntent2.putExtra("pasarPocionHambre",Integer.toString(amountHambre));
-                myIntent2.putExtra("pasarPocionSalud",Integer.toString(amountSalud));
-                myIntent2.putExtra("pasarPocionDiversion",Integer.toString(amountDiversion));
-                myIntent2.putExtra("pasarPocionSueno",Integer.toString(amountSueno));
+                myIntent2.putExtra("pasarPocionHambre", Integer.toString(amountHambre));
+                myIntent2.putExtra("pasarPocionSalud", Integer.toString(amountSalud));
+                myIntent2.putExtra("pasarPocionDiversion", Integer.toString(amountDiversion));
+                myIntent2.putExtra("pasarPocionSueno", Integer.toString(amountSueno));
 
-                myIntent2.putExtra("pasarPouEstado",pouEstado);
-                myIntent2.putExtra("pasarPouCamiseta",pouCamiseta);
-                myIntent2.putExtra("pasarPouBambas",pouBambas);
-                myIntent2.putExtra("pasarPouGafas",pouGafas);
-                myIntent2.putExtra("pasarPouGorro",pouGorro);
+                myIntent2.putExtra("pasarPouEstado", pouEstado);
+                myIntent2.putExtra("pasarPouCamiseta", pouCamiseta);
+                myIntent2.putExtra("pasarPouBambas", pouBambas);
+                myIntent2.putExtra("pasarPouGafas", pouGafas);
+                myIntent2.putExtra("pasarPouGorro", pouGorro);
 
-                myIntent2.putExtra("pasarDataPouId",data_pouId);
-                myIntent2.putExtra("pasarDataNombrePou",data_nombrePou);
-                myIntent2.putExtra("pasarDataNacimientoPou",data_nacimientoPou);
-                myIntent2.putExtra("pasarDataCorreoPou",data_correoPou);
+                myIntent2.putExtra("pasarDataPouId", data_pouId);
+                myIntent2.putExtra("pasarDataNombrePou", data_nombrePou);
+                myIntent2.putExtra("pasarDataNacimientoPou", data_nacimientoPou);
+                myIntent2.putExtra("pasarDataCorreoPou", data_correoPou);
                 myIntent2.putExtra("pasarDataPasswordPou", data_passwordPou);
 
-                myIntent2.putExtra("pasarPoseePijama",posee_pijama);
-                myIntent2.putExtra("pasarPoseeFcb",posee_fcb);
-                myIntent2.putExtra("pasarPoseeSpain",posee_spain);
-                myIntent2.putExtra("pasarPoseeMessi",posee_messi);
-                myIntent2.putExtra("pasarPoseeRafa",posee_rafa);
-                myIntent2.putExtra("pasarPoseeVeja",posee_veja);
-                myIntent2.putExtra("pasarPoseeFiesta",posee_fiesta);
-                myIntent2.putExtra("pasarPoseeRayban",posee_rayban);
-                myIntent2.putExtra("pasarPoseeCiclismo",posee_ciclismo);
-                myIntent2.putExtra("pasarPoseeCerveza",posee_cerveza);
-                myIntent2.putExtra("pasarPoseeBoina",posee_boina);
-                myIntent2.putExtra("pasarPoseePolo",posee_polo);
+                myIntent2.putExtra("pasarPoseePijama", posee_pijama);
+                myIntent2.putExtra("pasarPoseeFcb", posee_fcb);
+                myIntent2.putExtra("pasarPoseeSpain", posee_spain);
+                myIntent2.putExtra("pasarPoseeMessi", posee_messi);
+                myIntent2.putExtra("pasarPoseeRafa", posee_rafa);
+                myIntent2.putExtra("pasarPoseeVeja", posee_veja);
+                myIntent2.putExtra("pasarPoseeFiesta", posee_fiesta);
+                myIntent2.putExtra("pasarPoseeRayban", posee_rayban);
+                myIntent2.putExtra("pasarPoseeCiclismo", posee_ciclismo);
+                myIntent2.putExtra("pasarPoseeCerveza", posee_cerveza);
+                myIntent2.putExtra("pasarPoseeBoina", posee_boina);
+                myIntent2.putExtra("pasarPoseePolo", posee_polo);
 
-                myIntent2.putExtra("pasarRecordPou",Integer.toString(recordPou));
-                myIntent2.putExtra("pasarActividadOrigen",activityOrigen);
+                myIntent2.putExtra("pasarRecordPou", Integer.toString(recordPou));
+                myIntent2.putExtra("pasarActividadOrigen", activityOrigen);
 
                 Activity_Pou_Salon.this.startActivity(myIntent2);
             }
         });
+
     }
 
     public void guardarPartida(View view) throws IOException {
@@ -409,6 +408,27 @@ public class Activity_Pou_Salon extends AppCompatActivity{
             // PONER AQUÍ EL MECANISMO PARA QUE GUARDE LA PARTIDA EN LA BASE DE DATOS.
 
             StyleableToast.makeText(this, "¡Partida Guardada!", R.style.exampleToast).show();
+
+            pouServices = PouRetrofit.getInstance().getPouServices();
+            //Petición para rellenar todos los parametros
+            Call<Void> cargarDatos = pouServices.updateObjetoArmario(new InformacionPou(data_pouId, data_nombrePou, data_nacimientoPou, data_correoPou, data_passwordPou, recordPou, lvlHambre, lvlSalud, lvlDiversion, lvlSueno, amountDinero, amountCandy, amountManzana, amountPizza, amountAgua, amountAquarius, amountRoncola, amountHambre, amountSalud, amountDiversion, amountSueno, pouCamiseta, pouBambas, pouGafas, pouGorro, posee_pijama, posee_fcb, posee_spain, posee_messi, posee_rafa, posee_veja, posee_fiesta, posee_rayban, posee_ciclismo, posee_cerveza, posee_boina, posee_polo));
+            cargarDatos.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(Call<Void> cargarDatos, Response<Void> respuestaDatos) {
+                    switch (respuestaDatos.code()) {
+                        case 201:
+                            StyleableToast.makeText(Activity_Pou_Salon.this, "¡Se ha guardado toda la información y se ha hecho Logout del Pou!", R.style.exampleToast).show();
+                            break;
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Void> cargarDatos, Throwable t) {
+                    Log.d("POU", " onFailure", t);
+                    StyleableToast.makeText(Activity_Pou_Salon.this, "¡Error!", R.style.exampleToast).show();
+                }
+            });
         }
     }
 }
+
