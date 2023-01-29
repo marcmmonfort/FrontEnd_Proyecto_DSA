@@ -118,7 +118,7 @@ public class Activity_Pou_Juego extends AppCompatActivity{
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // RECEPCIÓN DE DATOS DESDE OTRA ACTIVIDAD
         Bundle infoRecibida = getIntent().getExtras();
-        if (infoRecibida!=null){
+        if (infoRecibida!=null) {
             lvlHambre = Integer.parseInt(infoRecibida.getString("pasarNivelHambre"));
             lvlSalud = Integer.parseInt(infoRecibida.getString("pasarNivelSalud"));
             lvlDiversion = Integer.parseInt(infoRecibida.getString("pasarNivelDiversion"));
@@ -212,7 +212,6 @@ public class Activity_Pou_Juego extends AppCompatActivity{
                 myIntent1.putExtra("pasarDataCorreoPou",data_correoPou);
                 myIntent1.putExtra("pasarDataPasswordPou", data_passwordPou);
 
-
                 myIntent1.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent1.putExtra("pasarPoseeFcb",posee_fcb);
                 myIntent1.putExtra("pasarPoseeSpain",posee_spain);
@@ -267,7 +266,6 @@ public class Activity_Pou_Juego extends AppCompatActivity{
                 myIntent2.putExtra("pasarDataCorreoPou",data_correoPou);
                 myIntent2.putExtra("pasarDataPasswordPou", data_passwordPou);
 
-
                 myIntent2.putExtra("pasarPoseePijama",posee_pijama);
                 myIntent2.putExtra("pasarPoseeFcb",posee_fcb);
                 myIntent2.putExtra("pasarPoseeSpain",posee_spain);
@@ -291,8 +289,8 @@ public class Activity_Pou_Juego extends AppCompatActivity{
 
     public void clicarJugar(View view) throws IOException {
         if (view==btn_iniciarJuego){
-            // EL SIGUIENTE CÓDIGO ES A MODO DE TEST DE ESTE BOTÓN ...
 
+            // SE LANZA UNITY ...
             Intent myIntent1 = new Intent(Activity_Pou_Juego.this, UnityPlayerActivity.class);
             Activity_Pou_Juego.this.startActivity(myIntent1);
 

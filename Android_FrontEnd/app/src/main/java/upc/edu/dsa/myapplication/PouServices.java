@@ -64,7 +64,7 @@ public interface PouServices {
     // UBICACIÓN: Extra_Pou_Ranking.
     // DESCRIPCIÓN: Obtener toda la tienda ordenada.
     @GET("/dsaApp/pougame/objetoTienda/ranking/{rankingId}")
-            Call<List<ObjetoTienda>> obtenerTiendaOrdenadaDescendentemente(@Path("rankingId") String rankingId);
+    Call<List<ObjetoTienda>> obtenerTiendaOrdenadaDescendentemente(@Path("rankingId") String rankingId);
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // EJEMPLOS DE SERVICIOS POU (GET, POST Y PUT)

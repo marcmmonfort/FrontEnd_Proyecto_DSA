@@ -74,6 +74,8 @@ public class Activity_Pou_SplashScreen extends AppCompatActivity {
         data_passwordPou = preferencias.getString("password","");
         Boolean isLogged = preferencias.getBoolean("isLogged", false);
 
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
         Thread timerThread = new Thread() {
             public void run() {
                 try {
