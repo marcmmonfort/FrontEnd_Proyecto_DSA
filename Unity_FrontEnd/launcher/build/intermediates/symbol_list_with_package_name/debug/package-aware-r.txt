@@ -1,4 +1,4 @@
-com.DefaultCompany.TutorialUnity
+com.DefaultCompany.Pou
 drawable app_banner
 id unitySurfaceView
 mipmap app_icon

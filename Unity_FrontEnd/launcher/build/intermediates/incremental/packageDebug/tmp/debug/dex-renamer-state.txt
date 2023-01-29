@@ -1,9 +1,9 @@
-#Sat Jan 28 23:11:33 CET 2023
-base.2=C\:\\Users\\victo\\OneDrive\\Escritorio\\Universidad\\4 Ano\\1 Cuatrimestre\\DSA\\Proyecto\\FrontEnd\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_0.dex
+#Sun Jan 29 16:53:16 CET 2023
+base.2=C\:\\Dades Marc\\UPC\\DSA\\Proyecto\\FrontEnd_Proyecto\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_0.dex
 path.2=classes_0.dex
-base.1=C\:\\Users\\victo\\OneDrive\\Escritorio\\Universidad\\4 Ano\\1 Cuatrimestre\\DSA\\Proyecto\\FrontEnd\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+base.1=C\:\\Dades Marc\\UPC\\DSA\\Proyecto\\FrontEnd_Proyecto\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
 path.1=classes.dex
-base.0=C\:\\Users\\victo\\OneDrive\\Escritorio\\Universidad\\4 Ano\\1 Cuatrimestre\\DSA\\Proyecto\\FrontEnd\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.0=C\:\\Dades Marc\\UPC\\DSA\\Proyecto\\FrontEnd_Proyecto\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex

@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 dependencies {
     implementation project(':unityLibrary')
@@ -16,9 +16,8 @@ android {
     defaultConfig {
         minSdkVersion 22
         targetSdkVersion 30
-        applicationId 'com.DefaultCompany.TutorialUnity'
         ndk {
-            abiFilters 'armeabi-v7a','x86'
+            abiFilters 'armeabi-v7a'
         }
         versionCode 1
         versionName '1.0'
@@ -49,17 +48,5 @@ android {
 
     packagingOptions {
         doNotStrip '*/armeabi-v7a/*.so'
-    }
-
-    bundle {
-        language {
-            enableSplit = false
-        }
-        density {
-            enableSplit = false
-        }
-        abi {
-            enableSplit = true
-        }
     }
 }

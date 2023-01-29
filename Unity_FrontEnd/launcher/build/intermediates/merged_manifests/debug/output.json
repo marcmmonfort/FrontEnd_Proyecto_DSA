@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "applicationId": "com.DefaultCompany.TutorialUnity",
-  "variantType": "BASE_APK",
+  "applicationId": "com.DefaultCompany.Pou",
+  "variantType": "LIBRARY",
   "elements": [
     {
       "outputType": {
@@ -12,16 +12,15 @@
         "splits": [],
         "versionCode": 1,
         "versionName": "1.0",
-        "outputFile": "launcher-debug.apk",
+        "outputFile": "launcher-debug.aar",
         "fullName": "debug",
         "baseName": "debug",
         "dirName": ""
       },
-      "path": "AndroidManifest.xml",
+      "path": "../../library_manifest/debug/AndroidManifest.xml",
       "properties": {
-        "packageId": "com.DefaultCompany.TutorialUnity",
-        "split": "",
-        "minSdkVersion": "22"
+        "packageId": "com.DefaultCompany.Pou",
+        "split": ""
       }
     }
   ]

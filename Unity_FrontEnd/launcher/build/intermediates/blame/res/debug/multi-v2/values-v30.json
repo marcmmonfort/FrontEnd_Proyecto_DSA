@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\victo\\OneDrive\\Escritorio\\Universidad\\4 Ano\\1 Cuatrimestre\\DSA\\Proyecto\\FrontEnd\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v30\\values-v30.xml",
+            "outputFile": "C:\\Dades Marc\\UPC\\DSA\\Proyecto\\FrontEnd_Proyecto\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\launcher\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v30\\values-v30.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\victo\\OneDrive\\Escritorio\\Universidad\\4 Ano\\1 Cuatrimestre\\DSA\\Proyecto\\FrontEnd\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\unityLibrary\\build\\intermediates\\packaged_res\\debug\\values-v30\\values-v30.xml",
+                    "source": "C:\\Dades Marc\\UPC\\DSA\\Proyecto\\FrontEnd_Proyecto\\FrontEnd_Proyecto_DSA\\Unity_FrontEnd\\unityLibrary\\build\\intermediates\\packaged_res\\debug\\values-v30\\values-v30.xml",
                     "from": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",

@@ -26,6 +26,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.unity3d.player.UnityPlayerActivity;
+
 import org.w3c.dom.Text;
 
 import upc.edu.dsa.myapplication.Entities.VO.*;
@@ -290,6 +292,9 @@ public class Activity_Pou_Juego extends AppCompatActivity{
     public void clicarJugar(View view) throws IOException {
         if (view==btn_iniciarJuego){
             // EL SIGUIENTE CÓDIGO ES A MODO DE TEST DE ESTE BOTÓN ...
+
+            Intent myIntent1 = new Intent(Activity_Pou_Juego.this, UnityPlayerActivity.class);
+            Activity_Pou_Juego.this.startActivity(myIntent1);
 
             if ((Integer.parseInt(hambre_juego.getText().toString())>=20)&&(Integer.parseInt(salud_juego.getText().toString())>=20)&&(Integer.parseInt(sueno_juego.getText().toString())>=20))
             {
