@@ -51,13 +51,33 @@ public interface PouServices {
     @GET("/dsaApp/pougame/tienda/obtenerarticulo/{articuloid}")
     Call<ObjetoTienda> obtenerInfoObjeto(@Path("articuloid") String articuloId);
 
-    // UBICACIÓN: -
+    // UBICACIÓN: Extra_Pou_Ranking.
     // DESCRIPCIÓN: Obtener todos los Pous ordenados.
     @GET("/dsaApp/pougame/pou/ranking/{rankingId}")
     Call<List<Pou>> obtenerPousOrdenadosDescendentemente(@Path("rankingId") String rankingId);
 
-    // UBICACIÓN: Activity_Pou_SplashScreen.
-    // DESCRIPCIÓN: Enviamos al BackEnd la información del idioma con el que estamos cargando la App.
-    @PUT("/dsaApp/pougame/pou/guardaridioma/{userId}/{idioma}")
-    Call<Void> guardarIdioma(@Path("userId") String userId, @Path("idioma") String idioma);
+    // UBICACIÓN: Extra_Pou_Ranking.
+    // DESCRIPCIÓN: Obtener todos los Armarios ordenados.
+    @GET("/dsaApp/pougame/objetoArmario/ranking/{rankingId}")
+    Call<List<ObjetoArmario>> obtenerArmarioOrdenadoDescendentemente(@Path("rankingId") String rankingId);
+
+    // UBICACIÓN: Extra_Pou_Ranking.
+    // DESCRIPCIÓN: Obtener toda la tienda ordenada.
+    @GET("/dsaApp/pougame/objetoTienda/ranking/{rankingId}")
+            Call<List<ObjetoTienda>> obtenerTiendaOrdenadaDescendentemente(@Path("rankingId") String rankingId);
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // EJEMPLOS DE SERVICIOS POU (GET, POST Y PUT)
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    /*
+    @GET("gameManager/characters")
+    Call<List<Characters>> getListCharacters();
+
+    @POST("gameManager/user")
+    Call<User> registerUser(@Body UserRegister userRegister);
+
+    @PUT("gameManager/user/buyObject/{email}/{objectId}")
+    Call<Void> buyObject(@Path("email") String email, @Path("objectId") String objectId);
+    */
 }

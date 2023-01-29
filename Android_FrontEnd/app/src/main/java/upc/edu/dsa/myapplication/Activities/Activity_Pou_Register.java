@@ -10,7 +10,6 @@ import android.widget.*;
 
 import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
@@ -27,7 +26,6 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
     TextView registro_textLasAventurasDe;
     Button registro_botonHacerRegistro, registro_backHome;
     TextInputEditText registro_nacimientoPou, registro_correoPou, registro_nombrePou, registro_pouId, registro_passwordPou, registro_passwordPouConfirmar;
-    TextInputLayout register_textInputLayout_username,register_textInputLayout_name,register_textInputLayout_birthdate,register_textInputLayout_correo,register_textInputLayout_password,register_textInputLayout_confirmPassword;
 
     PouServices pouServices;
 
@@ -48,24 +46,6 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
         registro_pouId = findViewById(R.id.registro_pouId);
         registro_passwordPou = findViewById(R.id.registro_passwordPou);
         registro_passwordPouConfirmar = findViewById(R.id.registro_passwordPouConfirmar);
-
-        register_textInputLayout_username = (TextInputLayout) findViewById(R.id.register_textInputLayout_username);
-        register_textInputLayout_username.setHint(R.string.hint_Username);
-
-        register_textInputLayout_name = (TextInputLayout) findViewById(R.id.register_textInputLayout_name);
-        register_textInputLayout_name.setHint(R.string.hint_Name);
-
-        register_textInputLayout_birthdate = (TextInputLayout) findViewById(R.id.register_textInputLayout_birthdate);
-        register_textInputLayout_birthdate.setHint(R.string.hint_Birthdate);
-
-        register_textInputLayout_correo = (TextInputLayout) findViewById(R.id.register_textInputLayout_correo);
-        register_textInputLayout_correo.setHint(R.string.hint_Correo);
-
-        register_textInputLayout_password = (TextInputLayout) findViewById(R.id.register_textInputLayout_password);
-        register_textInputLayout_password.setHint(R.string.hint_Password);
-
-        register_textInputLayout_confirmPassword = (TextInputLayout) findViewById(R.id.register_textInputLayout_confirmPassword);
-        register_textInputLayout_confirmPassword.setHint(R.string.hint_ConfirmPassword);
     }
 
     public void backHome(View view) {
@@ -77,7 +57,7 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
 
         if (!registro_passwordPou.getText().toString().equals(registro_passwordPouConfirmar.getText().toString())){
             // Contraseñas diferentes. Se avisa y no se procede con el registro.
-            StyleableToast.makeText(Activity_Pou_Register.this, getResources().getString(R.string.toast_Register_lasPasswordsNoCoinciden), R.style.exampleToast).show();
+            StyleableToast.makeText(Activity_Pou_Register.this, "¡Las contraseñas no coinciden!", R.style.exampleToast).show();
 
         }
         else{
@@ -92,19 +72,19 @@ public class Activity_Pou_Register extends AppCompatActivity implements View.OnC
                     switch (respuesta.code()){
                         case 200:
                             // Pou creado satisfactoriamente. Nos dirigimos a hacer el Login.
-                            StyleableToast.makeText(Activity_Pou_Register.this, getResources().getString(R.string.toast_Register_haNacidoTuPou), R.style.exampleToast).show();
+                            StyleableToast.makeText(Activity_Pou_Register.this, "¡Enhorabuena, ha nacido tu Pou!", R.style.exampleToast).show();
                             Intent myIntent3 = new Intent(Activity_Pou_Register.this, Activity_Pou_Login.class);
                             Activity_Pou_Register.this.startActivity(myIntent3);
                             break;
                         case 404:
                             // Ya existe el correo. Nos dirigimos a hacer el Login.
-                            StyleableToast.makeText(Activity_Pou_Register.this, getResources().getString(R.string.toast_Register_elCorreoIntroducidoYaEstaAsociadoAUnaCuenta), R.style.exampleToast).show();
+                            StyleableToast.makeText(Activity_Pou_Register.this, "¡El 'correo' introducido ya está asociado a una cuenta!", R.style.exampleToast).show();
                             Intent myIntent2 = new Intent(Activity_Pou_Register.this, Activity_Pou_Login.class);
                             Activity_Pou_Register.this.startActivity(myIntent2);
                             break;
                         case 405:
                             // Ya existe el PouID.
-                            StyleableToast.makeText(Activity_Pou_Register.this, getResources().getString(R.string.toast_Register_elUsernameIntroducidoYaEstaEnUso), R.style.exampleToast).show();
+                            StyleableToast.makeText(Activity_Pou_Register.this, "¡El 'username' introducido ya está en uso!", R.style.exampleToast).show();
                             break;
                     }
                 }

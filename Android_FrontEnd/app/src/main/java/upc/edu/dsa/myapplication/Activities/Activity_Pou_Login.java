@@ -10,26 +10,27 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import android.widget.Toast;
 
 import upc.edu.dsa.myapplication.Entities.VO.Credenciales;
+import upc.edu.dsa.myapplication.Entities.VO.InformacionPou;
 import upc.edu.dsa.myapplication.PouRetrofit;
 import upc.edu.dsa.myapplication.PouServices;
 import upc.edu.dsa.myapplication.R;
 import android.content.SharedPreferences;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 public class Activity_Pou_Login extends AppCompatActivity implements View.OnClickListener{
 
-    TextView login_textLasAventurasDe, login_languageId;
+    TextView login_textLasAventurasDe;
     Button login_botonHacerLogin, login_backHome;
     TextInputEditText login_correoPou, login_passwordPou;
-
-    TextInputLayout home_textInputLayout_password, home_textInputLayout_correo;
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // VARIABLES GLOBALES DEL POU QUE SE VAN A PASAR AL SALÓN SI EL LOGIN ES CORRECTO.
@@ -83,20 +84,11 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.pou_login_screen);
 
         login_textLasAventurasDe = findViewById(R.id.login_textLasAventurasDe);
-        login_textLasAventurasDe.setText(R.string.lasaventurasdepou);
 
         login_botonHacerLogin = (Button) findViewById(R.id.login_botonHacerLogin);
-        login_botonHacerLogin.setText(R.string.login_ACCEDER);
 
         login_correoPou = findViewById(R.id.login_correoPou);
-
         login_passwordPou = findViewById(R.id.login_passwordPou);
-
-        home_textInputLayout_correo = (TextInputLayout) findViewById(R.id.login_textInputLayout_correo);
-        home_textInputLayout_correo.setHint(R.string.hint_Correo);
-
-        home_textInputLayout_password = (TextInputLayout) findViewById(R.id.login_textInputLayout_password);
-        home_textInputLayout_password.setHint(R.string.hint_Password);
 
         SharedPreferences preferences=getSharedPreferences("datos", Context.MODE_PRIVATE);
         login_correoPou.setText(preferences.getString("mail",""));
@@ -131,8 +123,7 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
                         data_passwordPou = login_passwordPou.getText().toString();
 
                         // Login del Pou satisfactorio. Nos dirigimos al menú principal.
-                        StyleableToast.makeText(Activity_Pou_Login.this, getResources().getString(R.string.toast_Login_hasAccedidoCorrectamenteATuPou), R.style.exampleToast).show();
-
+                        StyleableToast.makeText(Activity_Pou_Login.this, "¡Has accedido correctamente a tu Pou!", R.style.exampleToast).show();
                         // Nos vamos al Home.
                         Intent myIntent1 = new Intent(Activity_Pou_Login.this, Activity_Pou_Salon.class);
 
@@ -190,13 +181,13 @@ public class Activity_Pou_Login extends AppCompatActivity implements View.OnClic
                         break;
                     case 404:
                         // El correo no existe. Nos dirigimos al registro.
-                        StyleableToast.makeText(Activity_Pou_Login.this, getResources().getString(R.string.toast_Login_elCorreoIntroducidoNoTieneNingunPouAsociado), R.style.exampleToast).show();
+                        StyleableToast.makeText(Activity_Pou_Login.this, "¡El 'correo' introducido no tiene ningún Pou asociado!", R.style.exampleToast).show();
                         Intent myIntent2 = new Intent(Activity_Pou_Login.this, Activity_Pou_Register.class);
                         Activity_Pou_Login.this.startActivity(myIntent2);
                         break;
                     case 405:
                         // Contraseña incorrecta.
-                        StyleableToast.makeText(Activity_Pou_Login.this, getResources().getString(R.string.toast_Login_laPasswordIntroducidaNoEsLaCorrecta), R.style.exampleToast).show();
+                        StyleableToast.makeText(Activity_Pou_Login.this, "¡La 'contraseña' introducida no es la correcta!", R.style.exampleToast).show();
                         break;
                 }
             }

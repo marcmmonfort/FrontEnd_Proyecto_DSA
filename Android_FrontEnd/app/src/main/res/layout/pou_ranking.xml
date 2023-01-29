@@ -43,10 +43,10 @@
         android:id="@+id/scrollView"
         android:layout_width="380dp"
         android:layout_height="360dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nombre2">
+        app:layout_constraintTop_toBottomOf="@+id/spinner">
 
         <TableLayout
             android:id="@+id/tablaPous"
@@ -68,10 +68,10 @@
                     android:gravity="center"
                     android:text="Pos"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/columna_ID"
+                    android:id="@+id/columna_dinero"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.3"
@@ -79,7 +79,7 @@
                     android:gravity="center"
                     android:text="ID"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/columna_nombre"
@@ -90,7 +90,7 @@
                     android:gravity="center"
                     android:text="Nombre"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/columna_record"
@@ -101,9 +101,19 @@
                     android:gravity="center"
                     android:text="Record"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="12sp" />
             </TableRow>
         </TableLayout>
     </ScrollView>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nombre2"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

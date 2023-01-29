@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +24,7 @@ import io.github.muddz.styleabletoast.StyleableToast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import upc.edu.dsa.myapplication.Entities.ObjetoArmario;
 import upc.edu.dsa.myapplication.Entities.ObjetoTienda;
 import upc.edu.dsa.myapplication.Entities.Pou;
 import upc.edu.dsa.myapplication.PouRetrofit;
@@ -39,6 +43,7 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
 
     TableLayout tablaPous;
     Button ranking_record_botonSalir;
+    Spinner spinner;
 
     PouServices pouServices;
 
@@ -95,6 +100,20 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
 
         ranking_record_botonSalir = (Button) findViewById(R.id.ranking_record_botonSalir);
 
+        spinner = (Spinner) findViewById(R.id.spinner);
+
+        ArrayList<String> elementos = new ArrayList<String>();
+
+        elementos.add("Seleccione una opción");
+        elementos.add("dineroPou");
+        elementos.add("record");
+        elementos.add("precioArticulo");
+        elementos.add("cantidad");
+
+        ArrayAdapter adp = new ArrayAdapter(Extra_Pou_Ranking.this, R.layout.extra_spinner_row, elementos);
+
+        spinner.setAdapter(adp);
+
         Bundle infoRecibida = getIntent().getExtras();
         if (infoRecibida!=null){
 
@@ -147,46 +166,149 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
 
         // AQUÍ DIFERENCIAR EL TIPO DE COLUMNA QUE QUEREMOS USAR PARA ORDENAR DESCENDIENTEMENTE LOS POUS.
 
-        pouServices = PouRetrofit.getInstance().getPouServices();
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String elemento = (String) spinner.getAdapter().getItem(position);
 
-        Call<List<Pou>> peticion = pouServices.obtenerPousOrdenadosDescendentemente("record");
+                tablaPous.removeAllViews();
 
-        peticion.enqueue(new Callback<List<Pou>>() {
-            @Override
-            public void onResponse(Call<List<Pou>> peticion, Response<List<Pou>> respuesta) {
-                switch (respuesta.code()){
-                    case 201:
-                        List<Pou> listaPous = respuesta.body();
+                pouServices = PouRetrofit.getInstance().getPouServices();
 
-                        // Rellenamos la tabla.
-                        int positionPou = 1;
-                        assert listaPous != null;
-                        for (int i=0; i<listaPous.size();i++) {
+                if (Objects.equals(elemento, "record") || Objects.equals(elemento, "dineroPou")){
 
-                            View filaPou = LayoutInflater.from(Extra_Pou_Ranking.this).inflate(R.layout.extra_ranking_row, null, false);
+                    StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Has escogido el ranking de " + elemento + " !", R.style.exampleToast).show();
+                    Call<List<Pou>> peticion = pouServices.obtenerPousOrdenadosDescendentemente(elemento);
+                    peticion.enqueue(new Callback<List<Pou>>() {
+                        @Override
+                        public void onResponse(Call<List<Pou>> peticion, Response<List<Pou>> respuesta) {
+                            switch (respuesta.code()){
+                                case 201:
+                                    List<Pou> listaPous = respuesta.body();
 
-                            TextView columna_position = filaPou.findViewById(R.id.columna_position);
-                            TextView columna_ID = filaPou.findViewById(R.id.columna_ID);
-                            TextView columna_nombre = filaPou.findViewById(R.id.columna_nombre);
-                            TextView columna_record = filaPou.findViewById(R.id.columna_record);
+                                    // Rellenamos la tabla.
+                                    int positionPou = 1;
+                                    assert listaPous != null;
+                                    for (int i=0; i<listaPous.size();i++) {
 
-                            columna_position.setText(Integer.toString(positionPou));
-                            columna_ID.setText(listaPous.get(i).getPouId());
-                            columna_nombre.setText(listaPous.get(i).getNombrePou());
-                            columna_record.setText(Integer.toString(listaPous.get(i).getRecord()));
+                                        View filaPou = LayoutInflater.from(Extra_Pou_Ranking.this).inflate(R.layout.extra_ranking_row, null, false);
 
-                            tablaPous.addView(filaPou);
+                                        TextView columna_position = filaPou.findViewById(R.id.columna_position);
+                                        TextView columna_dinero = filaPou.findViewById(R.id.columna_dinero);
+                                        TextView columna_nombre = filaPou.findViewById(R.id.columna_nombre);
+                                        TextView columna_record = filaPou.findViewById(R.id.columna_record);
 
-                            positionPou++;
+                                        columna_position.setText(Integer.toString(positionPou));
+                                        columna_dinero.setText(Integer.toString(listaPous.get(i).getDineroPou()));
+                                        columna_nombre.setText(listaPous.get(i).getNombrePou());
+                                        columna_record.setText(Integer.toString(listaPous.get(i).getRecord()));
+
+                                        tablaPous.addView(filaPou);
+
+                                        positionPou++;
+                                    }
+
+                                    break;
+                            }
                         }
 
-                        break;
+                        @Override
+                        public void onFailure(Call<List<Pou>> peticion, Throwable t) {
+                            StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Error!", R.style.exampleToast).show();
+
+                        }
+                    });
+                }
+                else if (Objects.equals(elemento, "cantidad") ){
+
+                    StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Has escogido el ranking de " + elemento + " !", R.style.exampleToast).show();
+                    Call<List<ObjetoArmario>> peticion2 = pouServices.obtenerArmarioOrdenadoDescendentemente(elemento);
+                    peticion2.enqueue(new Callback<List<ObjetoArmario>>() {
+                        @Override
+                        public void onResponse(Call<List<ObjetoArmario>> peticion2, Response<List<ObjetoArmario>> respuesta2) {
+                            switch (respuesta2.code()){
+                                case 201:
+                                    List<ObjetoArmario> listaObjetos = respuesta2.body();
+
+                                    // Rellenamos la tabla.
+                                    int positionPou = 1;
+                                    assert listaObjetos != null;
+                                    for (int i=0; i<listaObjetos.size();i++) {
+
+                                        View filaPou = LayoutInflater.from(Extra_Pou_Ranking.this).inflate(R.layout.extra_ranking_row, null, false);
+
+                                        TextView columna_position = filaPou.findViewById(R.id.columna_position);
+                                        TextView columna_cantidad = filaPou.findViewById(R.id.columna_dinero);
+                                        TextView columna_nombre = filaPou.findViewById(R.id.columna_nombre);
+                                        TextView columna_usuario = filaPou.findViewById(R.id.columna_record);
+
+                                        columna_position.setText(Integer.toString(positionPou));
+                                        columna_cantidad.setText(Integer.toString(listaObjetos.get(i).getCantidad()));
+                                        columna_nombre.setText(listaObjetos.get(i).getIdArticulo());
+                                        columna_usuario.setText(listaObjetos.get(i).getPouId());
+
+                                        tablaPous.addView(filaPou);
+
+                                        positionPou++;
+                                    }
+
+                                    break;
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<ObjetoArmario>> peticion, Throwable t) {
+                            StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Error!", R.style.exampleToast).show();
+
+                        }
+                    });
+
+                }
+                else if (Objects.equals(elemento, "precioArticulo") ){
+                    StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Has escogido el ranking de " + elemento + " !", R.style.exampleToast).show();
+                    Call<List<ObjetoTienda>> peticion3 = pouServices.obtenerTiendaOrdenadaDescendentemente(elemento);
+                    peticion3.enqueue(new Callback<List<ObjetoTienda>>() {
+                        @Override
+                        public void onResponse(Call<List<ObjetoTienda>> peticion3, Response<List<ObjetoTienda>> respuesta3) {
+                            switch (respuesta3.code()){
+                                case 201:
+                                    List<ObjetoTienda> listaObjetos = respuesta3.body();
+
+                                    // Rellenamos la tabla.
+                                    int positionPou = 1;
+                                    assert listaObjetos != null;
+                                    for (int i=0; i<listaObjetos.size();i++) {
+
+                                        View filaPou = LayoutInflater.from(Extra_Pou_Ranking.this).inflate(R.layout.extra_ranking_row, null, false);
+
+                                        TextView columna_position = filaPou.findViewById(R.id.columna_position);
+                                        TextView columna_precio = filaPou.findViewById(R.id.columna_dinero);
+                                        TextView columna_nombre = filaPou.findViewById(R.id.columna_nombre);
+                                        TextView columna_tipo = filaPou.findViewById(R.id.columna_record);
+
+                                        columna_position.setText(Integer.toString(positionPou));
+                                        columna_precio.setText(String.valueOf(listaObjetos.get(i).getPrecioArticulo()));
+                                        columna_nombre.setText(listaObjetos.get(i).getNombreArticulo());
+                                        columna_tipo.setText(listaObjetos.get(i).getTipoArticulo());
+
+                                        tablaPous.addView(filaPou);
+
+                                        positionPou++;
+                                    }
+
+                                    break;
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<ObjetoTienda>> peticion, Throwable t) {
+                            StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Error!", R.style.exampleToast).show();
+
+                        }
+                    });
                 }
             }
-
             @Override
-            public void onFailure(Call<List<Pou>> peticion, Throwable t) {
-                StyleableToast.makeText(Extra_Pou_Ranking.this, "¡Error!", R.style.exampleToast).show();
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
@@ -215,12 +337,12 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
             View filaPou = LayoutInflater.from(this).inflate(R.layout.extra_ranking_row, null, false);
 
             TextView columna_position = filaPou.findViewById(R.id.columna_position);
-            TextView columna_ID = filaPou.findViewById(R.id.columna_ID);
+            TextView columna_dinero = filaPou.findViewById(R.id.columna_dinero);
             TextView columna_nombre = filaPou.findViewById(R.id.columna_nombre);
             TextView columna_record = filaPou.findViewById(R.id.columna_record);
 
             columna_position.setText(positionPou);
-            columna_ID.setText(pou.getPouId());
+            columna_dinero.setText(pou.getPouId());
             columna_nombre.setText(pou.getNombrePou());
             columna_record.setText(Integer.toString((int) pou.getRecord()));
 
