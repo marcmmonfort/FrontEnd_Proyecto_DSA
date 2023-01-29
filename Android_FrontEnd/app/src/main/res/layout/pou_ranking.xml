@@ -99,7 +99,7 @@
                     android:layout_weight="0.2"
                     android:fontFamily="@font/pou_font"
                     android:gravity="center"
-                    android:text="Record"
+                    android:text="Value"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </TableRow>
@@ -112,6 +112,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:gravity="center"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nombre2"

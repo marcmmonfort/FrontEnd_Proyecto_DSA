@@ -107,8 +107,8 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
         elementos.add("Seleccione una opción");
         elementos.add("dineroPou");
         elementos.add("record");
-        elementos.add("precioArticulo");
-        elementos.add("cantidad");
+        // elementos.add("precioArticulo");
+        // elementos.add("cantidad");
 
         ArrayAdapter adp = new ArrayAdapter(Extra_Pou_Ranking.this, R.layout.extra_spinner_row, elementos);
 
@@ -185,25 +185,40 @@ public class Extra_Pou_Ranking extends AppCompatActivity {
                                 case 201:
                                     List<Pou> listaPous = respuesta.body();
 
+                                    // - - -
+
+                                    View filaPou1 = LayoutInflater.from(Extra_Pou_Ranking.this).inflate(R.layout.extra_ranking_row, null, false);
+                                    TextView columna_position1 = filaPou1.findViewById(R.id.columna_position);
+                                    TextView columna_dinero1 = filaPou1.findViewById(R.id.columna_dinero);
+                                    TextView columna_nombre1 = filaPou1.findViewById(R.id.columna_nombre);
+                                    TextView columna_record1 = filaPou1.findViewById(R.id.columna_record);
+                                    columna_position1.setText("Pos");
+                                    columna_dinero1.setText("ID");
+                                    columna_nombre1.setText("Nombre");
+                                    if (Objects.equals(elemento, "record")){
+                                        columna_record1.setText("Record");
+                                    }
+                                    else{
+                                        columna_record1.setText("Dinero");
+                                    }
+                                    tablaPous.addView(filaPou1);
+
+                                    // - - -
+
                                     // Rellenamos la tabla.
                                     int positionPou = 1;
                                     assert listaPous != null;
                                     for (int i=0; i<listaPous.size();i++) {
-
                                         View filaPou = LayoutInflater.from(Extra_Pou_Ranking.this).inflate(R.layout.extra_ranking_row, null, false);
-
                                         TextView columna_position = filaPou.findViewById(R.id.columna_position);
                                         TextView columna_dinero = filaPou.findViewById(R.id.columna_dinero);
                                         TextView columna_nombre = filaPou.findViewById(R.id.columna_nombre);
                                         TextView columna_record = filaPou.findViewById(R.id.columna_record);
-
                                         columna_position.setText(Integer.toString(positionPou));
                                         columna_dinero.setText(Integer.toString(listaPous.get(i).getDineroPou()));
                                         columna_nombre.setText(listaPous.get(i).getNombrePou());
                                         columna_record.setText(Integer.toString(listaPous.get(i).getRecord()));
-
                                         tablaPous.addView(filaPou);
-
                                         positionPou++;
                                     }
 
